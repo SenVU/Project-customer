@@ -1,28 +1,33 @@
 using System;
 using UnityEngine;
-using static UnityEngine.Timeline.AnimationPlayableAsset;
 
+[RequireComponent(typeof(Collider))]
 public class PlayerControler : MonoBehaviour
 {
-    Rigidbody rigidBody;
-    [SerializeField] GameObject cam;
+    private Rigidbody rigidBody;
+    private Collider playerCollider;
+    [SerializeField] private GameObject cam;
+    [SerializeField] private GameObject camTP;
 
-    [SerializeField] float moveSpeed;
-    [SerializeField] float strafeSpeed;
-    [SerializeField] float rotationSpeed;
-    [SerializeField] float jumpForce;
-    [SerializeField] float airControlFactor;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float strafeSpeed;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float airControlFactor;
 
-    [SerializeField] float maxCamRotation;
-    [SerializeField] float minCamRotation;
-    [SerializeField] float camRotationSpeed;
+    [SerializeField] private float maxCamRotation;
+    [SerializeField] private float minCamRotation;
+    [SerializeField] private float camRotationSpeed;
 
-    float rotation = 0;
-    float camRotation = 0;
+    private float rotation = 0;
+    private float camRotation = 0;
+    private bool TPPov = false;
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
+        playerCollider = GetComponent<Collider>();
         Debug.Assert(cam != null, "PlayerControler does not have a Camera attached");
+        Debug.Assert(camTP != null, "PlayerControler does not have a third person Camera attached");
         Application.targetFrameRate = 60;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; 
@@ -40,6 +45,7 @@ public class PlayerControler : MonoBehaviour
 
         MovePlayer(WS, AD);
         CheckForJump();
+        CheckForCamSwitch();
     }
 
   
@@ -61,7 +67,7 @@ public class PlayerControler : MonoBehaviour
 
     private void MovePlayer(float WS, float AD)
     {
-        Vector3 moveVect = new Vector3(AD * strafeSpeed, 0, WS * moveSpeed);
+        Vector3 moveVect = new Vector3(AD * strafeSpeed, rigidBody.velocity.y, WS * moveSpeed);
         moveVect = Quaternion.Euler(0, rotation, 0) * moveVect;
 
 
@@ -79,8 +85,19 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    bool IsGrounded()
+    private void CheckForCamSwitch()
     {
-        return Physics.Raycast(transform.position+new Vector3(0,.1f,0), -Vector3.up, .2f);
+        if (Input.GetKeyDown(KeyCode.Tab)) TPPov = !TPPov;
+
+        cam.SetActive(!TPPov);
+        camTP.SetActive(TPPov);
+    }
+
+    public bool IsGrounded()
+    {
+        return Physics.CheckCapsule(playerCollider.bounds.center,
+        new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y - 0.1f, playerCollider.bounds.center.z),
+        0.45f);
+        //return Physics.Raycast(transform.position+new Vector3(0,.1f,0), -Vector3.up, .2f);
     }
 }
