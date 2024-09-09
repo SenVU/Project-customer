@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static UnityEngine.Timeline.AnimationPlayableAsset;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class PlayerControler : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         Debug.Assert(cam != null, "PlayerControler does not have a Camera attached");
         Application.targetFrameRate = 60;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false; 
     }
 
     void FixedUpdate()
