@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-
 [RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Rigidbody))]
 
@@ -9,7 +8,6 @@ public class AIWalker : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float airControlFactor = .1f;
-    [SerializeField] float unsetTargetDistance;
 
     private Collider AICollider;
     private Nullable<Vector3> target = null;
@@ -26,7 +24,6 @@ public class AIWalker : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        checkIfClose();
         lookAt(target);
         MoveTo(target);
     }
@@ -36,9 +33,10 @@ public class AIWalker : MonoBehaviour
         if (!HasTarget()) return;
         Vector3 moveVect = target.Value - transform.position;
         moveVect.y = 0;
+        moveVect.Normalize();
 
         // if the AI is grounded use a velosity based movement else use force based
-        if (IsGrounded()) AIRigidbody.velocity = moveVect;
+        if (IsGrounded()) AIRigidbody.velocity = moveVect*speed;
         else AIRigidbody.AddForce(moveVect * airControlFactor);
         Debug.DrawLine(transform.position, target.Value, Color.yellow);
     }
@@ -50,14 +48,6 @@ public class AIWalker : MonoBehaviour
         rotation.x = 0;
         rotation.z = 0;
         transform.rotation = Quaternion.Euler(rotation);
-    }
-
-    private void checkIfClose()
-    {
-        if (HasTarget() && (transform.position-target.Value).magnitude<=unsetTargetDistance)
-        {
-            target = null;
-        }
     }
 
     /// <summary>

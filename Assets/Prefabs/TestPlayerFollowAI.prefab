@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3923655ef1e3d4980127386c2ca56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1
   airControlFactor: 0.1
   unsetTargetDistance: 0
 --- !u!114 &7564123059553173671
