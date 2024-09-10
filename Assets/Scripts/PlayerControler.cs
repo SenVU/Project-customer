@@ -7,6 +7,7 @@ public class PlayerControler : MonoBehaviour
     private Rigidbody rigidBody;
     private Collider playerCollider;
     [SerializeField] private GameObject cam;
+    Transform camTF;
     [SerializeField] private GameObject camTP;
 
     [SerializeField] private float moveSpeed;
@@ -27,6 +28,7 @@ public class PlayerControler : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<Collider>();
         Debug.Assert(cam != null, "PlayerControler does not have a Camera attached");
+        camTF =  cam.GetComponent<Transform>();
         Debug.Assert(camTP != null, "PlayerControler does not have a third person Camera attached");
         Application.targetFrameRate = 60;
         Cursor.lockState = CursorLockMode.Locked;
@@ -52,9 +54,14 @@ public class PlayerControler : MonoBehaviour
 
     private void RotateCamera(float mouseY)
     {
-        Transform camTF = cam.GetComponent<Transform>();
-        camRotation -= mouseY*camRotationSpeed;
-        camRotation = Mathf.Clamp(camRotation, minCamRotation, maxCamRotation);
+        if (cam.activeSelf)
+        {
+            camRotation -= mouseY * camRotationSpeed;
+            camRotation = Mathf.Clamp(camRotation, minCamRotation, maxCamRotation);
+        } else
+        {
+            camRotation = 0;
+        }
         camTF.rotation = Quaternion.Euler(camRotation, rotation, 0);
     }
 
@@ -65,9 +72,10 @@ public class PlayerControler : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, rotation, 0);
     }
 
-    private void MovePlayer(float WS, float AD)
+
+    private void MovePlayer(float Forward, float AD)
     {
-        Vector3 moveVect = new Vector3(AD * strafeSpeed, rigidBody.velocity.y, WS * moveSpeed);
+        Vector3 moveVect = new Vector3(AD * strafeSpeed, rigidBody.velocity.y, Forward * moveSpeed);
         moveVect = Quaternion.Euler(0, rotation, 0) * moveVect;
 
 
@@ -75,6 +83,9 @@ public class PlayerControler : MonoBehaviour
         else rigidBody.AddForce(moveVect*airControlFactor);
     }
 
+    /// <summary>
+    /// checks for the jump key and jumps
+    /// </summary>
     private void CheckForJump()
     {
         if (Input.GetKey(KeyCode.Space) && IsGrounded())
@@ -85,14 +96,19 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// checks for the pressing of the key that switchest betwees 1st person and 3rd person
+    /// </summary>
     private void CheckForCamSwitch()
     {
         if (Input.GetKeyDown(KeyCode.Tab)) TPPov = !TPPov;
-
         cam.SetActive(!TPPov);
         camTP.SetActive(TPPov);
     }
 
+    /// <summary>
+    /// checks if there is a collision whitin the distance of 0.1f below the player
+    /// </summary>
     public bool IsGrounded()
     {
         return Physics.CheckCapsule(playerCollider.bounds.center,
