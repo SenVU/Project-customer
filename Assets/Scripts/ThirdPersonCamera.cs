@@ -1,28 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
-    [SerializeField] private GameObject camera;
+    [SerializeField] private GameObject cameraObject;
     private Transform camTransform;
 
     [SerializeField] private float distanceAway;
     [SerializeField] private float distanceUp;
 
     private Vector3 velocityCanSmooth = Vector3.zero;
-    [SerializeField] private float canSmoothDampTime = .1f;
+    [SerializeField] private float canSmoothDampTime = 1f;
 
     private Vector3 lookDir;
     private Vector3 targetPos;
 
-
+    /// <summary>
+    /// setup on spawn
+    /// </summary>
     void Start()
     {
-        Debug.Assert(camera != null, "Third person camera does not have a player attached");
-        camTransform = camera.transform;
+        Debug.Assert(cameraObject != null, "Third person camera does not have a player attached");
+        camTransform = cameraObject.transform;
         lookDir = transform.forward;
+        camTransform.parent = null;
     }
 
     void LateUpdate()
