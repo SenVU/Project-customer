@@ -24,7 +24,6 @@ public class AIBasicFollower : MonoBehaviour
 
     private bool checkIfClose()
     {
-        return (transform.position - followTarget.transform.position).magnitude <= unsetTargetDistance)
-        
+        return (transform.position - followTarget.transform.position).magnitude <= unsetTargetDistance;
     }
 }
