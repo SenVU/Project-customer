@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
-using UnityEngine.AI;
 
 [RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerControler : MonoBehaviour
 {
     private Rigidbody rigidBody;
