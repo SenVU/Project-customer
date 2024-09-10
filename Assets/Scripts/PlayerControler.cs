@@ -1,14 +1,15 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Collider))]
 public class PlayerControler : MonoBehaviour
 {
     private Rigidbody rigidBody;
     private Collider playerCollider;
-    [SerializeField] private GameObject cam;
-    Transform camTF;
-    [SerializeField] private GameObject camTP;
+    [SerializeField] private GameObject mainCam;
+    Transform mainCamTransform;
+    [SerializeField] private GameObject TPCam;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float strafeSpeed;
@@ -20,28 +21,38 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private float minCamRotation;
     [SerializeField] private float camRotationSpeed;
 
-    private float rotation = 0;
-    private float camRotation = 0;
-    private bool TPPov = false;
+    [SerializeField] private KeyCode jumpKey = KeyCode.Space;
+    [SerializeField] private KeyCode camSwitchKey = KeyCode.Tab;
+
+    private float playerYawRotation = 0;
+    private float camPitchRotation = 0;
+
+    /// <summary>
+    /// setup at player spawn
+    /// </summary>
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<Collider>();
-        Debug.Assert(cam != null, "PlayerControler does not have a Camera attached");
-        camTF =  cam.GetComponent<Transform>();
-        Debug.Assert(camTP != null, "PlayerControler does not have a third person Camera attached");
+        Debug.Assert(playerCollider != null, "Players Collider not found");
+        Debug.Assert(mainCam != null, "PlayerControler does not have a Camera attached");
+        mainCamTransform =  mainCam.GetComponent<Transform>();
+        Debug.Assert(TPCam != null, "PlayerControler does not have a third person Camera attached");
         Application.targetFrameRate = 60;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; 
     }
 
+    /// <summary>
+    /// fixed update loop
+    /// </summary>
     void FixedUpdate()
     {
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
         float WS = Input.GetAxisRaw("Vertical");
         float AD = Input.GetAxisRaw("Horizontal");
-        
+
         RotatePlayer(mouseX);
         RotateCamera(mouseY);
 
@@ -50,35 +61,47 @@ public class PlayerControler : MonoBehaviour
         CheckForCamSwitch();
     }
 
-  
 
+    /// <summary>
+    /// camera rotation control
+    /// </summary>
+    /// <param name="mouseY">mouse Y axis</param>
     private void RotateCamera(float mouseY)
     {
-        if (cam.activeSelf)
+        // checks if the FP camera is active
+        if (mainCam.activeSelf)
         {
-            camRotation -= mouseY * camRotationSpeed;
-            camRotation = Mathf.Clamp(camRotation, minCamRotation, maxCamRotation);
+            camPitchRotation -= mouseY * camRotationSpeed;
+            camPitchRotation = Mathf.Clamp(camPitchRotation, minCamRotation, maxCamRotation);
         } else
         {
-            camRotation = 0;
+            camPitchRotation = 0;
         }
-        camTF.rotation = Quaternion.Euler(camRotation, rotation, 0);
+        mainCamTransform.rotation = Quaternion.Euler(camPitchRotation, playerYawRotation, 0);
     }
 
+    /// <summary>
+    /// player mouse rotation control
+    /// </summary>
+    /// <param name="mouseX">mouse X axis</param>
     private void RotatePlayer(float mouseX)
     {
-        rotation = transform.rotation.eulerAngles.y;
-        rotation += mouseX * rotationSpeed;
-        transform.rotation = Quaternion.Euler(0, rotation, 0);
+        playerYawRotation = transform.rotation.eulerAngles.y;
+        playerYawRotation += mouseX * rotationSpeed;
+        transform.rotation = Quaternion.Euler(0, playerYawRotation, 0);
     }
 
-
-    private void MovePlayer(float Forward, float AD)
+    /// <summary>
+    /// player movement control
+    /// </summary>
+    /// <param name="Forward">the forward input</param>
+    /// <param name="Strafe">the sideways input</param>
+    private void MovePlayer(float Forward, float Strafe)
     {
-        Vector3 moveVect = new Vector3(AD * strafeSpeed, rigidBody.velocity.y, Forward * moveSpeed);
-        moveVect = Quaternion.Euler(0, rotation, 0) * moveVect;
+        Vector3 moveVect = new Vector3(Strafe * strafeSpeed, rigidBody.velocity.y, Forward * moveSpeed);
+        moveVect = Quaternion.Euler(0, playerYawRotation, 0) * moveVect;
 
-
+        // if the player is grounded use a velosity based movement else use force based
         if (IsGrounded()) rigidBody.velocity = moveVect;
         else rigidBody.AddForce(moveVect*airControlFactor);
     }
@@ -88,7 +111,7 @@ public class PlayerControler : MonoBehaviour
     /// </summary>
     private void CheckForJump()
     {
-        if (Input.GetKey(KeyCode.Space) && IsGrounded())
+        if (Input.GetKey(jumpKey) && IsGrounded())
         {
             Vector3 jump = rigidBody.velocity;
             jump.y = jumpForce;
@@ -101,19 +124,27 @@ public class PlayerControler : MonoBehaviour
     /// </summary>
     private void CheckForCamSwitch()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)) TPPov = !TPPov;
-        cam.SetActive(!TPPov);
-        camTP.SetActive(TPPov);
+        if (Input.GetKeyDown(camSwitchKey))
+        {
+            mainCam.SetActive(!mainCam.activeSelf);
+            TPCam.SetActive(!mainCam.activeSelf);
+        }
     }
 
     /// <summary>
-    /// checks if there is a collision whitin the distance of 0.1f below the player
+    /// checks if there is a collision whitin the distance of 0.01f below the player
     /// </summary>
     public bool IsGrounded()
     {
-        return Physics.CheckCapsule(playerCollider.bounds.center,
-        new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y - 0.1f, playerCollider.bounds.center.z),
-        0.45f);
-        //return Physics.Raycast(transform.position+new Vector3(0,.1f,0), -Vector3.up, .2f);
+        Vector3 colliderBottom = new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y - .01f, playerCollider.bounds.center.z);
+
+        Vector3 checkCapsuleBottom = colliderBottom + new Vector3(0, 0.45f, 0);
+        bool grounded = Physics.CheckCapsule(playerCollider.bounds.center, checkCapsuleBottom, 0.45f);
+        // old raycast based method
+        //bool grounded = Physics.Linecast(playerCollider.bounds.center, colliderBottom);
+
+        Debug.DrawLine(playerCollider.bounds.center, colliderBottom, grounded ? Color.red : Color.blue);
+
+        return grounded;
     }
 }

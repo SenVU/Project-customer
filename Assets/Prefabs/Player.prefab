@@ -109,12 +109,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208200989516769379}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.571, z: 0.872}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.086000025, z: -0.048000038}
   m_LocalScale: {x: 0.2586612, y: 0.29480135, z: 0.46006262}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7771430625565662829}
+  m_Father: {fileID: 7195407117992456096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5965476324109366294
 MeshFilter:
@@ -358,12 +358,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4225110903409558883}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.516, z: 1.098}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.14100003, z: 0.17800003}
   m_LocalScale: {x: 0.1543328, y: 0.029434146, z: 0.012812284}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7771430625565662829}
+  m_Father: {fileID: 7195407117992456096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4185555189309783608
 MeshFilter:
@@ -441,12 +441,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4794470443458231820}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0854, y: 0.627, z: 1.098}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0854, y: -0.030000031, z: 0.17800003}
   m_LocalScale: {x: 0.034763463, y: 0.029434146, z: 0.012812284}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7771430625565662829}
+  m_Father: {fileID: 7195407117992456096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6789891618860077094
 MeshFilter:
@@ -694,7 +694,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.657, z: 0.774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8695851109234576925}
+  - {fileID: 6171802998222960740}
+  - {fileID: 5131281562333675939}
+  - {fileID: 5826508712741817131}
   m_Father: {fileID: 7171726910567516687}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &5018631344199941369
@@ -806,16 +810,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7253f69e373dd1c47953d563cec3ee0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 7913205305800544969}
-  camTP: {fileID: 8371665040121888195}
-  moveSpeed: 10
-  strafeSpeed: 10
-  rotationSpeed: 5
-  jumpForce: 5
+  mainCam: {fileID: 7913205305800544969}
+  TPCam: {fileID: 8371665040121888195}
+  moveSpeed: 5
+  strafeSpeed: 4
+  rotationSpeed: 4
+  jumpForce: 3
   airControlFactor: 0.2
   maxCamRotation: 65
   minCamRotation: -65
-  camRotationSpeed: 5
+  camRotationSpeed: 4
+  jumpKey: 32
+  camSwitchKey: 9
 --- !u!54 &6571254026092443757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -863,9 +869,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.2
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!114 &390970535302993369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,12 +1006,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8858314989802318972}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0854, y: 0.627, z: 1.098}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0854, y: -0.030000031, z: 0.17800003}
   m_LocalScale: {x: 0.034763463, y: 0.029434146, z: 0.012812284}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7771430625565662829}
+  m_Father: {fileID: 7195407117992456096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8066204133910426850
 MeshFilter:
@@ -1087,10 +1093,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4770138094073685067}
-  - {fileID: 8695851109234576925}
-  - {fileID: 6171802998222960740}
-  - {fileID: 5131281562333675939}
-  - {fileID: 5826508712741817131}
   - {fileID: 4924556365875363115}
   - {fileID: 806060534231096166}
   - {fileID: 6346829227871205806}

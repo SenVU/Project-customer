@@ -56,7 +56,7 @@ public class ThirdPersonCamera : MonoBehaviour
         RaycastHit wallHit = new RaycastHit();
         if (Physics.Linecast(fromObject, toTarget, out wallHit))
         {
-            Debug.DrawLine(wallHit.point, wallHit.point+Vector3.down, Color.red);
+            Debug.DrawRay(wallHit.point, Vector3.down, Color.red);
             toTarget = new Vector3(wallHit.point.x, toTarget.y, wallHit.point.z);
         }
     }
