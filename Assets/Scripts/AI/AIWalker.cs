@@ -10,7 +10,7 @@ public class AIWalker : MonoBehaviour
     [SerializeField] float airControlFactor = .1f;
 
     private Collider AICollider;
-    private Nullable<Vector3> target = null;
+    private Vector3? target = null;
     private Rigidbody AIRigidbody;
 
     void Start()

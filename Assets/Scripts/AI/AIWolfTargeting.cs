@@ -9,7 +9,7 @@ public class AIWolfTargeting : AITargeter
     List<GameObject> potentialTargets;
     System.Random random = new System.Random();
     State currentState = State.Wander;
-    Nullable<Vector2> wanderTarget;
+    Vector2? wanderTarget;
 
     [SerializeField] int maxWanderDistance = 15;
     [SerializeField] float wanderResetTargetDistance = 2;
