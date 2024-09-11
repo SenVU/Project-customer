@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour
@@ -10,7 +9,7 @@ public class ThirdPersonCamera : MonoBehaviour
     [SerializeField] private float distanceUp;
 
     private Vector3 velocityCanSmooth = Vector3.zero;
-    [SerializeField] private float canSmoothDampTime = 1f;
+    [SerializeField] private float canSmoothDampTime = .1f;
 
     private Vector3 lookDir;
     private Vector3 targetPos;
@@ -20,9 +19,10 @@ public class ThirdPersonCamera : MonoBehaviour
     /// </summary>
     void Start()
     {
-        Debug.Assert(cameraObject != null, "Third person camera does not have a player attached");
+        Debug.Assert(cameraObject != null, "Third person camera in not attached");
         camTransform = cameraObject.transform;
-        lookDir = transform.forward;
+        
+        // takes the camera out of the player prefab so its position is not confined
         camTransform.parent = null;
     }
 
