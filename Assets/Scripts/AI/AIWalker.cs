@@ -69,4 +69,16 @@ public class AIWalker : MonoBehaviour
 
     public void SetTarget(Nullable<Vector3> target) { this.target = target; }
     public bool HasTarget() { return target.HasValue; }
+
+    public float GetDistanceToTarget()
+    {
+        return (target - transform.position).Value.magnitude;
+    }
+
+    public float GetHorizontalDistanceToTarget()
+    {
+        Vector3 horizontalTarget = target.Value;
+        horizontalTarget.y = transform.position.y;
+        return (horizontalTarget - transform.position).magnitude;
+    }
 }
