@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class AIWalker : MonoBehaviour
 {
-    [SerializeField] float speed;
+    [SerializeField] float defaultSpeed;
     [SerializeField] float airControlFactor = .1f;
+    float overrideSpeed;
 
     private Collider AICollider;
     private Vector3? target = null;
@@ -28,20 +29,21 @@ public class AIWalker : MonoBehaviour
         MoveTo(target);
     }
 
-    private void MoveTo(Nullable<Vector3> target)
+    private void MoveTo(Vector3? target)
     {
         if (!HasTarget()) return;
         Vector3 moveVect = target.Value - transform.position;
         moveVect.y = 0;
         moveVect.Normalize();
-
+        moveVect = moveVect * overrideSpeed;
+        moveVect.y = AIRigidbody.velocity.y;
         // if the AI is grounded use a velosity based movement else use force based
-        if (IsGrounded()) AIRigidbody.velocity = moveVect*speed;
+        if (IsGrounded()) AIRigidbody.velocity = moveVect;
         else AIRigidbody.AddForce(moveVect * airControlFactor);
         Debug.DrawLine(transform.position, target.Value, Color.yellow);
     }
 
-    private void lookAt(Nullable<Vector3> LookTarget)
+    private void lookAt(Vector3? LookTarget)
     {
         if (HasTarget()) transform.LookAt(LookTarget.Value);
         Vector3 rotation = transform.rotation.eulerAngles;
@@ -55,6 +57,9 @@ public class AIWalker : MonoBehaviour
     /// </summary>
     public bool IsGrounded()
     {
+        // needs a rework, the same thing as the player will not work 100%
+
+
         Vector3 colliderBottom = new Vector3(AICollider.bounds.center.x, AICollider.bounds.min.y - .05f, AICollider.bounds.center.z);
 
         Vector3 checkCapsuleBottom = colliderBottom + new Vector3(0, 0.45f, 0);
@@ -67,7 +72,21 @@ public class AIWalker : MonoBehaviour
         return grounded;
     }   
 
-    public void SetTarget(Nullable<Vector3> target) { this.target = target; }
+    /// <summary>
+    /// sets a new target
+    /// </summary>
+    /// <returns>true if the target is reacable</returns>
+    public bool SetTarget(Vector3? target) 
+    { 
+        return SetTarget(target, defaultSpeed);
+    }
+
+    public bool SetTarget(Vector3? target, float overrideSpeed)
+    {
+        this.overrideSpeed = overrideSpeed;
+        this.target = target;
+        return true;
+    }
     public bool HasTarget() { return target.HasValue; }
 
     public float GetDistanceToTarget()

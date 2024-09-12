@@ -135,14 +135,14 @@ public class PlayerControler : MonoBehaviour
     /// </summary>
     public bool IsGrounded()
     {
-        Vector3 colliderBottom = new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y - .01f, playerCollider.bounds.center.z);
-
-        Vector3 checkCapsuleBottom = colliderBottom + new Vector3(0, 0.45f, 0);
-        bool grounded = Physics.CheckCapsule(playerCollider.bounds.center, checkCapsuleBottom, 0.45f);
+        Vector3 colliderBottom = new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y , playerCollider.bounds.center.z);
+        float sphereRadius = 1.05f;
+        Vector3 checkSperePoint = colliderBottom + new Vector3(0, sphereRadius, 0);
+        bool grounded = Physics.CheckSphere(checkSperePoint, sphereRadius);
         // old raycast based method
         //bool grounded = Physics.Linecast(playerCollider.bounds.center, colliderBottom);
 
-        Debug.DrawLine(playerCollider.bounds.center, colliderBottom, grounded ? Color.red : Color.blue);
+        Debug.DrawLine(checkSperePoint, checkSperePoint + Vector3.down*sphereRadius, grounded ? Color.red : Color.blue);
 
         return grounded;
     }
