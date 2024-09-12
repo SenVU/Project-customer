@@ -29,7 +29,7 @@ public class AIWalker : MonoBehaviour
         MoveTo(target);
     }
 
-    private void MoveTo(Nullable<Vector3> target)
+    private void MoveTo(Vector3? target)
     {
         if (!HasTarget()) return;
         Vector3 moveVect = target.Value - transform.position;
@@ -43,7 +43,7 @@ public class AIWalker : MonoBehaviour
         Debug.DrawLine(transform.position, target.Value, Color.yellow);
     }
 
-    private void lookAt(Nullable<Vector3> LookTarget)
+    private void lookAt(Vector3? LookTarget)
     {
         if (HasTarget()) transform.LookAt(LookTarget.Value);
         Vector3 rotation = transform.rotation.eulerAngles;
@@ -57,6 +57,9 @@ public class AIWalker : MonoBehaviour
     /// </summary>
     public bool IsGrounded()
     {
+        // needs a rework, the same thing as the player will not work 100%
+
+
         Vector3 colliderBottom = new Vector3(AICollider.bounds.center.x, AICollider.bounds.min.y - .05f, AICollider.bounds.center.z);
 
         Vector3 checkCapsuleBottom = colliderBottom + new Vector3(0, 0.45f, 0);
@@ -73,12 +76,12 @@ public class AIWalker : MonoBehaviour
     /// sets a new target
     /// </summary>
     /// <returns>true if the target is reacable</returns>
-    public bool SetTarget(Nullable<Vector3> target) 
+    public bool SetTarget(Vector3? target) 
     { 
         return SetTarget(target, defaultSpeed);
     }
 
-    public bool SetTarget(Nullable<Vector3> target, float overrideSpeed)
+    public bool SetTarget(Vector3? target, float overrideSpeed)
     {
         this.overrideSpeed = overrideSpeed;
         this.target = target;

@@ -158,7 +158,7 @@ public class AIWolfTargeting : AITargeter
     /// <summary>
     /// returns the Vec3 version of the target
     /// </summary>
-    Vector3 Vec2TargetToVec3(Vector2 wanderTarget) { return new Vector3(wanderTarget.x, transform.position.y, wanderTarget.y); }
+    Vector3 Vec2TargetToVec3(Vector2 target) { return new Vector3(target.x, transform.position.y, target.y); }
     /// <summary>
     /// gets the current position in the Vec2 format
     /// </summary>
