@@ -7,10 +7,10 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: debris_layer
-  m_DiffuseTexture: {fileID: 2800000, guid: 3453fa8c3ba97764f9408bdb0e1e6a07, type: 3}
-  m_NormalMapTexture: {fileID: 0}
+  m_DiffuseTexture: {fileID: 2800000, guid: ab46cdf715ac5254a82de080dc9c2046, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: e0ef118139c3b9c4e953e94cc79e473d, type: 3}
   m_MaskMapTexture: {fileID: 0}
-  m_TileSize: {x: 2, y: 2}
+  m_TileSize: {x: 4, y: 4}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0

@@ -7,10 +7,10 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: mountain_slope_layer
-  m_DiffuseTexture: {fileID: 2800000, guid: 91a087180e75e934487bdf3c994d34a0, type: 3}
-  m_NormalMapTexture: {fileID: 0}
+  m_DiffuseTexture: {fileID: 2800000, guid: 78521d84f6bd0aa4eb1e1c2fdf31c8ab, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: 76a76e864d6cb3648bb9ddd52f6c878b, type: 3}
   m_MaskMapTexture: {fileID: 0}
-  m_TileSize: {x: 2, y: 2}
+  m_TileSize: {x: 10, y: 10}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0
