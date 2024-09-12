@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8344863121469522184}
   - component: {fileID: 7247382901609458114}
   - component: {fileID: 5595661566147902129}
-  - component: {fileID: 7415036536197251222}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -84,27 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7415036536197251222
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59763839223290009}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1713220607179661369
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +94,6 @@ GameObject:
   - component: {fileID: 5086881954052006806}
   - component: {fileID: 3337177357120616379}
   - component: {fileID: 925643261698103418}
-  - component: {fileID: 4938413685307451729}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -189,27 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4938413685307451729
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1713220607179661369}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2237931810966955209
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3923655ef1e3d4980127386c2ca56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  defaultSpeed: 2
   airControlFactor: 0.1
 --- !u!135 &7295313396399196296
 SphereCollider:
@@ -322,5 +278,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 0}
-  maxWanderDistance: 15
+  wanderSpeed: 3
+  maxWanderDistance: 10
   wanderResetTargetDistance: 2
+  maxDistanceFromSpawn: 25
+  wanderToIdleChanse: 0.8
+  minIdleTime: 1
+  maxIdleTime: 3.5
+  attackSpeed: 4
+  maxTargetSearchDistance: 10
+  maxTargetTrackDistance: 15

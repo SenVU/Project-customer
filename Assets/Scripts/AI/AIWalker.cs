@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class AIWalker : MonoBehaviour
 {
-    [SerializeField] float speed;
+    [SerializeField] float defaultSpeed;
     [SerializeField] float airControlFactor = .1f;
+    float overrideSpeed;
 
     private Collider AICollider;
     private Vector3? target = null;
@@ -34,9 +35,10 @@ public class AIWalker : MonoBehaviour
         Vector3 moveVect = target.Value - transform.position;
         moveVect.y = 0;
         moveVect.Normalize();
-
+        moveVect = moveVect * overrideSpeed;
+        moveVect.y = AIRigidbody.velocity.y;
         // if the AI is grounded use a velosity based movement else use force based
-        if (IsGrounded()) AIRigidbody.velocity = moveVect*speed;
+        if (IsGrounded()) AIRigidbody.velocity = moveVect;
         else AIRigidbody.AddForce(moveVect * airControlFactor);
         Debug.DrawLine(transform.position, target.Value, Color.yellow);
     }
@@ -67,7 +69,21 @@ public class AIWalker : MonoBehaviour
         return grounded;
     }   
 
-    public void SetTarget(Nullable<Vector3> target) { this.target = target; }
+    /// <summary>
+    /// sets a new target
+    /// </summary>
+    /// <returns>true if the target is reacable</returns>
+    public bool SetTarget(Nullable<Vector3> target) 
+    { 
+        return SetTarget(target, defaultSpeed);
+    }
+
+    public bool SetTarget(Nullable<Vector3> target, float overrideSpeed)
+    {
+        this.overrideSpeed = overrideSpeed;
+        this.target = target;
+        return true;
+    }
     public bool HasTarget() { return target.HasValue; }
 
     public float GetDistanceToTarget()
