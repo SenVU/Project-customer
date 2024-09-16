@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -70,7 +69,26 @@ public class AIWalker : MonoBehaviour
         Debug.DrawLine(AICollider.bounds.center, colliderBottom, grounded ? Color.red : Color.blue);
 
         return grounded;
-    }   
+    }
+
+    /// <summary>
+    /// sets a new target
+    /// </summary>
+    /// <returns>true if the target is reacable</returns>
+    public bool SetTargetVec2(Vector2 target)
+    {
+        return SetTargetVec2(target, defaultSpeed);
+    }
+
+    /// <summary>
+    /// sets a new target
+    /// </summary>
+    /// <returns>true if the target is reacable</returns>
+    public bool SetTargetVec2(Vector2 target, float overrideSpeed)
+    {
+        Vector3 targetOut = new Vector3(target.x, transform.position.y, target.y);
+        return SetTarget(targetOut, overrideSpeed);
+    }
 
     /// <summary>
     /// sets a new target
@@ -81,6 +99,10 @@ public class AIWalker : MonoBehaviour
         return SetTarget(target, defaultSpeed);
     }
 
+    /// <summary>
+    /// sets a new target
+    /// </summary>
+    /// <returns>true if the target is reacable</returns>
     public bool SetTarget(Vector3? target, float overrideSpeed)
     {
         this.overrideSpeed = overrideSpeed;

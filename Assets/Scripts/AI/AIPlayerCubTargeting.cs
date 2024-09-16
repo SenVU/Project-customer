@@ -1,66 +1,58 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AIWolfTargeting : AITargeter
+public class AIPlayerCubTargeting : AITargeter
 {
-    List<GameObject> potentialTargets;
     System.Random random = new System.Random();
     State currentState = State.Wander;
     Vector2? wanderTarget;
-    Vector2 startPoint;
-    GameObject attackTarget;
 
     float idleTime;
     float chosenIdleTime;
 
+    GameObject player;
 
     [SerializeField] float wanderSpeed = 2;
-    [SerializeField] int maxWanderDistance = 15;
+    [SerializeField] int maxWanderDistance = 10;
     [SerializeField] float wanderResetTargetDistance = .5f;
-    /// <summary>
-    /// leave 0 for infinite
-    /// </summary>
-    [SerializeField] float maxDistanceFromSpawn;
+    [SerializeField] float maxDistanceFromPlayer = 20;
+    [SerializeField] float minDistanceFromPlayer = 2;
     [SerializeField] float wanderToIdleChanse = .75f;
 
     [SerializeField] float minIdleTime = 1.5f;
     [SerializeField] float maxIdleTime = 5;
 
 
-    [SerializeField] float attackSpeed=4;
-    [SerializeField] float maxTargetSearchDistance=10;
-    [SerializeField] float maxTargetTrackDistance=15;
+    [SerializeField] float followDistance = 5;
+
+    [SerializeField] string playerObjectName = "Player";
 
     enum State
     {
         Wander,
-        Attack,
+        Follow,
         Idle
     }
 
     protected override void Start()
     {
-        startPoint = GetVec2Pos();
+        player = GameObject.Find(playerObjectName);
+        Debug.Assert(player != null, "Cub can't find player GameObject by name: (" + playerObjectName + ")");
         base.Start();
     }
 
     protected override void Update()
     {
-        FindAttackTargets();
-
-        // if there are targets switch to attack mode
-        if (potentialTargets.Count > 0) 
-            currentState = State.Attack;
+        if (Vec3ToVec2(transform.position - player.transform.position).magnitude > maxDistanceFromPlayer)
+            currentState = State.Follow;
 
         if (currentState == State.Idle)
             Idle();
-        if (currentState == State.Attack)
-            Attack();
-        if (currentState == State.Wander) 
+        if (currentState == State.Wander)
             Wander();
-        
+        if (currentState == State.Follow)
+            Follow();
 
-        if (maxDistanceFromSpawn > 0) Debug.DrawLine(transform.position, Vec2ToVec3(startPoint), Color.cyan);
+        if (maxDistanceFromPlayer > 0) Debug.DrawLine(transform.position, player.transform.position, Color.cyan);
     }
 
     public void startIdle()
@@ -73,10 +65,23 @@ public class AIWolfTargeting : AITargeter
     public void Idle()
     {
         walker.SetTarget(null);
-        wanderTarget=null;
+        wanderTarget = null;
         idleTime += Time.deltaTime;
+        
         if (idleTime > maxIdleTime) 
             currentState = State.Wander;
+    }
+
+    public void Follow() 
+    {
+        Vector2 playerPos = Vec3ToVec2(player.transform.position);
+        Vector2 selfPos = GetVec2Pos();
+
+        Vector2 direction = (selfPos - playerPos).normalized;
+
+        walker.SetTargetVec2(playerPos + (direction * followDistance));
+
+        if (Vec3ToVec2(transform.position - player.transform.position).magnitude < followDistance) currentState = State.Idle;
     }
 
     public void Wander()
@@ -84,7 +89,7 @@ public class AIWolfTargeting : AITargeter
         if (wanderTarget.HasValue)
         {
             // sets a new target, if the walker deems it unreachable the target is unset
-            if (!walker.SetTargetVec2(wanderTarget.Value, wanderSpeed))
+            if (!walker.SetTargetVec2(wanderTarget.Value, wanderSpeed)) 
                 wanderTarget = null;
 
             // unset the target if it has been reached
@@ -98,44 +103,22 @@ public class AIWolfTargeting : AITargeter
         else 
         {
             int itterations = 0;
-            while (!wanderTarget.HasValue)
+            while (!wanderTarget.HasValue && itterations<11)
             {
                 // if this loop has been called 10 times it is deemed a failure and it will target the starting point
-                if (itterations > 10) wanderTarget = startPoint;
+                if (itterations > 10) wanderTarget = Vec3ToVec2(player.transform.position)+new Vector2(minDistanceFromPlayer, 0);
                 else wanderTarget = GetVec2Pos() + RandomPosOffset();
 
                 // check if the target is too far from the staring point and if so reset it
-                if (maxDistanceFromSpawn>0 && (wanderTarget.Value - startPoint).magnitude > maxDistanceFromSpawn) 
+                if (maxDistanceFromPlayer > 0 && (wanderTarget.Value - Vec3ToVec2(player.transform.position)).magnitude > maxDistanceFromPlayer)
+                    wanderTarget = null;
+                else if (minDistanceFromPlayer > 0 && (wanderTarget.Value - Vec3ToVec2(player.transform.position)).magnitude < minDistanceFromPlayer)
                     wanderTarget = null;
                 itterations++;
             }
         }
     }
 
-    void Attack()
-    {
-        if (attackTarget != null)
-        {
-            if ((transform.position - attackTarget.transform.position).magnitude > maxTargetTrackDistance)
-                attackTarget = null;
-            else walker.SetTarget(attackTarget.transform.position, attackSpeed);
-        }
-        else ChooseNewTarget();
-    }
-
-    void FindAttackTargets()
-    {
-        potentialTargets = new List<GameObject>();
-        Collider[] foundColliders = Physics.OverlapSphere(transform.position, maxTargetSearchDistance);
-        foreach(Collider collider in foundColliders)
-        {
-            GameObject obj = collider.gameObject;
-            if (isAttackable(obj) && !potentialTargets.Contains(obj))
-            {
-                potentialTargets.Add(obj);
-            }
-        }
-    }
 
     bool isAttackable(GameObject obj)
     {
@@ -145,23 +128,18 @@ public class AIWolfTargeting : AITargeter
         return toReturn;
     }
 
-    public void ChooseNewTarget()
-    {
-        if (potentialTargets.Count > 0)
-        {
-            attackTarget = potentialTargets[random.Next(potentialTargets.Count)];
-        }
-        else startIdle();
-    }
-
     /// <summary>
     /// returns the Vec3 version of the target
     /// </summary>
     Vector3 Vec2ToVec3(Vector2 target) { return new Vector3(target.x, transform.position.y, target.y); }
     /// <summary>
+    /// returns the Vec2 version of the target
+    /// </summary>
+    Vector2 Vec3ToVec2(Vector3 target) { return new Vector2(target.x, target.z); }
+    /// <summary>
     /// gets the current position in the Vec2 format
     /// </summary>
-    Vector2 GetVec2Pos() { return new Vector2(transform.position.x, transform.position.z); }
+    Vector2 GetVec2Pos() { return Vec3ToVec2(transform.position); }
     /// <summary>
     /// A Random Offset for finding a new target
     /// </summary>

@@ -26,13 +26,16 @@ public class ThirdPersonCamera : MonoBehaviour
         camTransform.parent = null;
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         Vector3 characterOffset = transform.position + new Vector3(0, distanceUp, 0);
 
-        lookDir = characterOffset - camTransform.position;
-        lookDir.y = 0;
-        lookDir.Normalize();
+        //lookDir = characterOffset - camTransform.position;
+        //lookDir.y = 0;
+        //lookDir.Normalize();
+
+        lookDir = transform.forward;
+        
 
         Debug.DrawRay(camTransform.position, lookDir, Color.green);
 
