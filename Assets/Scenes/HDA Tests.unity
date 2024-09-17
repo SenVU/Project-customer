@@ -2056,6 +2056,63 @@ MonoBehaviour:
     _childOutputs: []
     isInstancer: 0
   _volumeLayerName: height
+--- !u!1001 &1346803748
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.58942026
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.019805
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 986.9276
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.46638072
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.88458407
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -124.401
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_Name
+      value: Polarbear_pre-uv_0004
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
 --- !u!114 &1372537278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2155,7 +2212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7171726910567516687, guid: 79f94669ce110e84689bd1b911325ad7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 223.09
+      value: 220.53
       objectReference: {fileID: 0}
     - target: {fileID: 7171726910567516687, guid: 79f94669ce110e84689bd1b911325ad7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3429,3 +3486,4 @@ SceneRoots:
   - {fileID: 1469829132}
   - {fileID: 39666421}
   - {fileID: 1612524513}
+  - {fileID: 1346803748}
