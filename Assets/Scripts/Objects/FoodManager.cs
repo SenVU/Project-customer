@@ -119,7 +119,6 @@ public class FoodManager : MonoBehaviour
             }
         }
 
-        Debug.Log("No food collected in time. Game over!");
-        SceneManager.LoadScene("DeathNoFood");
+        SceneManager.LoadScene("FoodDeath");
     }
 }

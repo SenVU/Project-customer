@@ -1188,6 +1188,8 @@ MonoBehaviour:
   foodLossInterval: 10
   deathCountdownDuration: 10
   myFood: {fileID: 685688800}
+  noFoodDeathMessage: Climate change disrupts food chains. Polar bears are starving
+    as their prey becomes harder to find.
 --- !u!1 &426477723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,11 +1400,11 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
+  m_Radius: 2
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -2916,7 +2918,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -705, y: 438}
-  m_SizeDelta: {x: 500, y: 200}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619015719
 MonoBehaviour:
@@ -3070,7 +3072,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1651622638
 MonoBehaviour:
