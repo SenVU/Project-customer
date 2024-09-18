@@ -73,7 +73,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -639,6 +639,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
       propertyPath: m_Name
       value: Polarbear_pre-uv_0004
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
