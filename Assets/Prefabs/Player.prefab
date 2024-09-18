@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1984308849818500700}
   - component: {fileID: 6161183371004275117}
   m_Layer: 2
-  m_Name: PlayerCamera
+  m_Name: PlayerCameraFPP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 251172490915294680}
   - component: {fileID: 6698398025463481171}
   m_Layer: 2
-  m_Name: PlayerCameraTP
+  m_Name: PlayerCameraTPP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
