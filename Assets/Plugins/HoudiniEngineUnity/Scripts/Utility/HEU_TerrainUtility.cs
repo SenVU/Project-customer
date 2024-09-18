@@ -1275,6 +1275,13 @@ namespace HoudiniEngineUnity
                 detailPrototype.renderMode = (DetailRenderMode)heuDetail._renderMode;
 
                 detailPrototypes.Add(detailPrototype);
+
+                #if UNITY_2021_3_OR_NEWER
+                    if (detailPrototype.renderMode == DetailRenderMode.VertexLit)
+                    {
+                        detailPrototype.useInstancing = true;
+                    }
+                #endif
             }
 
             // Set the DetailPrototypes

@@ -122,7 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &21409038
+--- !u!114 &31289803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,12 +134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 25
-  _partName: OUT_TERRAIN_25
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 32
+  _partName: OUT_TERRAIN_32
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -161,7 +161,7 @@ MonoBehaviour:
       _colliders: []
     _childOutputs: []
     isInstancer: 0
-  _volumeLayerName: sediment
+  _volumeLayerName: tundra
 --- !u!1 &39666419
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,12 +207,52 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 266345828}
-  - {fileID: 240789488}
-  - {fileID: 1520038173}
-  - {fileID: 1302214305}
-  - {fileID: 1664725812}
+  - {fileID: 1662324528}
+  - {fileID: 1076195005}
+  - {fileID: 334334950}
+  - {fileID: 883011079}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &86810307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 36
+  _partName: OUT_TERRAIN_36
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: water
 --- !u!1 &100641980
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +411,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &148602667
+--- !u!114 &117407210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -383,52 +423,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 10
-  _partName: OUT_TERRAIN_10
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 9
+  _partName: OUT_TERRAIN_9
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: detail_layer
---- !u!114 &155612893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 42
-  _partName: OUT_TERRAIN_42
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -451,7 +451,7 @@ MonoBehaviour:
     _childOutputs: []
     isInstancer: 0
   _volumeLayerName: base
---- !u!114 &179884237
+--- !u!114 &144879967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -463,12 +463,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 20
-  _partName: OUT_TERRAIN_20
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 12
+  _partName: OUT_TERRAIN_12
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -490,8 +490,8 @@ MonoBehaviour:
       _colliders: []
     _childOutputs: []
     isInstancer: 0
-  _volumeLayerName: base
---- !u!114 &202231093
+  _volumeLayerName: tundra
+--- !u!114 &150007318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -503,12 +503,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 0
-  _partName: OUT_TERRAIN_0
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 5
+  _partName: OUT_TERRAIN_5
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -530,7 +530,47 @@ MonoBehaviour:
       _colliders: []
     _childOutputs: []
     isInstancer: 0
-  _volumeLayerName: ocean
+  _volumeLayerName: debris
+--- !u!114 &207614564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 16
+  _partName: OUT_TERRAIN_16
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: water
 --- !u!1 &209408032
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,139 +650,6 @@ MonoBehaviour:
   _showOnlyEditGeometry: 1
   _alwaysCookUpstream: 1
   _paintMeshVisiblity: 0
---- !u!114 &240531799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 7
-  _partName: OUT_TERRAIN_7
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: mask
---- !u!1 &240789485
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 240789488}
-  - component: {fileID: 240789487}
-  - component: {fileID: 240789486}
-  m_Layer: 0
-  m_Name: terrain_generator_loader_2_45_OUT_TERRAIN_OUT_TERRAIN_4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!154 &240789486
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240789485}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: d10de027bb1101f489e298b3cca10aea, type: 2}
-  m_EnableTreeColliders: 1
---- !u!218 &240789487
-Terrain:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240789485}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: d10de027bb1101f489e298b3cca10aea, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 0.4
-  m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
-  m_HeightmapMinimumLODSimplification: 0
-  m_HeightmapMaximumLOD: 0
-  m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
-  m_DrawInstanced: 1
-  m_DrawTreesAndFoliage: 1
-  m_StaticShadowCaster: 0
-  m_IgnoreQualitySettings: 0
-  m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 18ef1fc90dc256245a6d57623c0565b4, type: 2}
-  m_BakeLightProbesForTrees: 1
-  m_PreserveTreePrototypeLayers: 0
-  m_DeringLightProbesForTrees: 1
-  m_ReceiveGI: 1
-  m_ScaleInLightmap: 1
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
-  m_GroupingID: 0
-  m_RenderingLayerMask: 257
-  m_AllowAutoConnect: 1
-  m_EnableHeightmapRayTracing: 1
-  m_EnableTreesAndDetailsRayTracing: 0
-  m_TreeMotionVectorModeOverride: 3
---- !u!4 &240789488
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240789485}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 15.2891, z: -2048}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 39666421}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &266345826
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,16 +681,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _assetType: 1
   _assetInfo:
-    nodeId: 227
-    objectNodeId: 228
+    nodeId: 302
+    objectNodeId: 303
     hasEverCooked: 1
-    nameSH: 98362
-    labelSH: 96957
-    filePathSH: 97786
-    versionSH: 98719
-    fullOpNameSH: 98720
-    helpTextSH: 98721
-    helpURLSH: 98313
+    nameSH: 129281
+    labelSH: 129282
+    filePathSH: 129283
+    versionSH: 129277
+    fullOpNameSH: 129278
+    helpTextSH: 129279
+    helpURLSH: 129280
     objectCount: -1
     handleCount: 0
     transformInputCount: 0
@@ -792,14 +699,14 @@ MonoBehaviour:
     haveObjectsChanged: 0
     haveMaterialsChanged: 0
   _nodeInfo:
-    id: 227
-    parentId: 228
-    nameSH: 98722
+    id: 302
+    parentId: 303
+    nameSH: 129274
     type: 2
     isValid: 1
-    totalCookCount: 17
-    uniqueHoudiniNodeId: 460241
-    internalNodePathSH: 98716
+    totalCookCount: 3
+    uniqueHoudiniNodeId: 665283
+    internalNodePathSH: 129275
     parmCount: 1
     parmIntValueCount: 0
     parmFloatValueCount: 0
@@ -810,7 +717,7 @@ MonoBehaviour:
     outputCount: 1
     createdPostAssetLoad: 1
     isTimeDependent: 0
-  _assetName: terrain_generator_loader_2_45
+  _assetName: terrain_generator_loader_2_60
   _assetOpName: markh::Sop/terrain_generator_loader::2.0
   _assetHelp: 
   _assetPath: Assets/HDA/sop_markh.terrain_generator_loader.2.0.hda
@@ -818,10 +725,10 @@ MonoBehaviour:
   _alwaysOverwriteOnLoad: 0
   _assetFileObject: {fileID: 102900000, guid: 2ae7603ac7f9d6448994110e3e264afc, type: 3}
   _objectNodes:
-  - {fileID: 753968885}
+  - {fileID: 1348434855}
   _rootGameObject: {fileID: 39666419}
   _materialCache: []
-  _parameters: {fileID: 1265361773}
+  _parameters: {fileID: 545667468}
   _lastSyncedTransformMatrix:
     e00: 1
     e01: 0
@@ -856,12 +763,76 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
+  - e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 15.2891
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: -2048
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  - e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: -23.502693
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  - e00: 1
+    e01: 0
+    e02: 0
+    e03: -2048
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 9.589795
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: -2048
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  - e00: 1
+    e01: 0
+    e02: 0
+    e03: -2048
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: -23.180052
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
   _assetCacheFolderPath: Assets/HoudiniEngineAssetCache/Working/sop_markh.terrain_generator_loader.2
     1.0
   _subassetNames:
   - markh::Sop/terrain_generator_loader::2.0
   _selectedSubassetIndex: 0
-  _totalCookCount: 35
+  _totalCookCount: 5
   _requestBuildAction: 0
   _checkParameterChangeForCook: 0
   _skipCookCheck: 0
@@ -870,7 +841,7 @@ MonoBehaviour:
   _upstreamCookChanged: 0
   _cookStatus: 0
   _lastCookResult: 1
-  _isCookingAssetReloaded: 0
+  _isCookingAssetReloaded: 1
   _sessionID: 2210394625088
   _uiLocked: 1
   _showHDAOptions: 0
@@ -922,14 +893,14 @@ MonoBehaviour:
   _curveFrameSelectedNodes: 1
   _curveFrameSelectedNodeDistance: 20
   _inputNodes:
-  - {fileID: 1444541005}
+  - {fileID: 785551319}
   _handles: []
   _handlesEnabled: 1
   _volumeCaches:
-  - {fileID: 874509726}
-  - {fileID: 398329941}
-  - {fileID: 1737444375}
-  - {fileID: 542424364}
+  - {fileID: 1450123260}
+  - {fileID: 1314381764}
+  - {fileID: 664087016}
+  - {fileID: 1526553797}
   _attributeStores: []
   _editableNodesToolsEnabled: 0
   _toolsInfo: {fileID: 228772791}
@@ -949,7 +920,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 39666421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &287761739
+--- !u!114 &284202526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -961,132 +932,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 31
-  _partName: OUT_TERRAIN_31
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 10
+  _partName: OUT_TERRAIN_10
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: base
---- !u!114 &288394922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 24
-  _partName: OUT_TERRAIN_24
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: tundra
---- !u!114 &302795178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 2
-  _partName: OUT_TERRAIN_2
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: tundra
---- !u!114 &361243369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 11
-  _partName: OUT_TERRAIN_11
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -1109,7 +960,7 @@ MonoBehaviour:
     _childOutputs: []
     isInstancer: 0
   _volumeLayerName: ocean
---- !u!114 &364486227
+--- !u!114 &293776569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1121,163 +972,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 26
-  _partName: OUT_TERRAIN_26
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 18
+  _partName: OUT_TERRAIN_18
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 2048, y: 9.589795, z: -2048}
-  _assetDBTerrainData: {fileID: 15600000, guid: 1e4a87b38a1a55746a374f355ed0d098, type: 2}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 1302214302}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: height
---- !u!114 &398329941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 054bae7d2b31a224da13732a930a5b13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ownerNode: {fileID: 1087517690}
-  _layers:
-  - _layerName: height
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 1
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 0}
-    _layerType: 1
-    _part: {fileID: 977854340}
-  - _layerName: ocean
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 1
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
-    _layerType: 0
-    _part: {fileID: 361243369}
-  - _layerName: river
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 1
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 1774216362}
-  - _layerName: tundra
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 1
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 182e29cd69efc504288280d798107aab, type: 2}
-    _layerType: 0
-    _part: {fileID: 1569501092}
-  - _layerName: sediment
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 1
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 835031410}
-  - _layerName: debris
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 1
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 8a2b072098df2f74e899bd14537e2070, type: 2}
-    _layerType: 0
-    _part: {fileID: 1350340759}
-  - _layerName: water
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 1
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 27bc8528b84ded2428498db4aadb4361, type: 2}
-    _layerType: 0
-    _part: {fileID: 479069555}
-  - _layerName: mountain_slope
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 1
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
-    _layerType: 0
-    _part: {fileID: 2143462279}
-  - _layerName: base
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 1
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 179884237}
-  - _layerName: detail_layer
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 1
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 0}
-    _layerType: 3
-    _part: {fileID: 526932052}
-  _tileIndex: 1
-  _isDirty: 0
-  _geoName: OUT_TERRAIN
-  _objName: terrain_generator_loader_2_45
-  _uiExpanded: 1
-  _terrainData: {fileID: 15600000, guid: df11028a0bf336747b57844c5b62143d, type: 2}
-  _parentAsset: {fileID: 266345827}
---- !u!114 &479069555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 17
-  _partName: OUT_TERRAIN_17
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -1299,7 +999,340 @@ MonoBehaviour:
       _colliders: []
     _childOutputs: []
     isInstancer: 0
-  _volumeLayerName: water
+  _volumeLayerName: mountain_slope
+--- !u!114 &329696939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 33
+  _partName: OUT_TERRAIN_33
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: sediment
+--- !u!114 &331051619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 17
+  _partName: OUT_TERRAIN_17
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: mask
+--- !u!1 &334334947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334334950}
+  - component: {fileID: 334334949}
+  - component: {fileID: 334334951}
+  m_Layer: 0
+  m_Name: terrain_generator_loader_2_60_OUT_TERRAIN_OUT_TERRAIN_24
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!218 &334334949
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334334947}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: 15a11fcba73cc144c8a326bff740bba7, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 1
+  m_DrawTreesAndFoliage: 1
+  m_StaticShadowCaster: 0
+  m_IgnoreQualitySettings: 0
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 2100000, guid: 18ef1fc90dc256245a6d57623c0565b4, type: 2}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ReceiveGI: 1
+  m_ScaleInLightmap: 1
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 257
+  m_AllowAutoConnect: 1
+  m_EnableHeightmapRayTracing: 1
+  m_EnableTreesAndDetailsRayTracing: 0
+  m_TreeMotionVectorModeOverride: 3
+--- !u!4 &334334950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334334947}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2048, y: 9.589795, z: -2048}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 39666421}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!154 &334334951
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334334947}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_TerrainData: {fileID: 15600000, guid: 15a11fcba73cc144c8a326bff740bba7, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!114 &337492745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 28
+  _partName: OUT_TERRAIN_28
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: mountain_slope
+--- !u!114 &448995101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 21
+  _partName: OUT_TERRAIN_21
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: river
+--- !u!114 &456956163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 23
+  _partName: OUT_TERRAIN_23
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: sediment
+--- !u!114 &457837603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 8
+  _partName: OUT_TERRAIN_8
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: mountain_slope
 --- !u!1 &479560765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,969 +1382,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &482493822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 43
-  _partName: OUT_TERRAIN_43
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: detail_layer
---- !u!114 &526932052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 21
-  _partName: OUT_TERRAIN_21
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: detail_layer
---- !u!114 &542424364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 054bae7d2b31a224da13732a930a5b13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ownerNode: {fileID: 1087517690}
-  _layers:
-  - _layerName: height
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 3
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 0}
-    _layerType: 1
-    _part: {fileID: 1212825978}
-  - _layerName: ocean
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 3
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
-    _layerType: 0
-    _part: {fileID: 1739422174}
-  - _layerName: river
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 3
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 566686109}
-  - _layerName: tundra
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 3
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 182e29cd69efc504288280d798107aab, type: 2}
-    _layerType: 0
-    _part: {fileID: 1405840242}
-  - _layerName: sediment
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 3
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 1743328301}
-  - _layerName: debris
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 3
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 8a2b072098df2f74e899bd14537e2070, type: 2}
-    _layerType: 0
-    _part: {fileID: 1570992602}
-  - _layerName: water
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 3
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 27bc8528b84ded2428498db4aadb4361, type: 2}
-    _layerType: 0
-    _part: {fileID: 1396975481}
-  - _layerName: mountain_slope
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 3
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
-    _layerType: 0
-    _part: {fileID: 1459375447}
-  - _layerName: base
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 3
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 155612893}
-  - _layerName: detail_layer
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 3
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 0}
-    _layerType: 3
-    _part: {fileID: 482493822}
-  _tileIndex: 3
-  _isDirty: 0
-  _geoName: OUT_TERRAIN
-  _objName: terrain_generator_loader_2_45
-  _uiExpanded: 1
-  _terrainData: {fileID: 15600000, guid: 7e1ed2079deb4a8489e267413449431b, type: 2}
-  _parentAsset: {fileID: 266345827}
---- !u!114 &566686109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 34
-  _partName: OUT_TERRAIN_34
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: river
---- !u!114 &737324793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 22
-  _partName: OUT_TERRAIN_22
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: ocean
---- !u!114 &753968885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d064048945a579428d136799401f238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objName: terrain_generator_loader_2_45
-  _parentAsset: {fileID: 266345827}
-  _objectInfo:
-    nameSH: 98110
-    objectInstancePathSH: 0
-    hasTransformChanged: 1
-    haveGeosChanged: 1
-    isVisible: 1
-    isInstancer: 0
-    isInstanced: 0
-    geoCount: 0
-    nodeId: 228
-    objectToInstanceId: -1
-  _geoNodes:
-  - {fileID: 1087517690}
---- !u!114 &814878747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 9
-  _partName: OUT_TERRAIN_9
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: base
---- !u!114 &835031410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 14
-  _partName: OUT_TERRAIN_14
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: sediment
---- !u!114 &874509726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 054bae7d2b31a224da13732a930a5b13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ownerNode: {fileID: 1087517690}
-  _layers:
-  - _layerName: height
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 0
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 0}
-    _layerType: 1
-    _part: {fileID: 1224785340}
-  - _layerName: ocean
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 0
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
-    _layerType: 0
-    _part: {fileID: 202231093}
-  - _layerName: river
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 0
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 1076651473}
-  - _layerName: tundra
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 0
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 182e29cd69efc504288280d798107aab, type: 2}
-    _layerType: 0
-    _part: {fileID: 302795178}
-  - _layerName: sediment
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 0
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 1990441290}
-  - _layerName: debris
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 0
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 8a2b072098df2f74e899bd14537e2070, type: 2}
-    _layerType: 0
-    _part: {fileID: 2106977510}
-  - _layerName: water
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 0
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 27bc8528b84ded2428498db4aadb4361, type: 2}
-    _layerType: 0
-    _part: {fileID: 1562848657}
-  - _layerName: mountain_slope
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 0
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
-    _layerType: 0
-    _part: {fileID: 1511901079}
-  - _layerName: base
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 0
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 814878747}
-  - _layerName: detail_layer
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 0
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 0}
-    _layerType: 3
-    _part: {fileID: 148602667}
-  _tileIndex: 0
-  _isDirty: 0
-  _geoName: OUT_TERRAIN
-  _objName: terrain_generator_loader_2_45
-  _uiExpanded: 1
-  _terrainData: {fileID: 15600000, guid: d10de027bb1101f489e298b3cca10aea, type: 2}
-  _parentAsset: {fileID: 266345827}
---- !u!114 &885977683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 30
-  _partName: OUT_TERRAIN_30
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: mountain_slope
---- !u!114 &977854340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 15
-  _partName: OUT_TERRAIN_15
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: -23.502693, z: 0}
-  _assetDBTerrainData: {fileID: 15600000, guid: df11028a0bf336747b57844c5b62143d, type: 2}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 1520038170}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: height
---- !u!114 &1076651473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 1
-  _partName: OUT_TERRAIN_1
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: river
---- !u!114 &1077560149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 32
-  _partName: OUT_TERRAIN_32
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: detail_layer
---- !u!114 &1087517690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d66a2560bc02844b93f5cd39436c51a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _geoInfo:
-    type: 0
-    nameSH: 98712
-    nodeId: 229
-    isEditable: 0
-    isTemplated: 0
-    isDisplayGeo: 1
-    hasGeoChanged: 1
-    hasMaterialChanged: 1
-    pointGroupCount: 0
-    primitiveGroupCount: 0
-    edgeGroupCount: 0
-    partCount: 45
-  _geoName: OUT_TERRAIN
-  _parts:
-  - {fileID: 202231093}
-  - {fileID: 1076651473}
-  - {fileID: 302795178}
-  - {fileID: 1990441290}
-  - {fileID: 1224785340}
-  - {fileID: 2106977510}
-  - {fileID: 1562848657}
-  - {fileID: 240531799}
-  - {fileID: 1511901079}
-  - {fileID: 814878747}
-  - {fileID: 148602667}
-  - {fileID: 361243369}
-  - {fileID: 1774216362}
-  - {fileID: 1569501092}
-  - {fileID: 835031410}
-  - {fileID: 977854340}
-  - {fileID: 1350340759}
-  - {fileID: 479069555}
-  - {fileID: 1106862048}
-  - {fileID: 2143462279}
-  - {fileID: 179884237}
-  - {fileID: 526932052}
-  - {fileID: 737324793}
-  - {fileID: 1918959072}
-  - {fileID: 288394922}
-  - {fileID: 21409038}
-  - {fileID: 364486227}
-  - {fileID: 1445376686}
-  - {fileID: 1879842137}
-  - {fileID: 1656674992}
-  - {fileID: 885977683}
-  - {fileID: 287761739}
-  - {fileID: 1077560149}
-  - {fileID: 1739422174}
-  - {fileID: 566686109}
-  - {fileID: 1405840242}
-  - {fileID: 1743328301}
-  - {fileID: 1212825978}
-  - {fileID: 1570992602}
-  - {fileID: 1396975481}
-  - {fileID: 1524730082}
-  - {fileID: 1459375447}
-  - {fileID: 155612893}
-  - {fileID: 482493822}
-  - {fileID: 1452177508}
-  _containerObjectNode: {fileID: 753968885}
-  _inputNode: {fileID: 0}
-  _geoCurve: {fileID: 0}
-  _volumeCache: {fileID: 0}
-  _volumeCaches:
-  - {fileID: 874509726}
-  - {fileID: 398329941}
-  - {fileID: 1737444375}
-  - {fileID: 542424364}
---- !u!114 &1106862048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 18
-  _partName: OUT_TERRAIN_18
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: mask
---- !u!1 &1171061306
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1171061308}
-  - component: {fileID: 1171061307}
-  m_Layer: 0
-  m_Name: StaticLightingSky
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1171061307
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171061306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 441482e8936e35048a1dffac814e3ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Profile: {fileID: 11400000, guid: 3a58392dd1adf5042805a6ea5df567aa, type: 2}
-  m_StaticLightingSkyUniqueID: 4
-  m_StaticLightingCloudsUniqueID: 0
-  m_StaticLightingVolumetricClouds: 0
---- !u!4 &1171061308
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171061306}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1198379337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f149f98b4ada1f047b5a0c3d65f45dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showInstanceInputs: 1
-  _numInputsToShowUI: 5
-  _inputsPageIndexUI: 0
---- !u!114 &1212825978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 37
-  _partName: OUT_TERRAIN_37
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 2048, y: -23.180052, z: 0}
-  _assetDBTerrainData: {fileID: 15600000, guid: 7e1ed2079deb4a8489e267413449431b, type: 2}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 1664725809}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: height
---- !u!114 &1224785340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 4
-  _partName: OUT_TERRAIN_4
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 15.2891, z: -2048}
-  _assetDBTerrainData: {fileID: 15600000, guid: d10de027bb1101f489e298b3cca10aea, type: 2}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 240789485}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: height
---- !u!1 &1264307626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1264307628}
-  - component: {fileID: 1264307627}
-  m_Layer: 0
-  m_Name: Sky and Fog Global Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1264307627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264307626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 3a58392dd1adf5042805a6ea5df567aa, type: 2}
---- !u!4 &1264307628
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264307626}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -225.27103, y: 243.8407, z: 791.67914}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1265361773
+--- !u!114 &545667468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2388,16 +1459,16 @@ MonoBehaviour:
       childIndex: 0
       type: 8
       scriptType: 7
-      typeInfoSH: 98360
+      typeInfoSH: 129291
       permissions: 1
       tagCount: 2
       size: 1
       choiceListType: 3
       choiceCount: 0
-      nameSH: 98708
-      labelSH: 98714
-      templateNameSH: 98422
-      helpSH: 98711
+      nameSH: 129287
+      labelSH: 129288
+      templateNameSH: 129290
+      helpSH: 129289
       hasMin: 0
       hasMax: 0
       hasUIMin: 0
@@ -2411,8 +1482,8 @@ MonoBehaviour:
       spare: 0
       joinNext: 0
       labelNone: 0
-      intValuesIndex: 0
-      floatValuesIndex: 0
+      intValuesIndex: -1
+      floatValuesIndex: -1
       stringValuesIndex: 0
       choiceIndex: 0
       inputNodeType: 0
@@ -2439,6 +1510,964 @@ MonoBehaviour:
   _validParameters: 1
   _showParameters: 1
   _parentAsset: {fileID: 266345827}
+--- !u!114 &593755497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 24
+  _partName: OUT_TERRAIN_24
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 2048, y: 9.589795, z: -2048}
+  _assetDBTerrainData: {fileID: 15600000, guid: 15a11fcba73cc144c8a326bff740bba7, type: 2}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 334334947}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: height
+--- !u!114 &627704406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d66a2560bc02844b93f5cd39436c51a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _geoInfo:
+    type: 0
+    nameSH: 131387
+    nodeId: 304
+    isEditable: 0
+    isTemplated: 0
+    isDisplayGeo: 1
+    hasGeoChanged: 1
+    hasMaterialChanged: 0
+    pointGroupCount: 0
+    primitiveGroupCount: 0
+    edgeGroupCount: 0
+    partCount: 41
+  _geoName: OUT_TERRAIN
+  _parts:
+  - {fileID: 1014536121}
+  - {fileID: 2041323915}
+  - {fileID: 1982062855}
+  - {fileID: 1842272001}
+  - {fileID: 1133559871}
+  - {fileID: 150007318}
+  - {fileID: 1973276002}
+  - {fileID: 1632233267}
+  - {fileID: 457837603}
+  - {fileID: 117407210}
+  - {fileID: 284202526}
+  - {fileID: 1291244008}
+  - {fileID: 144879967}
+  - {fileID: 2073927834}
+  - {fileID: 872277228}
+  - {fileID: 933130690}
+  - {fileID: 207614564}
+  - {fileID: 331051619}
+  - {fileID: 293776569}
+  - {fileID: 1509707989}
+  - {fileID: 645341593}
+  - {fileID: 448995101}
+  - {fileID: 1044304146}
+  - {fileID: 456956163}
+  - {fileID: 593755497}
+  - {fileID: 1516228824}
+  - {fileID: 952347786}
+  - {fileID: 1687916417}
+  - {fileID: 337492745}
+  - {fileID: 1636855263}
+  - {fileID: 1793417511}
+  - {fileID: 1617309109}
+  - {fileID: 31289803}
+  - {fileID: 329696939}
+  - {fileID: 1339257166}
+  - {fileID: 898101719}
+  - {fileID: 86810307}
+  - {fileID: 891106099}
+  - {fileID: 1317768280}
+  - {fileID: 632321770}
+  - {fileID: 1949341899}
+  _containerObjectNode: {fileID: 1348434855}
+  _inputNode: {fileID: 0}
+  _geoCurve: {fileID: 0}
+  _volumeCache: {fileID: 0}
+  _volumeCaches:
+  - {fileID: 1450123260}
+  - {fileID: 1314381764}
+  - {fileID: 664087016}
+  - {fileID: 1526553797}
+--- !u!114 &632321770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 39
+  _partName: OUT_TERRAIN_39
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: base
+--- !u!114 &645341593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 20
+  _partName: OUT_TERRAIN_20
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: ocean
+--- !u!114 &664087016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054bae7d2b31a224da13732a930a5b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ownerNode: {fileID: 627704406}
+  _layers:
+  - _layerName: height
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 2
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 0}
+    _layerType: 1
+    _part: {fileID: 593755497}
+  - _layerName: ocean
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 2
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
+    _layerType: 0
+    _part: {fileID: 645341593}
+  - _layerName: river
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 2
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 448995101}
+  - _layerName: tundra
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 2
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 182e29cd69efc504288280d798107aab, type: 2}
+    _layerType: 0
+    _part: {fileID: 1044304146}
+  - _layerName: sediment
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 2
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 456956163}
+  - _layerName: debris
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 2
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 8a2b072098df2f74e899bd14537e2070, type: 2}
+    _layerType: 0
+    _part: {fileID: 1516228824}
+  - _layerName: water
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 2
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 27bc8528b84ded2428498db4aadb4361, type: 2}
+    _layerType: 0
+    _part: {fileID: 952347786}
+  - _layerName: mountain_slope
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 2
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
+    _layerType: 0
+    _part: {fileID: 337492745}
+  - _layerName: base
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 2
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 1636855263}
+  _tileIndex: 2
+  _isDirty: 0
+  _geoName: OUT_TERRAIN
+  _objName: terrain_generator_loader_2_54
+  _uiExpanded: 1
+  _terrainData: {fileID: 15600000, guid: 15a11fcba73cc144c8a326bff740bba7, type: 2}
+  _parentAsset: {fileID: 266345827}
+--- !u!114 &785551319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8512ec9bb36e55e4dab2691b35626896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputNodeType: 0
+  _inputObjectType: 1
+  _pendingInputObjectType: 1
+  _inputObjects: []
+  _inputObjectsConnectedAssetIDs: 
+  _inputAsset: {fileID: 0}
+  _connectedInputAsset: {fileID: 0}
+  _inputAssetInfos: []
+  _nodeID: 302
+  _inputIndex: 0
+  _requiresCook: 1
+  _requiresUpload: 0
+  _inputName: Sub-Network Input #1
+  _labelName: Sub-Network Input #1
+  _paramName: 
+  _connectedNodeID: -1
+  _keepWorldTransform: 1
+  _packGeometryBeforeMerging: 0
+  _parentAsset: {fileID: 266345827}
+  _meshSettings:
+    _exportColliders: 0
+  _tilemapSettings:
+    _createGroupsForTiles: 1
+    _exportUnusedTiles: 1
+    _applyTileColor: 1
+    _applyTilemapOrientation: 1
+  _splineSettings:
+    _samplingResolution: 25
+  _usingSelectFromHierarchy: 0
+--- !u!114 &872277228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 14
+  _partName: OUT_TERRAIN_14
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: -23.502693, z: 0}
+  _assetDBTerrainData: {fileID: 15600000, guid: 532e69889af537041ba63cb48db5d6d0, type: 2}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 1076195002}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: height
+--- !u!1 &883011076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 883011079}
+  - component: {fileID: 883011078}
+  - component: {fileID: 883011080}
+  m_Layer: 0
+  m_Name: terrain_generator_loader_2_60_OUT_TERRAIN_OUT_TERRAIN_34
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!218 &883011078
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883011076}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: bc34c6450f7cc3f439c358999c901075, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 1
+  m_DrawTreesAndFoliage: 1
+  m_StaticShadowCaster: 0
+  m_IgnoreQualitySettings: 0
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 2100000, guid: 18ef1fc90dc256245a6d57623c0565b4, type: 2}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ReceiveGI: 1
+  m_ScaleInLightmap: 1
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 257
+  m_AllowAutoConnect: 1
+  m_EnableHeightmapRayTracing: 1
+  m_EnableTreesAndDetailsRayTracing: 0
+  m_TreeMotionVectorModeOverride: 3
+--- !u!4 &883011079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883011076}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2048, y: -23.180052, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 39666421}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!154 &883011080
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883011076}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_TerrainData: {fileID: 15600000, guid: bc34c6450f7cc3f439c358999c901075, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!114 &891106099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 37
+  _partName: OUT_TERRAIN_37
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: mask
+--- !u!114 &898101719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 35
+  _partName: OUT_TERRAIN_35
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: debris
+--- !u!114 &933130690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 15
+  _partName: OUT_TERRAIN_15
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: debris
+--- !u!114 &952347786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 26
+  _partName: OUT_TERRAIN_26
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: water
+--- !u!114 &1014536121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 0
+  _partName: OUT_TERRAIN_0
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: ocean
+--- !u!114 &1044304146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 22
+  _partName: OUT_TERRAIN_22
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: tundra
+--- !u!1 &1076195002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1076195005}
+  - component: {fileID: 1076195004}
+  - component: {fileID: 1076195006}
+  m_Layer: 0
+  m_Name: terrain_generator_loader_2_60_OUT_TERRAIN_OUT_TERRAIN_14
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!218 &1076195004
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076195002}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: 532e69889af537041ba63cb48db5d6d0, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 1
+  m_DrawTreesAndFoliage: 1
+  m_StaticShadowCaster: 0
+  m_IgnoreQualitySettings: 0
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 2100000, guid: 18ef1fc90dc256245a6d57623c0565b4, type: 2}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ReceiveGI: 1
+  m_ScaleInLightmap: 1
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 257
+  m_AllowAutoConnect: 1
+  m_EnableHeightmapRayTracing: 1
+  m_EnableTreesAndDetailsRayTracing: 0
+  m_TreeMotionVectorModeOverride: 3
+--- !u!4 &1076195005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076195002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -23.502693, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 39666421}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!154 &1076195006
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076195002}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_TerrainData: {fileID: 15600000, guid: 532e69889af537041ba63cb48db5d6d0, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!114 &1133559871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 4
+  _partName: OUT_TERRAIN_4
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 15.2891, z: -2048}
+  _assetDBTerrainData: {fileID: 15600000, guid: 1b9f52fe83929f3449b1ccf057615bd5, type: 2}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 1662324525}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: height
+--- !u!1 &1171061306
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1171061308}
+  - component: {fileID: 1171061307}
+  m_Layer: 0
+  m_Name: StaticLightingSky
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1171061307
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171061306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441482e8936e35048a1dffac814e3ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Profile: {fileID: 11400000, guid: 3a58392dd1adf5042805a6ea5df567aa, type: 2}
+  m_StaticLightingSkyUniqueID: 4
+  m_StaticLightingCloudsUniqueID: 0
+  m_StaticLightingVolumetricClouds: 0
+--- !u!4 &1171061308
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171061306}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1198379337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f149f98b4ada1f047b5a0c3d65f45dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showInstanceInputs: 1
+  _numInputsToShowUI: 5
+  _inputsPageIndexUI: 0
+--- !u!1 &1264307626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1264307628}
+  - component: {fileID: 1264307627}
+  m_Layer: 0
+  m_Name: Sky and Fog Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1264307627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264307626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 3a58392dd1adf5042805a6ea5df567aa, type: 2}
+--- !u!4 &1264307628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264307626}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -225.27103, y: 243.8407, z: 791.67914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1289862781 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7913205305800544969, guid: 79f94669ce110e84689bd1b911325ad7, type: 3}
@@ -2573,99 +2602,228 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
---- !u!1 &1302214302
-GameObject:
+--- !u!114 &1291244008
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1302214305}
-  - component: {fileID: 1302214304}
-  - component: {fileID: 1302214303}
-  m_Layer: 0
-  m_Name: terrain_generator_loader_2_45_OUT_TERRAIN_OUT_TERRAIN_26
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!154 &1302214303
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302214302}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
-  serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: 1e4a87b38a1a55746a374f355ed0d098, type: 2}
-  m_EnableTreeColliders: 1
---- !u!218 &1302214304
-Terrain:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 11
+  _partName: OUT_TERRAIN_11
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: river
+--- !u!114 &1314381764
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302214302}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
-  serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 1e4a87b38a1a55746a374f355ed0d098, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 0.4
-  m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
-  m_HeightmapMinimumLODSimplification: 0
-  m_HeightmapMaximumLOD: 0
-  m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
-  m_DrawInstanced: 1
-  m_DrawTreesAndFoliage: 1
-  m_StaticShadowCaster: 0
-  m_IgnoreQualitySettings: 0
-  m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 18ef1fc90dc256245a6d57623c0565b4, type: 2}
-  m_BakeLightProbesForTrees: 1
-  m_PreserveTreePrototypeLayers: 0
-  m_DeringLightProbesForTrees: 1
-  m_ReceiveGI: 1
-  m_ScaleInLightmap: 1
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
-  m_GroupingID: 0
-  m_RenderingLayerMask: 257
-  m_AllowAutoConnect: 1
-  m_EnableHeightmapRayTracing: 1
-  m_EnableTreesAndDetailsRayTracing: 0
-  m_TreeMotionVectorModeOverride: 3
---- !u!4 &1302214305
-Transform:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054bae7d2b31a224da13732a930a5b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ownerNode: {fileID: 627704406}
+  _layers:
+  - _layerName: height
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 1
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 0}
+    _layerType: 1
+    _part: {fileID: 872277228}
+  - _layerName: ocean
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 1
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
+    _layerType: 0
+    _part: {fileID: 284202526}
+  - _layerName: river
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 1
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 1291244008}
+  - _layerName: tundra
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 1
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 182e29cd69efc504288280d798107aab, type: 2}
+    _layerType: 0
+    _part: {fileID: 144879967}
+  - _layerName: sediment
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 1
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 2073927834}
+  - _layerName: debris
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 1
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 8a2b072098df2f74e899bd14537e2070, type: 2}
+    _layerType: 0
+    _part: {fileID: 933130690}
+  - _layerName: water
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 1
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 27bc8528b84ded2428498db4aadb4361, type: 2}
+    _layerType: 0
+    _part: {fileID: 207614564}
+  - _layerName: mountain_slope
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 1
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
+    _layerType: 0
+    _part: {fileID: 293776569}
+  - _layerName: base
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 1
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 1509707989}
+  _tileIndex: 1
+  _isDirty: 0
+  _geoName: OUT_TERRAIN
+  _objName: terrain_generator_loader_2_54
+  _uiExpanded: 1
+  _terrainData: {fileID: 15600000, guid: 532e69889af537041ba63cb48db5d6d0, type: 2}
+  _parentAsset: {fileID: 266345827}
+--- !u!114 &1317768280
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302214302}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2048, y: 9.589795, z: -2048}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 39666421}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 38
+  _partName: OUT_TERRAIN_38
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: mountain_slope
+--- !u!114 &1339257166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 34
+  _partName: OUT_TERRAIN_34
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 2048, y: -23.180052, z: 0}
+  _assetDBTerrainData: {fileID: 15600000, guid: bc34c6450f7cc3f439c358999c901075, type: 2}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 883011076}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: height
 --- !u!1001 &1346803748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2723,7 +2881,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c79a3c005689a2c41ad31b1ac7f2b04f, type: 3}
---- !u!114 &1350340759
+--- !u!114 &1348434855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2732,199 +2890,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d064048945a579428d136799401f238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 16
-  _partName: OUT_TERRAIN_16
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: debris
---- !u!114 &1396975481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 39
-  _partName: OUT_TERRAIN_39
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: water
---- !u!114 &1405840242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 35
-  _partName: OUT_TERRAIN_35
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: tundra
---- !u!114 &1444541005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8512ec9bb36e55e4dab2691b35626896, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputNodeType: 0
-  _inputObjectType: 1
-  _pendingInputObjectType: 1
-  _inputObjects: []
-  _inputObjectsConnectedAssetIDs: 
-  _inputAsset: {fileID: 0}
-  _connectedInputAsset: {fileID: 0}
-  _inputAssetInfos: []
-  _nodeID: 227
-  _inputIndex: 0
-  _requiresCook: 1
-  _requiresUpload: 0
-  _inputName: Sub-Network Input #1
-  _labelName: Sub-Network Input #1
-  _paramName: 
-  _connectedNodeID: -1
-  _keepWorldTransform: 1
-  _packGeometryBeforeMerging: 0
+  _objName: terrain_generator_loader_2_60
   _parentAsset: {fileID: 266345827}
-  _meshSettings:
-    _exportColliders: 0
-  _tilemapSettings:
-    _createGroupsForTiles: 1
-    _exportUnusedTiles: 1
-    _applyTileColor: 1
-    _applyTilemapOrientation: 1
-  _splineSettings:
-    _samplingResolution: 25
-  _usingSelectFromHierarchy: 0
---- !u!114 &1445376686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 27
-  _partName: OUT_TERRAIN_27
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
+  _objectInfo:
+    nameSH: 129273
+    objectInstancePathSH: 0
+    hasTransformChanged: 1
+    haveGeosChanged: 1
+    isVisible: 1
     isInstancer: 0
-  _volumeLayerName: debris
---- !u!114 &1452177508
+    isInstanced: 0
+    geoCount: 0
+    nodeId: 303
+    objectToInstanceId: -1
+  _geoNodes:
+  - {fileID: 627704406}
+--- !u!114 &1450123260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2933,77 +2917,99 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 054bae7d2b31a224da13732a930a5b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 44
-  _partName: OUT_TERRAIN_44
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 0
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 1
-  _isPartInstanced: 0
-  _partPointCount: 5516
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 1
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 4
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 0
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 1
-  _volumeLayerName: 
---- !u!114 &1459375447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 41
-  _partName: OUT_TERRAIN_41
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: mountain_slope
+  _ownerNode: {fileID: 627704406}
+  _layers:
+  - _layerName: height
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 0
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 0}
+    _layerType: 1
+    _part: {fileID: 1133559871}
+  - _layerName: ocean
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 0
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
+    _layerType: 0
+    _part: {fileID: 1014536121}
+  - _layerName: river
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 0
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 2041323915}
+  - _layerName: tundra
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 0
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 182e29cd69efc504288280d798107aab, type: 2}
+    _layerType: 0
+    _part: {fileID: 1982062855}
+  - _layerName: sediment
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 0
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 1842272001}
+  - _layerName: debris
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 0
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 8a2b072098df2f74e899bd14537e2070, type: 2}
+    _layerType: 0
+    _part: {fileID: 150007318}
+  - _layerName: water
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 0
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 27bc8528b84ded2428498db4aadb4361, type: 2}
+    _layerType: 0
+    _part: {fileID: 1973276002}
+  - _layerName: mountain_slope
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 0
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
+    _layerType: 0
+    _part: {fileID: 457837603}
+  - _layerName: base
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 0
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 117407210}
+  _tileIndex: 0
+  _isDirty: 0
+  _geoName: OUT_TERRAIN
+  _objName: terrain_generator_loader_2_54
+  _uiExpanded: 1
+  _terrainData: {fileID: 15600000, guid: 1b9f52fe83929f3449b1ccf057615bd5, type: 2}
+  _parentAsset: {fileID: 266345827}
 --- !u!1001 &1469829132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3026,15 +3032,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7171726910567516687, guid: 79f94669ce110e84689bd1b911325ad7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.47
+      value: 154.3
       objectReference: {fileID: 0}
     - target: {fileID: 7171726910567516687, guid: 79f94669ce110e84689bd1b911325ad7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.381
+      value: 15.87
       objectReference: {fileID: 0}
     - target: {fileID: 7171726910567516687, guid: 79f94669ce110e84689bd1b911325ad7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 986.9276
+      value: 678.3
       objectReference: {fileID: 0}
     - target: {fileID: 7171726910567516687, guid: 79f94669ce110e84689bd1b911325ad7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3080,7 +3086,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1289862785}
   m_SourcePrefab: {fileID: 100100000, guid: 79f94669ce110e84689bd1b911325ad7, type: 3}
---- !u!114 &1511901079
+--- !u!114 &1509707989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3092,12 +3098,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 8
-  _partName: OUT_TERRAIN_8
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 19
+  _partName: OUT_TERRAIN_19
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -3119,101 +3125,8 @@ MonoBehaviour:
       _colliders: []
     _childOutputs: []
     isInstancer: 0
-  _volumeLayerName: mountain_slope
---- !u!1 &1520038170
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1520038173}
-  - component: {fileID: 1520038172}
-  - component: {fileID: 1520038171}
-  m_Layer: 0
-  m_Name: terrain_generator_loader_2_45_OUT_TERRAIN_OUT_TERRAIN_15
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!154 &1520038171
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520038170}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: df11028a0bf336747b57844c5b62143d, type: 2}
-  m_EnableTreeColliders: 1
---- !u!218 &1520038172
-Terrain:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520038170}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: df11028a0bf336747b57844c5b62143d, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 0.4
-  m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
-  m_HeightmapMinimumLODSimplification: 0
-  m_HeightmapMaximumLOD: 0
-  m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
-  m_DrawInstanced: 1
-  m_DrawTreesAndFoliage: 1
-  m_StaticShadowCaster: 0
-  m_IgnoreQualitySettings: 0
-  m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 18ef1fc90dc256245a6d57623c0565b4, type: 2}
-  m_BakeLightProbesForTrees: 1
-  m_PreserveTreePrototypeLayers: 0
-  m_DeringLightProbesForTrees: 1
-  m_ReceiveGI: 1
-  m_ScaleInLightmap: 1
-  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
-  m_GroupingID: 0
-  m_RenderingLayerMask: 257
-  m_AllowAutoConnect: 1
-  m_EnableHeightmapRayTracing: 1
-  m_EnableTreesAndDetailsRayTracing: 0
-  m_TreeMotionVectorModeOverride: 3
---- !u!4 &1520038173
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520038170}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -23.502693, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 39666421}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1524730082
+  _volumeLayerName: base
+--- !u!114 &1516228824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3225,132 +3138,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 40
-  _partName: OUT_TERRAIN_40
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 25
+  _partName: OUT_TERRAIN_25
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: mask
---- !u!114 &1562848657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 6
-  _partName: OUT_TERRAIN_6
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: water
---- !u!114 &1569501092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 13
-  _partName: OUT_TERRAIN_13
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: tundra
---- !u!114 &1570992602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 38
-  _partName: OUT_TERRAIN_38
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -3373,6 +3166,108 @@ MonoBehaviour:
     _childOutputs: []
     isInstancer: 0
   _volumeLayerName: debris
+--- !u!114 &1526553797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054bae7d2b31a224da13732a930a5b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ownerNode: {fileID: 627704406}
+  _layers:
+  - _layerName: height
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 3
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 0}
+    _layerType: 1
+    _part: {fileID: 1339257166}
+  - _layerName: ocean
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 3
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
+    _layerType: 0
+    _part: {fileID: 1793417511}
+  - _layerName: river
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 3
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 1617309109}
+  - _layerName: tundra
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 3
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 182e29cd69efc504288280d798107aab, type: 2}
+    _layerType: 0
+    _part: {fileID: 31289803}
+  - _layerName: sediment
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 3
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 329696939}
+  - _layerName: debris
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 3
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 8a2b072098df2f74e899bd14537e2070, type: 2}
+    _layerType: 0
+    _part: {fileID: 898101719}
+  - _layerName: water
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 3
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 27bc8528b84ded2428498db4aadb4361, type: 2}
+    _layerType: 0
+    _part: {fileID: 86810307}
+  - _layerName: mountain_slope
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 3
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
+    _layerType: 0
+    _part: {fileID: 1317768280}
+  - _layerName: base
+    _strength: 1
+    _uiExpanded: 0
+    _tile: 3
+    _xLength: 1025
+    _yLength: 1025
+    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
+    _layerType: 0
+    _part: {fileID: 632321770}
+  _tileIndex: 3
+  _isDirty: 0
+  _geoName: OUT_TERRAIN
+  _objName: terrain_generator_loader_2_54
+  _uiExpanded: 1
+  _terrainData: {fileID: 15600000, guid: bc34c6450f7cc3f439c358999c901075, type: 2}
+  _parentAsset: {fileID: 266345827}
 --- !u!114 &1610894553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3386,7 +3281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _softDeleted: 0
---- !u!114 &1656674992
+--- !u!114 &1617309109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3398,12 +3293,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 29
-  _partName: OUT_TERRAIN_29
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 31
+  _partName: OUT_TERRAIN_31
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: river
+--- !u!114 &1632233267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 7
+  _partName: OUT_TERRAIN_7
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -3426,7 +3361,47 @@ MonoBehaviour:
     _childOutputs: []
     isInstancer: 0
   _volumeLayerName: mask
---- !u!1 &1664725809
+--- !u!114 &1636855263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 29
+  _partName: OUT_TERRAIN_29
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: base
+--- !u!1 &1662324525
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3434,52 +3409,32 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1664725812}
-  - component: {fileID: 1664725811}
-  - component: {fileID: 1664725810}
+  - component: {fileID: 1662324528}
+  - component: {fileID: 1662324527}
+  - component: {fileID: 1662324529}
   m_Layer: 0
-  m_Name: terrain_generator_loader_2_45_OUT_TERRAIN_OUT_TERRAIN_37
+  m_Name: terrain_generator_loader_2_60_OUT_TERRAIN_OUT_TERRAIN_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!154 &1664725810
-TerrainCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664725809}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_TerrainData: {fileID: 15600000, guid: 7e1ed2079deb4a8489e267413449431b, type: 2}
-  m_EnableTreeColliders: 1
---- !u!218 &1664725811
+--- !u!218 &1662324527
 Terrain:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664725809}
+  m_GameObject: {fileID: 1662324525}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 7e1ed2079deb4a8489e267413449431b, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 1b9f52fe83929f3449b1ccf057615bd5, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 0.4
+  m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMinimumLODSimplification: 0
@@ -3504,133 +3459,42 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
---- !u!4 &1664725812
+--- !u!4 &1662324528
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664725809}
+  m_GameObject: {fileID: 1662324525}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2048, y: -23.180052, z: 0}
+  m_LocalPosition: {x: -0, y: 15.2891, z: -2048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 39666421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1737444375
-MonoBehaviour:
+--- !u!154 &1662324529
+TerrainCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1662324525}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 054bae7d2b31a224da13732a930a5b13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ownerNode: {fileID: 1087517690}
-  _layers:
-  - _layerName: height
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 2
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 0}
-    _layerType: 1
-    _part: {fileID: 364486227}
-  - _layerName: ocean
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 2
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
-    _layerType: 0
-    _part: {fileID: 737324793}
-  - _layerName: river
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 2
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 1918959072}
-  - _layerName: tundra
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 2
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 182e29cd69efc504288280d798107aab, type: 2}
-    _layerType: 0
-    _part: {fileID: 288394922}
-  - _layerName: sediment
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 2
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 21409038}
-  - _layerName: debris
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 2
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 8a2b072098df2f74e899bd14537e2070, type: 2}
-    _layerType: 0
-    _part: {fileID: 1445376686}
-  - _layerName: water
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 2
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 27bc8528b84ded2428498db4aadb4361, type: 2}
-    _layerType: 0
-    _part: {fileID: 1879842137}
-  - _layerName: mountain_slope
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 2
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: 7b59dad1b7adaad4a92fd89ef76f61f8, type: 2}
-    _layerType: 0
-    _part: {fileID: 885977683}
-  - _layerName: base
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 2
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 8574412962073106934, guid: f58cd25ced57cfc41b08f6358027bbb7, type: 2}
-    _layerType: 0
-    _part: {fileID: 287761739}
-  - _layerName: detail_layer
-    _strength: 1
-    _uiExpanded: 0
-    _tile: 2
-    _xLength: 1025
-    _yLength: 1025
-    _terrainLayer: {fileID: 0}
-    _layerType: 3
-    _part: {fileID: 1077560149}
-  _tileIndex: 2
-  _isDirty: 0
-  _geoName: OUT_TERRAIN
-  _objName: terrain_generator_loader_2_45
-  _uiExpanded: 1
-  _terrainData: {fileID: 15600000, guid: 1e4a87b38a1a55746a374f355ed0d098, type: 2}
-  _parentAsset: {fileID: 266345827}
---- !u!114 &1739422174
+  serializedVersion: 2
+  m_TerrainData: {fileID: 15600000, guid: 1b9f52fe83929f3449b1ccf057615bd5, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!114 &1687916417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3642,12 +3506,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 33
-  _partName: OUT_TERRAIN_33
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 27
+  _partName: OUT_TERRAIN_27
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -3669,47 +3533,7 @@ MonoBehaviour:
       _colliders: []
     _childOutputs: []
     isInstancer: 0
-  _volumeLayerName: ocean
---- !u!114 &1743328301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 36
-  _partName: OUT_TERRAIN_36
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: sediment
+  _volumeLayerName: mask
 --- !u!1 &1744188697
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,7 +3751,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 23.3, y: -78.7, z: 0}
---- !u!114 &1774216362
+--- !u!114 &1793417511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3939,12 +3763,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 12
-  _partName: OUT_TERRAIN_12
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 30
+  _partName: OUT_TERRAIN_30
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -3966,88 +3790,8 @@ MonoBehaviour:
       _colliders: []
     _childOutputs: []
     isInstancer: 0
-  _volumeLayerName: river
---- !u!114 &1879842137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 28
-  _partName: OUT_TERRAIN_28
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: water
---- !u!114 &1918959072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _partID: 23
-  _partName: OUT_TERRAIN_23
-  _objectNodeID: 228
-  _geoID: 229
-  _partType: 2
-  _geoNode: {fileID: 1087517690}
-  _isAttribInstancer: 0
-  _isPartInstanced: 0
-  _partPointCount: 1
-  _isObjectInstancer: 0
-  _objectInstancesGenerated: 0
-  _objectInstanceInfos: []
-  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
-  _assetDBTerrainData: {fileID: 0}
-  _isPartEditable: 0
-  _partOutputType: 2
-  _curve: {fileID: 0}
-  _attributesStore: {fileID: 0}
-  _haveInstancesBeenGenerated: 0
-  _meshVertexCount: 1
-  _generatedOutput:
-    _outputData:
-      _gameObject: {fileID: 0}
-      _renderMaterials: []
-      _colliders: []
-    _childOutputs: []
-    isInstancer: 0
-  _volumeLayerName: river
---- !u!114 &1990441290
+  _volumeLayerName: ocean
+--- !u!114 &1842272001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4061,10 +3805,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _partID: 3
   _partName: OUT_TERRAIN_3
-  _objectNodeID: 228
-  _geoID: 229
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -4087,7 +3831,7 @@ MonoBehaviour:
     _childOutputs: []
     isInstancer: 0
   _volumeLayerName: sediment
---- !u!114 &2106977510
+--- !u!114 &1949341899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4099,12 +3843,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 5
-  _partName: OUT_TERRAIN_5
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 40
+  _partName: OUT_TERRAIN_40
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 0
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 1
+  _isPartInstanced: 0
+  _partPointCount: 55505
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 1
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 4
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 0
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 1
+  _volumeLayerName: 
+--- !u!114 &1973276002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 6
+  _partName: OUT_TERRAIN_6
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -4126,8 +3910,8 @@ MonoBehaviour:
       _colliders: []
     _childOutputs: []
     isInstancer: 0
-  _volumeLayerName: debris
---- !u!114 &2143462279
+  _volumeLayerName: water
+--- !u!114 &1982062855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4139,12 +3923,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partID: 19
-  _partName: OUT_TERRAIN_19
-  _objectNodeID: 228
-  _geoID: 229
+  _partID: 2
+  _partName: OUT_TERRAIN_2
+  _objectNodeID: 303
+  _geoID: 304
   _partType: 2
-  _geoNode: {fileID: 1087517690}
+  _geoNode: {fileID: 627704406}
   _isAttribInstancer: 0
   _isPartInstanced: 0
   _partPointCount: 1
@@ -4166,7 +3950,87 @@ MonoBehaviour:
       _colliders: []
     _childOutputs: []
     isInstancer: 0
-  _volumeLayerName: mountain_slope
+  _volumeLayerName: tundra
+--- !u!114 &2041323915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 1
+  _partName: OUT_TERRAIN_1
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: river
+--- !u!114 &2073927834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ce3a7cc3f38404592fdd27226cb0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _partID: 13
+  _partName: OUT_TERRAIN_13
+  _objectNodeID: 303
+  _geoID: 304
+  _partType: 2
+  _geoNode: {fileID: 627704406}
+  _isAttribInstancer: 0
+  _isPartInstanced: 0
+  _partPointCount: 1
+  _isObjectInstancer: 0
+  _objectInstancesGenerated: 0
+  _objectInstanceInfos: []
+  _terrainOffsetPosition: {x: 0, y: 0, z: 0}
+  _assetDBTerrainData: {fileID: 0}
+  _isPartEditable: 0
+  _partOutputType: 2
+  _curve: {fileID: 0}
+  _attributesStore: {fileID: 0}
+  _haveInstancesBeenGenerated: 0
+  _meshVertexCount: 1
+  _generatedOutput:
+    _outputData:
+      _gameObject: {fileID: 0}
+      _renderMaterials: []
+      _colliders: []
+    _childOutputs: []
+    isInstancer: 0
+  _volumeLayerName: sediment
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
