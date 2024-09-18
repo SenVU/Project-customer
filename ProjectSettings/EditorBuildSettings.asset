@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/QuestScene.unity
+    guid: 3c778c4432c333249a988b9e31797706
+  - enabled: 1
+    path: Assets/Scenes/GameOver/DeathNoFood.unity
+    guid: 1097a4a025ad23c419a73050b7a00478
   m_configObjects: {}

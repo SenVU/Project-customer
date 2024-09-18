@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class FoodManager : MonoBehaviour
@@ -119,6 +120,6 @@ public class FoodManager : MonoBehaviour
         }
 
         Debug.Log("No food collected in time. Game over!");
-        //TODO: Not done rn, I think we want a game over screen or something else
+        SceneManager.LoadScene("DeathNoFood");
     }
 }

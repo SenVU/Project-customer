@@ -237,7 +237,7 @@ public class QuestManager : MonoBehaviour
     {
         if (questText != null)
         {
-            questText.text = currentQuest != null ? "Quest : " + currentQuest.info.displayName : "No quest available";
+            questText.text = currentQuest != null ? "Main Quest : " + currentQuest.info.displayName : "No quest available";
         }
     }
 
