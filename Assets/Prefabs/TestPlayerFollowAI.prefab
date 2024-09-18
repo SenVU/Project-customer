@@ -277,7 +277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcc36ade54fc424d97373fabf6abacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 0}
   wanderSpeed: 3
   maxWanderDistance: 10
   wanderResetTargetDistance: 2
@@ -285,6 +284,9 @@ MonoBehaviour:
   wanderToIdleChanse: 0.8
   minIdleTime: 1
   maxIdleTime: 3.5
-  attackSpeed: 4
   maxTargetSearchDistance: 10
   maxTargetTrackDistance: 15
+  attackWalkSpeed: 4
+  attackDistance: 1.5
+  attackDamage: 1
+  attackInterval: 1

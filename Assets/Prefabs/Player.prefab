@@ -953,6 +953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   despawnOnDeath: 0
+  runOnDeathFunction: 
 --- !u!1 &8371665040121888195
 GameObject:
   m_ObjectHideFlags: 0

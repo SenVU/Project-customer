@@ -13,6 +13,8 @@ public class AIWolfTargeting : AITargeter
     float idleTime;
     float chosenIdleTime;
 
+    float lastAttackTime;
+
 
     [SerializeField] float wanderSpeed = 2;
     [SerializeField] int maxWanderDistance = 15;
@@ -27,9 +29,14 @@ public class AIWolfTargeting : AITargeter
     [SerializeField] float maxIdleTime = 5;
 
 
-    [SerializeField] float attackSpeed=4;
     [SerializeField] float maxTargetSearchDistance=10;
     [SerializeField] float maxTargetTrackDistance=15;
+
+    [SerializeField] float attackWalkSpeed = 4;
+
+    [SerializeField] float attackDistance = .75f;
+    [SerializeField] float attackDamage = 1f;
+    [SerializeField] float attackInterval = 1f;
 
     enum State
     {
@@ -118,7 +125,16 @@ public class AIWolfTargeting : AITargeter
         {
             if ((transform.position - attackTarget.transform.position).magnitude > maxTargetTrackDistance)
                 attackTarget = null;
-            else walker.SetTarget(attackTarget.transform.position, attackSpeed);
+            else walker.SetTarget(attackTarget.transform.position, attackWalkSpeed);
+            if (lastAttackTime >= attackInterval)
+            {
+                if ((transform.position - attackTarget.transform.position).magnitude <= attackDistance)
+                {
+                    lastAttackTime = 0;
+                    attackTarget.GetComponent<HealthManager>().Damage(attackDamage);
+                }
+            }
+            else lastAttackTime += Time.deltaTime;
         }
         else ChooseNewTarget();
     }
