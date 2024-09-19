@@ -1,21 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine;
 
 public class FoodManager : MonoBehaviour
 {
     [Header("Configuration")]
     [SerializeField] private int startingFood = 5;
     [SerializeField] private float foodLossInterval = 10f;
-    [SerializeField] private float deathCountdownDuration = 10f;
 
     public int currentFood { get; private set; }
-    [SerializeField] private TMPro.TMP_Text myFood;
+    [SerializeField] private TMP_Text myFood;
 
     private Coroutine foodLossCoroutine;
-    private Coroutine deathCountdownCoroutine;
+
+    [SerializeField] private DeathManager deathManager;
 
     private void Awake()
     {
@@ -23,27 +21,25 @@ public class FoodManager : MonoBehaviour
         UpdateFoodUI();
     }
 
-    private void OnEnable() 
+    private void OnEnable()
     {
         GameEventsManager.instance.foodEvents.onFoodGained += FoodGained;
         GameEventsManager.instance.foodEvents.onFoodLost += FoodLoosed;
-        
+
         foodLossCoroutine = StartCoroutine(FoodLossRoutine());
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
         GameEventsManager.instance.foodEvents.onFoodGained -= FoodGained;
         GameEventsManager.instance.foodEvents.onFoodLost -= FoodLoosed;
-        
+
         if (foodLossCoroutine != null)
         {
             StopCoroutine(foodLossCoroutine);
         }
-        if (deathCountdownCoroutine != null)
-        {
-            StopCoroutine(deathCountdownCoroutine);
-        }
+
+        deathManager.StopDeathCountdown();
     }
 
     private void Start()
@@ -52,17 +48,13 @@ public class FoodManager : MonoBehaviour
         UpdateFoodUI();
     }
 
-    private void FoodGained(int food) 
+    private void FoodGained(int food)
     {
         currentFood += food;
         GameEventsManager.instance.foodEvents.FoodChange(currentFood);
         UpdateFoodUI();
 
-        if (deathCountdownCoroutine != null)
-        {
-            StopCoroutine(deathCountdownCoroutine);
-            deathCountdownCoroutine = null;
-        }
+        deathManager.StopDeathCountdown();
     }
 
     private void FoodLoosed(int food)
@@ -71,9 +63,9 @@ public class FoodManager : MonoBehaviour
         GameEventsManager.instance.foodEvents.FoodChange(currentFood);
         UpdateFoodUI();
 
-        if (currentFood <= 0 && deathCountdownCoroutine == null)
+        if (currentFood <= 0)
         {
-            deathCountdownCoroutine = StartCoroutine(DeathCountdownRoutine());
+            deathManager.StartDeathCountdown();
         }
     }
 
@@ -103,22 +95,5 @@ public class FoodManager : MonoBehaviour
             }
             myFood.text = foodDisplay;
         }
-    }
-
-    private IEnumerator DeathCountdownRoutine()
-    {
-        float timeRemaining = deathCountdownDuration;
-        while (timeRemaining > 0)
-        {
-            yield return new WaitForSeconds(1f);
-            timeRemaining -= 1f;
-
-            if (currentFood > 0)
-            {
-                yield break;
-            }
-        }
-
-        SceneManager.LoadScene("FoodDeath");
     }
 }

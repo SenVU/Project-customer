@@ -5,7 +5,6 @@ public class Food : MonoBehaviour
     private bool isPlayerInRange = false;
     public string interactionKey = "e";
     public GameObject interactionUI;
-    // public GameObject drop;
     [SerializeField] private int foodGained = 1;
 
     void Start()
@@ -59,11 +58,4 @@ public class Food : MonoBehaviour
         GameEventsManager.instance.miscEvents.FoodCollected();
         Destroy(gameObject);
     }
-
-    // Drop an Item when a mob die
-    // private void OnDestroy()
-    // {
-    //     Instantiate(drop, transform.position + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)), drop.transform.rotation);
-    //     Instantiate(drop, transform.position + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)), drop.transform.rotation);
-    // }
 }
