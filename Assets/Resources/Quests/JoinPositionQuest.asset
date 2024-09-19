@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JoinPositionQuest
   m_EditorClassIdentifier: 
   <id>k__BackingField: JoinPositionQuest
-  displayName: Join the Cylinder
+  displayName: Join the strange thing
   Description: Go to the position
   questStepPrefabs:
   - {fileID: 5305295239318716737, guid: 2d3e939e81ac33f4283822262134b3a7, type: 3}

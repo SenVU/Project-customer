@@ -14,8 +14,8 @@ public class ProtectBabyQuestStep : QuestStep
     {
         enemy = GameObject.Find("Wolf");
         player = GameObject.Find("PlayerCub");
-        spawnedObjects.Add(Instantiate(enemy, player.transform.position + new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f)), enemy.transform.rotation));
-        spawnedObjects.Add(Instantiate(enemy, player.transform.position + new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f)), enemy.transform.rotation));
+        spawnedObjects.Add(Instantiate(enemy, player.transform.position + new Vector3(Random.Range(-10f, 10f), 1, Random.Range(-10f, 10f)), enemy.transform.rotation));
+        spawnedObjects.Add(Instantiate(enemy, player.transform.position + new Vector3(Random.Range(-10f, 10f), 1, Random.Range(-10f, 10f)), enemy.transform.rotation));
     }
 
     // Update is called once per frame

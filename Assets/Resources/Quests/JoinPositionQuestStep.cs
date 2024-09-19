@@ -9,7 +9,7 @@ public class JoinPositionQuestStep : QuestStep
     private GameObject player;
     private TMPro.TMP_Text questText;
 
-    public float tolerance = 1.0f;
+    public float tolerance = 15.0f;
     public float xPos;
     public float yPos;
     public float zPos;
@@ -21,7 +21,7 @@ public class JoinPositionQuestStep : QuestStep
         questText = textObject.GetComponent<TMPro.TMP_Text>();
 
         player = GameObject.Find("Player");
-        pointToJoin = GameObject.Find("Cylinder");
+        pointToJoin = GameObject.Find("Old_tent_0002");
         UpdateTextUI();
     }
 
@@ -30,13 +30,15 @@ public class JoinPositionQuestStep : QuestStep
     {
         xPos = player.transform.position.x;
         yPos = player.transform.position.y;
-        zPos = player.transform.position.y;
+        zPos = player.transform.position.z;
 
         bool isXInRange = xPos >= pointToJoin.transform.position.x - tolerance && xPos <= pointToJoin.transform.position.x + tolerance;
         bool isYInRange = yPos >= pointToJoin.transform.position.y - tolerance && yPos <= pointToJoin.transform.position.y + tolerance;
         bool isZInRange = zPos >= pointToJoin.transform.position.z - tolerance && zPos <= pointToJoin.transform.position.z + tolerance;
 
-        if (isXInRange && isYInRange)
+        Debug.Log("X: " + isXInRange + "Y: " + isYInRange + "Z: " + pointToJoin.transform.position.z);
+        Debug.Log("Player X: " + xPos + "Player Y: " + yPos + "Player Z: " + zPos);
+        if (isXInRange && isYInRange && isZInRange)
         {
             FinishQuestStep();
         }
@@ -47,7 +49,7 @@ public class JoinPositionQuestStep : QuestStep
     {
         if (questText != null)
         {
-            questText.text = "Join the Cylinder";
+            questText.text = "You see something strange in the forest";
         }
     }
 }
