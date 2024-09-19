@@ -63,7 +63,7 @@ SpeedTreeImporter:
     enableSubsurface: 1
     windQuality: 4
   - enableSettingOverride: 0
-    height: 0.01
+    height: 0.03757518
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 0
@@ -78,7 +78,7 @@ SpeedTreeImporter:
   fadeOutWidth: 0.25
   scaleFactor: 0.3048
   unitConversionEnumValue: 1
-  motionVectorModeEnumValue: 1
+  motionVectorModeEnumValue: 2
   materialVersion: 3
   materialLocation: 1
   fileIDType: 2
