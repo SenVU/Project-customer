@@ -91,7 +91,19 @@ PrefabInstance:
     - target: {fileID: 4577688036594666810, guid: 2f4f5d7c243412e46a3c471e7db65b96, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bcceffa11a480a540a40d0a9936be469, type: 3}
+      objectReference: {fileID: 21300000, guid: a65b451be1a845047ab4bf6bcb93d12e, type: 3}
+    - target: {fileID: 4577688036594666810, guid: 2f4f5d7c243412e46a3c471e7db65b96, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577688036594666810, guid: 2f4f5d7c243412e46a3c471e7db65b96, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577688036594666810, guid: 2f4f5d7c243412e46a3c471e7db65b96, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7902137456757418325, guid: 2f4f5d7c243412e46a3c471e7db65b96, type: 3}
       propertyPath: m_Name
       value: Mountain Biome Marker
