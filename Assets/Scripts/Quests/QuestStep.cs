@@ -43,7 +43,6 @@ public abstract class QuestStep : MonoBehaviour
 
     public void InitializeSideQuestStep(string questId)
     {
-        Debug.Log("I\'m here");
         this.sideQuestId = questId;
     }
 
