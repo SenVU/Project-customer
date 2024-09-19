@@ -44,10 +44,10 @@ public class WayPointCamera : MonoBehaviour
         }
         else
         {
+            wayPointOverlay.SetActive(false);
             foreach (GameObject onScreenMarker in wayPointMarkers.Keys)
             {
                 onScreenMarker.SetActive(false);
-                wayPointOverlay.SetActive(false);
             }
         }
     }
