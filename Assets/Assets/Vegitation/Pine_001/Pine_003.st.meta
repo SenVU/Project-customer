@@ -20,10 +20,10 @@ SpeedTreeImporter:
   enableBumpMapping: 1
   enableSubsurfaceScattering: 1
   bestWindQuality: 4
-  selectedWindQuality: 1
+  selectedWindQuality: 0
   enableShadowCasting: 1
   enableShadowReceiving: 1
-  enableLightProbes: 1
+  enableLightProbes: 0
   reflectionProbeEnumValue: 1
   hasBillboard: 1
   lODSettings:
@@ -67,7 +67,7 @@ SpeedTreeImporter:
     enableHue: 1
     enableSubsurface: 1
     windQuality: 1
-  enableSmoothLODTransition: 1
+  enableSmoothLODTransition: 0
   animateCrossFading: 1
   billboardTransitionCrossFadeWidth: 0.25
   fadeOutWidth: 0.25
