@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf259e96d8ed3942afee74213f39aa6, type: 3}
+  m_Name: 1RescueTheCub
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: 1RescueTheCub
+  displayName: Rescue the Polar Bear Cub
+  Description: The polar bear is far in a ice plate and he can't swim. Save him !
+  questStepPrefabs:
+  - {fileID: 6677836755210671451, guid: 2992da7a8e9220b4997a1b7c159ff8ce, type: 3}

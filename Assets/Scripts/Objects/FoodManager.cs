@@ -6,7 +6,7 @@ public class FoodManager : MonoBehaviour
 {
     [Header("Configuration")]
     [SerializeField] private int startingFood = 5;
-    [SerializeField] private float foodLossInterval = 10f;
+    [SerializeField] private float foodLossInterval = 30f;
 
     public int currentFood { get; private set; }
     [SerializeField] private TMP_Text myFood;

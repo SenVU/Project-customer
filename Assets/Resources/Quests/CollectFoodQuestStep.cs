@@ -6,7 +6,7 @@ using TMPro;
 public class CollectFoodQuestStep : QuestStep
 {
     private int foodsCollected = 0;
-    private int foodsToComplete = 4;
+    private int foodsToComplete = 8;
     private TMPro.TMP_Text questText;
 
     private void Start()

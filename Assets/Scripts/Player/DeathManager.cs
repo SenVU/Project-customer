@@ -6,7 +6,7 @@ using System.Collections;
 public class DeathManager : MonoBehaviour
 {
     [Header("Death Configuration")]
-    [SerializeField] private float deathCountdownDuration = 10f;
+    [SerializeField] private float deathCountdownDuration = 30f;
     [SerializeField] private CanvasGroup screenOverlay;
     [SerializeField] private TypewriterEffect typeWritterEffect;
     public string foodDeathMessage;
@@ -27,6 +27,8 @@ public class DeathManager : MonoBehaviour
         {
             StopCoroutine(deathCountdownCoroutine);
             deathCountdownCoroutine = null;
+            screenOverlay.alpha = 0f;
+            screenOverlay.gameObject.SetActive(false);
         }
     }
 

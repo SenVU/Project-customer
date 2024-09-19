@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721bd88dd842f4d4aa7bac5b8a09654e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keybind: 101
+  keybind: 120
   wayPointTags:
   - wayPoint
   FPP: {fileID: 5018631344199941369}
