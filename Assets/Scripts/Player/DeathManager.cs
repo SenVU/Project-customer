@@ -6,7 +6,7 @@ using System.Collections;
 public class DeathManager : MonoBehaviour
 {
     [Header("Death Configuration")]
-    [SerializeField] private float deathCountdownDuration = 30f;
+    [SerializeField] private float deathCountdownDuration = 10f;
     [SerializeField] private CanvasGroup screenOverlay;
     [SerializeField] private TypewriterEffect typeWritterEffect;
     public string foodDeathMessage;
@@ -27,47 +27,35 @@ public class DeathManager : MonoBehaviour
         {
             StopCoroutine(deathCountdownCoroutine);
             deathCountdownCoroutine = null;
-            screenOverlay.alpha = 0f;
-            screenOverlay.gameObject.SetActive(false);
+
+            if (screenOverlay != null)
+            {
+                screenOverlay.alpha = 0f;
+                screenOverlay.gameObject.SetActive(false);
+            }
         }
     }
 
     private IEnumerator DeathCountdownRoutine()
     {
         float timeRemaining = deathCountdownDuration;
-        float maxAlpha = 1f;
-        float fadeStep = maxAlpha / deathCountdownDuration;
+        float halfDuration = deathCountdownDuration / 2f;
+
+        while (timeRemaining > halfDuration)
+        {
+            timeRemaining -= Time.deltaTime;
+            yield return null;
+        }
 
         if (screenOverlay != null)
         {
             screenOverlay.gameObject.SetActive(true);
-            screenOverlay.alpha = 0f;
-        }
-
-        while (timeRemaining > 0)
-        {
-            yield return new WaitForSeconds(1f);
-            timeRemaining -= 1f;
-
-            if (screenOverlay != null)
-            {
-                screenOverlay.alpha = Mathf.Clamp(screenOverlay.alpha + fadeStep, 0, 1f);
-            }
+            yield return ScreenFade.Fade(screenOverlay, halfDuration, 0f, 1f);
         }
 
         if (typeWritterEffect != null)
         {
             typeWritterEffect.StartText(foodDeathMessage);
         }
-    }
-
-    private void PlayerDeath()
-    {
-        if (typeWritterEffect != null)
-        {
-            typeWritterEffect.StartText(foodDeathMessage);
-        }
-
-        //TODO: Stop everything in the game
     }
 }

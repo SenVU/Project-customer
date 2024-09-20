@@ -6,17 +6,23 @@ using TMPro;
 public abstract class QuestStep : MonoBehaviour
 {
     private bool isFinished = false;
+    private bool gameIsFinished = false;
     private string questId;
     private string sideQuestId;
 
+    [SerializeField] private CanvasGroup screenOverlay;
     private TMP_Text textMeshPro;
     public float fadeDuration = 1.0f;
     public float displayDuration = 1.0f;
 
-    private void Start()
+    private void Awake()
     {
         GameObject textObject = GameObject.Find("MainQuestText");
         textMeshPro = textObject.GetComponent<TMPro.TMP_Text>();
+    
+        GameObject panel = GameObject.Find("Panel");
+        screenOverlay = panel.GetComponent<CanvasGroup>();
+
 
         Color color = textMeshPro.color;
         color.a = 0;
@@ -30,6 +36,7 @@ public abstract class QuestStep : MonoBehaviour
         if (textMeshPro == null)
         {
             GameObject textObject = GameObject.Find("MainQuestText");
+            
             if (textObject != null)
             {
                 textMeshPro = textObject.GetComponent<TMP_Text>();
@@ -77,6 +84,16 @@ public abstract class QuestStep : MonoBehaviour
         }
     }
 
+    protected void FinishGame()
+    {
+        if (!gameIsFinished)
+        {
+            gameIsFinished = true;
+
+            StartCoroutine(FinishGameWithFade());
+        }
+    }
+
     private void QuestStartUI()
     {
         if (textMeshPro != null)
@@ -109,5 +126,16 @@ public abstract class QuestStep : MonoBehaviour
 
         color.a = endAlpha;
         textMeshPro.color = color;
+    }
+    
+    private IEnumerator FinishGameWithFade()
+    {
+        if (screenOverlay != null)
+        {
+            Debug.Log("Test");
+            yield return ScreenFade.Fade(screenOverlay, 2f, 0f, 1f); 
+        }
+
+        Destroy(this.gameObject);
     }
 }

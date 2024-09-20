@@ -9,7 +9,7 @@ public class BackToYourDen : QuestStep
     private GameObject player;
     private TMPro.TMP_Text questText;
 
-    public float tolerance = 15.0f;
+    public float tolerance = 5.0f;
     public float xPos;
     public float yPos;
     public float zPos;
@@ -38,7 +38,7 @@ public class BackToYourDen : QuestStep
 
         if (isXInRange && isYInRange && isZInRange)
         {
-            FinishQuestStep();
+            FinishGame();
         }
         UpdateTextUI();
     }
