@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7195407117992456096}
   - component: {fileID: 5018631344199941369}
   - component: {fileID: 1984308849818500700}
-  - component: {fileID: 6161183371004275117}
+  - component: {fileID: 8468776404211520153}
   m_Layer: 2
   m_Name: PlayerCameraFPP
   m_TagString: Untagged
@@ -66,7 +66,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -93,7 +93,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7913205305800544969}
   m_Enabled: 1
---- !u!114 &6161183371004275117
+--- !u!114 &8468776404211520153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
