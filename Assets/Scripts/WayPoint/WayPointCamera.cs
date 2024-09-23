@@ -105,6 +105,7 @@ public class WayPointCamera : MonoBehaviour
                 {
                     pos.x = minX;
                 }
+                pos.y = Screen.height - pos.y;
             }
 
             pos.x = Mathf.Clamp(pos.x, minX, maxX);
