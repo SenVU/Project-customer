@@ -47,7 +47,7 @@ public class PlayerControler : MonoBehaviour
     private Vector3 TPPLookDir;
     private Vector3 TPPTargetPos;
 
-    bool camSwiched = false;
+    private bool camSwiched = false;
 
 
     /// <summary>
