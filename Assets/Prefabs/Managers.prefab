@@ -32,8 +32,56 @@ Transform:
   - {fileID: 6391442406292603337}
   - {fileID: 232228887881439553}
   - {fileID: 1180154069899076649}
+  - {fileID: 1313088622845901328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7069495413337586113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1313088622845901328}
+  - component: {fileID: 492052314231245971}
+  m_Layer: 0
+  m_Name: TypeWritterEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1313088622845901328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7069495413337586113}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.436808, y: -6.3451715, z: -3.9235191}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8753293086796153404}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &492052314231245971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7069495413337586113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b11289077a13e949afdab037e251863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typingSpeed: 0.05
+  moveDuration: 2
+  moveDistance: 300
 --- !u!1 &7336030298211597257
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,8 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144b7bb78908e744ea1eea83bea5b976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questMenuPanel: {fileID: 0}
-  sideQuestsText: {fileID: 0}
   sideQuestManager: {fileID: 7140963783084579552}
 --- !u!1 &8407876242879429130
 GameObject:
@@ -183,4 +229,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sideQuestManager: {fileID: 7140963783084579552}
-  questText: {fileID: 0}

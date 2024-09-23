@@ -4,13 +4,18 @@ using TMPro;
 
 public class TypewriterEffect : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;
+    private TextMeshProUGUI textComponent;
     private string fullText;
     public float typingSpeed = 0.05f;
     public float moveDuration = 2f;
     public float moveDistance = 50f;
 
     private string currentText = "";
+
+    public void Start()
+    {
+        textComponent = GameObject.Find("DeathText").GetComponent<TextMeshProUGUI>();
+    }
 
     public void StartText(string msg)
     {
