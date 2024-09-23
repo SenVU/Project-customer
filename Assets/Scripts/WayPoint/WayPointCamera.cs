@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WayPointCamera : MonoBehaviour
 {
@@ -11,8 +12,7 @@ public class WayPointCamera : MonoBehaviour
 
     [SerializeField] List<string> wayPointTags;
 
-    [SerializeField] Camera FPP;
-    [SerializeField] Camera TPP;
+    [SerializeField] Camera cam;
 
     private void Start()
     {
@@ -20,8 +20,7 @@ public class WayPointCamera : MonoBehaviour
         wayPointOverlay = GameObject.Find("WayPointOverlay");
         Debug.Assert(canvas != null, "Canvas not Found");
         Debug.Assert(wayPointOverlay != null, "WayPointOverlay not Found");
-        Debug.Assert(FPP != null, "FPPcam not Found");
-        Debug.Assert(TPP != null, "TPPcam not Found");
+        Debug.Assert(cam != null, "cam not Found");
 
         if (wayPointOverlay.transform is RectTransform rt && canvas.transform is RectTransform crt)
             rt.sizeDelta = crt.sizeDelta;
@@ -88,10 +87,30 @@ public class WayPointCamera : MonoBehaviour
                 break;
             }
             WayPoint wayPoint = wayPointObj.GetComponent<WayPoint>();
-            Camera activeCam = null;
-            if (FPP.gameObject.activeSelf) activeCam = FPP;
-            else if (TPP.gameObject.activeSelf) activeCam = TPP;
-            if (activeCam != null) onScreenMarker.transform.position = activeCam.WorldToScreenPoint(wayPointObj.transform.position);
+
+            float minX = -onScreenMarker.GetComponent<Image>().GetPixelAdjustedRect().width / 8;
+            float maxX = Screen.width - minX;
+
+            float minY = -onScreenMarker.GetComponent<Image>().GetPixelAdjustedRect().height / 8;
+            float maxY = Screen.height - minY;
+
+            Vector2 pos = cam.WorldToScreenPoint(wayPointObj.transform.position);
+
+            if(Vector3.Dot(wayPointObj.transform.position - cam.transform.position, cam.transform.forward) <0)
+            {
+                // waypoint is behind the player
+                if(pos.x < Screen.width/2) {
+                    pos.x = maxX;
+                } else
+                {
+                    pos.x = minX;
+                }
+            }
+
+            pos.x = Mathf.Clamp(pos.x, minX, maxX);
+            pos.y = Mathf.Clamp(pos.y, minY, maxY);
+
+            onScreenMarker.transform.position = pos;
         }
     }
 }
