@@ -4,33 +4,46 @@ using UnityEngine;
 
 public class TakeTheCubQuestStep : QuestStep
 {
+    public string interactionKey = "g";
+
+    private GameObject player;
+    private GameObject cub;
+
     private TMPro.TMP_Text questText;
     private TipsMessage tipsScript;
 
     private void Start()
     {
-        GameObject textObject = GameObject.Find("QuestAdvancement");
-        questText = textObject.GetComponent<TMPro.TMP_Text>();
+        questText = GameObject.Find("QuestAdvancement").GetComponent<TMPro.TMP_Text>();
+        tipsScript = GameObject.Find("TipsManager").GetComponent<TipsMessage>();
 
-        GameObject tipsObject = GameObject.Find("TipsManager");
-        tipsScript = tipsObject.GetComponent<TipsMessage>();
-
-        UpdateTextUI();
+        player = GameObject.Find("Player");
+        cub = GameObject.Find("PlayerCub");
 
         if (tipsScript != null)
         {
-            tipsScript.SetTipsMessage("You can press \"k\" to pick up the cub");
+            tipsScript.SetTipsMessage("You can press \"g\" to pick up yours cub");
         }
+
+        UpdateTextUI();
     }
     // Update is called once per frame
     void Update()
     {
-        
+        float xPos = player.transform.position.x;
+        float yPos = player.transform.position.y;
+        float zPos = player.transform.position.z;
+
+        bool isXInRange = xPos >= cub.transform.position.x - 5.0f && xPos <= cub.transform.position.x + 5.0f;
+        bool isYInRange = yPos >= cub.transform.position.y - 5.0f && yPos <= cub.transform.position.y + 5.0f;
+        bool isZInRange = zPos >= cub.transform.position.z - 5.0f && zPos <= cub.transform.position.z + 5.0f;
+
+        if (isXInRange && isYInRange && isZInRange && Input.GetKeyDown(interactionKey))
+        {
+            FinishQuestStep();
+        }
     }
 
-/// <summary>
-/// UI
-/// </summary>
     private void UpdateTextUI()
     {
         if (questText != null)

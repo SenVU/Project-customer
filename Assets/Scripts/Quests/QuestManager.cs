@@ -94,9 +94,7 @@ public class QuestManager : MonoBehaviour
         {
             sideQuestManager.LoadAllSideQuests();
             loadSideQuest = true;
-        }
-        
-        
+        }   
     }
     
     private void ChangeQuestState(string id, QuestState state)
