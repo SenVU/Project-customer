@@ -12,7 +12,7 @@ public class TakeTheCubQuestStep : QuestStep
     private TMPro.TMP_Text questText;
     private TipsMessage tipsScript;
 
-    private void Start()
+    void Start()
     {
         questText = GameObject.Find("QuestAdvancement").GetComponent<TMPro.TMP_Text>();
         tipsScript = GameObject.Find("TipsManager").GetComponent<TipsMessage>();
@@ -30,6 +30,7 @@ public class TakeTheCubQuestStep : QuestStep
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Test");
         float xPos = player.transform.position.x;
         float yPos = player.transform.position.y;
         float zPos = player.transform.position.z;
