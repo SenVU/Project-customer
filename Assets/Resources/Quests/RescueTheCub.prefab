@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487d224c794b2d642b04a39897b490a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenOverlay: {fileID: 0}
+  fadeDuration: 1
+  displayDuration: 1
+  pointToJoin: {fileID: 0}
+  tolerance: 15
+  xPos: 0
+  yPos: 0
+  zPos: 0

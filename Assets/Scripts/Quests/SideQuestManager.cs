@@ -8,10 +8,10 @@ public class SideQuestManager : MonoBehaviour
 
     private void Start()
     {
-        LoadAllSideQuests();
+
     }
 
-    private void LoadAllSideQuests()
+    public void LoadAllSideQuests()
     {
         SideQuestSO[] sideQuests = Resources.LoadAll<SideQuestSO>("SideQuests");
 

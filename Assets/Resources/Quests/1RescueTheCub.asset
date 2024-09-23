@@ -17,3 +17,5 @@ MonoBehaviour:
   Description: The polar bear is far in a ice plate and he can't swim. Save him !
   questStepPrefabs:
   - {fileID: 6677836755210671451, guid: 2992da7a8e9220b4997a1b7c159ff8ce, type: 3}
+  - {fileID: 2413477963937840628, guid: a9160256a63430d4086714b12f1f12d0, type: 3}
+  - {fileID: 1788251856082025381, guid: e56fc86ff2e0b944e86ea27efeecd52f, type: 3}

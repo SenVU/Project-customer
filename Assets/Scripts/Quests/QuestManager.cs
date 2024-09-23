@@ -7,30 +7,18 @@ using TMPro;
 public class QuestManager : MonoBehaviour
 {
     private Dictionary<string, Quest> questMap;
-    private Dictionary<string, SideQuest> sideQuestMap;
-    //============================================================//
     private Quest currentQuest;
-    private SideQuest currentSideQuest;
-    //============================================================//
     private int questIndex = 0;
-    private int sideQuestIndex = 0;
-    //============================================================//
+    private bool loadSideQuest = false;
     private QuestState currentQuestState;
-    private QuestState currentSideQuestState;
-    //============================================================//
+    [SerializeField] private SideQuestManager sideQuestManager;
     [SerializeField] private TMPro.TMP_Text questText;
-    [SerializeField] private TMPro.TMP_Text sideQuestText;
-    //============================================================//
 
     private void OnDisable()
     {
         GameEventsManager.instance.questEvents.onStartQuest -= StartQuest;
         GameEventsManager.instance.questEvents.onProgressQuest -= ProgressQuest;
         GameEventsManager.instance.questEvents.onFinishQuest -= FinishQuest;
-
-        GameEventsManager.instance.questEvents.onStartSideQuest -= StartSideQuest;
-        GameEventsManager.instance.questEvents.onProgressSideQuest -= ProgressSideQuest;
-        GameEventsManager.instance.questEvents.onFinishSideQuest -= FinishSideQuest;
     }
 
     private void Awake()
@@ -38,13 +26,8 @@ public class QuestManager : MonoBehaviour
         GameEventsManager.instance.questEvents.onStartQuest += StartQuest;
         GameEventsManager.instance.questEvents.onProgressQuest += ProgressQuest;
         GameEventsManager.instance.questEvents.onFinishQuest += FinishQuest;
-
-        GameEventsManager.instance.questEvents.onStartSideQuest += StartSideQuest;
-        GameEventsManager.instance.questEvents.onProgressSideQuest += ProgressSideQuest;
-        GameEventsManager.instance.questEvents.onFinishSideQuest += FinishSideQuest;
     
         questMap = CreateQuestMap("Quests");
-        sideQuestMap = CreateSideQuestMap("SideQuests");
     }
 
     private void Start()
@@ -53,17 +36,11 @@ public class QuestManager : MonoBehaviour
         {
             GameEventsManager.instance.questEvents.QuestStateChange(quest);
         }
-
-        foreach (SideQuest quest in sideQuestMap.Values)
-        {
-            GameEventsManager.instance.questEvents.SideQuestStateChange(quest);
-        }
     }
 
     private void Update()
     {
         List<Quest> questList = questMap.Values.ToList();
-        List<SideQuest> sideQuestList = sideQuestMap.Values.ToList();
 
         if (questList.Count > 0)
         {
@@ -71,13 +48,6 @@ public class QuestManager : MonoBehaviour
             currentQuest = GetQuestById(firstQuest.info.id);
         }
         currentQuestState = currentQuest.state;
-
-        if (sideQuestList.Count > 0)
-        {
-            SideQuest firstSideQuest = sideQuestList[sideQuestIndex];
-            currentSideQuest = GetSideQuestById(firstSideQuest.info.id);
-        }
-        currentSideQuestState = currentSideQuest.state;
 
         if (currentQuestState.Equals(QuestState.REQUIREMENTS_NOT_MET))
         {
@@ -88,16 +58,6 @@ public class QuestManager : MonoBehaviour
             questIndex++;
         }
         UpdateQuestUI();
-
-        if (currentSideQuestState.Equals(QuestState.REQUIREMENTS_NOT_MET))
-        {
-            GameEventsManager.instance.questEvents.StartSideQuest(currentSideQuest.info.id);
-        }
-        else if (currentSideQuestState.Equals(QuestState.FINISHED))
-        {
-            sideQuestIndex++;
-        }
-        UpdateSideQuestUI();
     }
 
 
@@ -120,7 +80,22 @@ public class QuestManager : MonoBehaviour
     private void FinishQuest(string id)
     {
         Quest quest = GetQuestById(id);
+
+        quest.MoveToNextStep();
+        if (quest.CurrentStepExists())
+        {
+            ChangeQuestState(quest.info.id, QuestState.REQUIREMENTS_NOT_MET);
+            return;
+        }
+
         ChangeQuestState(quest.info.id, QuestState.FINISHED);
+        if (loadSideQuest == false)
+        {
+            sideQuestManager.LoadAllSideQuests();
+            loadSideQuest = true;
+        }
+        
+        
     }
     
     private void ChangeQuestState(string id, QuestState state)
@@ -128,33 +103,6 @@ public class QuestManager : MonoBehaviour
         Quest quest = GetQuestById(id);
         quest.state = state;
         GameEventsManager.instance.questEvents.QuestStateChange(quest);
-    }
-
-    private void StartSideQuest(string id)
-    {
-        SideQuest quest = GetSideQuestById(id);
-        ChangeSideQuestState(quest.info.id, QuestState.IN_PROGRESS);
-        quest.InstantiateCurrentSideQuestStep(this.transform);
-    }
-
-    private void ProgressSideQuest(string id)
-    {
-        SideQuest quest = GetSideQuestById(id);
-        ChangeSideQuestState(quest.info.id, QuestState.AFTER_PROGRESS);
-        quest.InstantiateCurrentSideQuestStep(this.transform);
-    }
-
-    private void FinishSideQuest(string id)
-    {
-        SideQuest quest = GetSideQuestById(id);
-        ChangeSideQuestState(quest.info.id, QuestState.FINISHED);
-    }
-    
-    private void ChangeSideQuestState(string id, QuestState state)
-    {
-        SideQuest quest = GetSideQuestById(id);
-        quest.state = state;
-        GameEventsManager.instance.questEvents.SideQuestStateChange(quest);
     }
 
 ////////// Quest Dictionnary //////////
@@ -180,31 +128,6 @@ public class QuestManager : MonoBehaviour
         }
 
         Debug.Log($"Total quests in dictionary: {idToQuestMap.Count}");
-        return idToQuestMap;
-    }
-
-    private Dictionary<string, SideQuest> CreateSideQuestMap(string folder)
-    {
-        SideQuestSO[] allQuests = Resources.LoadAll<SideQuestSO>(folder);
-        Dictionary<string, SideQuest> idToQuestMap = new Dictionary<string, SideQuest>();
-
-        Debug.Log($"Total side quests loaded: {allQuests.Length}");
-
-        foreach (SideQuestSO questInfo in allQuests)
-        {
-            if (idToQuestMap.ContainsKey(questInfo.id))
-            {
-                Debug.LogWarning($"Duplicate ID detected: {questInfo.id}");
-            }
-            else
-            {
-                SideQuest quest = new SideQuest(questInfo);
-                idToQuestMap.Add(questInfo.id, quest);
-                Debug.Log($"Added side quest with ID: {questInfo.id}");
-            }
-        }
-
-        Debug.Log($"Total side quests in dictionary: {idToQuestMap.Count}");
         return idToQuestMap;
     }
 
@@ -238,39 +161,6 @@ public class QuestManager : MonoBehaviour
         if (questText != null)
         {
             questText.text = currentQuest != null ? "Main Quest : " + currentQuest.info.displayName : "No quest available";
-        }
-    }
-
-////////// Side Quest Dictionnary //////////
-
-    private SideQuest GetSideQuestById(string id)
-    {
-        SideQuest quest = sideQuestMap[id];
-        if (quest == null)
-        {
-            Debug.LogError("ID not found in the Quest Map: " + id);
-        }
-        return quest;
-    }
-
-    public void SetSideQuest(string id)
-    {
-        if (sideQuestMap.TryGetValue(id, out SideQuest quest))
-        {
-            currentSideQuest = quest;
-            UpdateSideQuestUI();
-        }
-        else
-        {
-            Debug.LogError("Side Quest ID not found: " + id);
-        }
-    }
-
-    private void UpdateSideQuestUI()
-    {
-        if (sideQuestText != null)
-        {
-            sideQuestText.text = currentSideQuest != null ? "Side Quest : " + currentSideQuest.info.displayName : "No side quest available";
         }
     }
 }
