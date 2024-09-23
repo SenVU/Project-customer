@@ -9,7 +9,7 @@ public class RescueTheCub : QuestStep
     private GameObject player;
     private TMPro.TMP_Text questText;
 
-    public float tolerance = 15.0f;
+    public float tolerance = 0.5f;
     public float xPos;
     public float yPos;
     public float zPos;

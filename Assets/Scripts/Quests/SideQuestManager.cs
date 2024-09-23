@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class SideQuestManager : MonoBehaviour
 {
-    private List<SideQuest> activeSideQuests = new List<SideQuest>();
+    private Dictionary<string, SideQuest> sideQuestMap = new Dictionary<string, SideQuest>();
+    private SideQuest currentSideQuest;
 
     private void Start()
     {
-
     }
 
     public void LoadAllSideQuests()
@@ -17,30 +19,52 @@ public class SideQuestManager : MonoBehaviour
 
         foreach (var questSO in sideQuests)
         {
-            SideQuest newQuest = new SideQuest(questSO);
-
-            activeSideQuests.Add(newQuest);
+            if (sideQuestMap.ContainsKey(questSO.id))
+            {
+                Debug.LogWarning($"Duplicate ID detected for side quest: {questSO.id}");
+            }
+            else
+            {
+                SideQuest newQuest = new SideQuest(questSO);
+                sideQuestMap.Add(questSO.id, newQuest);
+                Debug.Log($"Added side quest with ID: {questSO.id}");
+            }
         }
 
-        Debug.Log($"{sideQuests.Length} side quests load");
+        Debug.Log($"{sideQuests.Length} side quests loaded.");
     }
 
     public void AddSideQuest(SideQuestSO questInfo)
     {
-        SideQuest newQuest = new SideQuest(questInfo);
-        activeSideQuests.Add(newQuest);
+        if (!sideQuestMap.ContainsKey(questInfo.id))
+        {
+            SideQuest newQuest = new SideQuest(questInfo);
+            sideQuestMap.Add(questInfo.id, newQuest);
+        }
+        else
+        {
+            Debug.LogWarning($"Side quest with ID {questInfo.id} already exists.");
+        }
     }
 
     public List<SideQuest> GetActiveSideQuests()
     {
-        return activeSideQuests;
+        return new List<SideQuest>(sideQuestMap.Values);
     }
 
     public void CompleteSideQuest(SideQuest quest)
     {
         if (quest.state == QuestState.FINISHED)
         {
-            activeSideQuests.Remove(quest);
+            if (sideQuestMap.ContainsKey(quest.info.id))
+            {
+                sideQuestMap.Remove(quest.info.id);
+                Debug.Log($"Side quest {quest.info.id} completed and removed from active quests.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Cannot complete side quest that isn't finished.");
         }
     }
 
@@ -56,28 +80,54 @@ public class SideQuestManager : MonoBehaviour
         }
     }
 
+    public void ChangeSideQuestState(string id, QuestState newState)
+    {
+        if (sideQuestMap.TryGetValue(id, out SideQuest quest))
+        {
+            quest.state = newState;
+            Debug.Log($"Side quest {id} state changed to {newState}");
+        }
+        else
+        {
+            Debug.LogError($"Side quest with ID {id} not found.");
+        }
+    }
+
     private Dictionary<string, SideQuest> CreateSideQuestMap(string folder)
     {
-        SideQuestSO[] allQuests = Resources.LoadAll<SideQuestSO>(folder);
-        Dictionary<string, SideQuest> idToQuestMap = new Dictionary<string, SideQuest>();
+        SideQuestSO[] allSideQuests = Resources.LoadAll<SideQuestSO>(folder);
+        Dictionary<string, SideQuest> idToSideQuestMap = new Dictionary<string, SideQuest>();
 
-        Debug.Log($"Total side quests loaded: {allQuests.Length}");
+        Debug.Log($"Total side quests loaded: {allSideQuests.Length}");
 
-        foreach (SideQuestSO questInfo in allQuests)
+        foreach (SideQuestSO questInfo in allSideQuests)
         {
-            if (idToQuestMap.ContainsKey(questInfo.id))
+            if (idToSideQuestMap.ContainsKey(questInfo.id))
             {
-                Debug.LogWarning($"Duplicate ID detected: {questInfo.id}");
+                Debug.LogWarning($"Duplicate side quest ID detected: {questInfo.id}");
             }
             else
             {
                 SideQuest quest = new SideQuest(questInfo);
-                idToQuestMap.Add(questInfo.id, quest);
+                idToSideQuestMap.Add(questInfo.id, quest);
                 Debug.Log($"Added side quest with ID: {questInfo.id}");
             }
         }
 
-        Debug.Log($"Total side quests in dictionary: {idToQuestMap.Count}");
-        return idToQuestMap;
+        Debug.Log($"Total side quests in dictionary: {idToSideQuestMap.Count}");
+        return idToSideQuestMap;
+    }
+
+    public SideQuest GetSideQuestById(string id)
+    {
+        if (sideQuestMap.TryGetValue(id, out SideQuest quest))
+        {
+            return quest;
+        }
+        else
+        {
+            Debug.LogError("ID not found in the Side Quest Map: " + id);
+            return null;
+        }
     }
 }
