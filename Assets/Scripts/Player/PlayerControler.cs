@@ -6,20 +6,24 @@ public class PlayerControler : MonoBehaviour
 {
     private Rigidbody rigidBody;
     private Collider playerCollider;
-    [SerializeField] private GameObject mainCam;
-    Transform mainCamTransform;
-    [SerializeField] private GameObject TPCam;
+    [Header("Objects")]
+    Transform FPPCamTF;
+    [SerializeField] private GameObject FPPCam;
+    [SerializeField] private GameObject TPPCam;
 
+    [Header("Controll Forces")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float strafeSpeed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float airControlFactor;
 
+    [Header("FPP camera")]
     [SerializeField] private float maxCamRotation;
     [SerializeField] private float minCamRotation;
     [SerializeField] private float camRotationSpeed;
 
+    [Header("Keybinds")]
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode camSwitchKey = KeyCode.Tab;
 
@@ -34,9 +38,9 @@ public class PlayerControler : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<Collider>();
         Debug.Assert(playerCollider != null, "Players Collider not found");
-        Debug.Assert(mainCam != null, "PlayerControler does not have a Camera attached");
-        mainCamTransform =  mainCam.GetComponent<Transform>();
-        Debug.Assert(TPCam != null, "PlayerControler does not have a third person Camera attached");
+        Debug.Assert(FPPCam != null, "PlayerControler does not have a Camera attached");
+        FPPCamTF =  FPPCam.GetComponent<Transform>();
+        Debug.Assert(TPPCam != null, "PlayerControler does not have a third person Camera attached");
         Application.targetFrameRate = 60;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; 
@@ -68,7 +72,7 @@ public class PlayerControler : MonoBehaviour
     private void RotateCamera(float mouseY)
     {
         // checks if the FP camera is active
-        if (mainCam.activeSelf)
+        if (FPPCam.activeSelf)
         {
             camPitchRotation -= mouseY * camRotationSpeed;
             camPitchRotation = Mathf.Clamp(camPitchRotation, minCamRotation, maxCamRotation);
@@ -76,7 +80,7 @@ public class PlayerControler : MonoBehaviour
         {
             camPitchRotation = 0;
         }
-        mainCamTransform.rotation = Quaternion.Euler(camPitchRotation, playerYawRotation, 0);
+        FPPCamTF.rotation = Quaternion.Euler(camPitchRotation, playerYawRotation, 0);
     }
 
     /// <summary>
@@ -125,8 +129,8 @@ public class PlayerControler : MonoBehaviour
     {
         if (Input.GetKeyDown(camSwitchKey))
         {
-            mainCam.SetActive(!mainCam.activeSelf);
-            TPCam.SetActive(!mainCam.activeSelf);
+            FPPCam.SetActive(!FPPCam.activeSelf);
+            TPPCam.SetActive(!FPPCam.activeSelf);
         }
     }
 

@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GameOver/FoodDeath.unity
     guid: a0761c7e3569a1341ae7a0d5b1d14bdc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HDA Tests.unity
     guid: 28c6d7f5623fe5c4fae7f6cac08b3bce
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: cf9fce6e017070b45879c848b8231dae
   m_configObjects: {}

@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(DeathManager))]
 public class FoodManager : MonoBehaviour
 {
     [Header("Configuration")]
@@ -9,14 +10,16 @@ public class FoodManager : MonoBehaviour
     [SerializeField] private float foodLossInterval = 30f;
 
     public int currentFood { get; private set; }
-    [SerializeField] private TMP_Text myFood;
+    private TMP_Text myFood;
 
     private Coroutine foodLossCoroutine;
 
-    [SerializeField] private DeathManager deathManager;
+    private DeathManager deathManager;
 
     private void Awake()
     {
+        myFood = GameObject.Find("FoodUI").GetComponent<TMP_Text>();
+        deathManager = GetComponent<DeathManager>();
         currentFood = startingFood;
         UpdateFoodUI();
     }
@@ -39,7 +42,7 @@ public class FoodManager : MonoBehaviour
             StopCoroutine(foodLossCoroutine);
         }
 
-        deathManager.StopDeathCountdown();
+        //deathManager.StopDeathCountdown();
     }
 
     private void Start()
@@ -65,7 +68,7 @@ public class FoodManager : MonoBehaviour
 
         if (currentFood <= 0)
         {
-            deathManager.StartDeathCountdown();
+            deathManager.StartDeathCountdown(DeathManager.DeathReason.Starvation);
         }
     }
 

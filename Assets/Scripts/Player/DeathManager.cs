@@ -1,23 +1,35 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DeathManager : MonoBehaviour
 {
+    [Header("Messages")]
+    [SerializeField] private PseudoDictionary<DeathReason, string> DeathMessages;
+
     [Header("Death Configuration")]
     [SerializeField] private float deathCountdownDuration = 10f;
-    [SerializeField] private CanvasGroup screenOverlay;
-    [SerializeField] private TypewriterEffect typeWritterEffect;
-    public string foodDeathMessage;
+    private CanvasGroup screenOverlay;
+    private TypewriterEffect typeWritterEffect;
 
     private Coroutine deathCountdownCoroutine;
 
-    public void StartDeathCountdown()
+    public enum DeathReason
+    {
+        Starvation,
+    }
+
+    private void Awake()
+    {
+        typeWritterEffect=GameObject.Find("TypeWritterEffect").GetComponent<TypewriterEffect>();
+        screenOverlay=GameObject.Find("DeathPanel").GetComponent<CanvasGroup>();
+    }
+
+        public void StartDeathCountdown(DeathReason reason)
     {
         if (deathCountdownCoroutine == null)
         {
-            deathCountdownCoroutine = StartCoroutine(DeathCountdownRoutine());
+            deathCountdownCoroutine = StartCoroutine(DeathCountdownRoutine(reason));
         }
     }
 
@@ -36,8 +48,14 @@ public class DeathManager : MonoBehaviour
         }
     }
 
-    private IEnumerator DeathCountdownRoutine()
+    private IEnumerator DeathCountdownRoutine(DeathReason reason)
     {
+        string deathMessage = reason.ToString();
+        if ( DeathMessages.ContainsKey(reason))
+        {
+            deathMessage = DeathMessages[reason];
+        }
+        
         float timeRemaining = deathCountdownDuration;
         float halfDuration = deathCountdownDuration / 2f;
 
@@ -55,7 +73,7 @@ public class DeathManager : MonoBehaviour
 
         if (typeWritterEffect != null)
         {
-            typeWritterEffect.StartText(foodDeathMessage);
+            typeWritterEffect.StartText(deathMessage);
         }
     }
 }

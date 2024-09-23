@@ -6,14 +6,16 @@ using System.Text;
 
 public class SideQuestMenu : MonoBehaviour
 {
-    public GameObject questMenuPanel;
-    public TextMeshProUGUI sideQuestsText;
+    private GameObject questMenuPanel;
+    private TextMeshProUGUI sideQuestsText;
     public SideQuestManager sideQuestManager;
 
     private bool isMenuVisible = false;
 
     private void Start()
     {
+        questMenuPanel = GameObject.Find("SideQuestMenu");
+        sideQuestsText = GameObject.Find("SideQuestList").GetComponent<TextMeshProUGUI>();
         questMenuPanel.SetActive(false);
     }
 

@@ -11,6 +11,8 @@ public class AIPlayerCubTargeting : AITargeter
 
     GameObject player;
 
+    [SerializeField] bool active;
+
     [SerializeField] float wanderSpeed = 2;
     [SerializeField] int maxWanderDistance = 10;
     [SerializeField] float wanderResetTargetDistance = .5f;
@@ -42,6 +44,8 @@ public class AIPlayerCubTargeting : AITargeter
 
     protected override void Update()
     {
+        if (!active) return;
+
         if (Vec3ToVec2(transform.position - player.transform.position).magnitude > maxDistanceFromPlayer)
             currentState = State.Follow;
 

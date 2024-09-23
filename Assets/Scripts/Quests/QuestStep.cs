@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -10,24 +9,26 @@ public abstract class QuestStep : MonoBehaviour
     private string questId;
     private string sideQuestId;
 
-    [SerializeField] private CanvasGroup screenOverlay;
+    private CanvasGroup screenOverlay;
     private TMP_Text textMeshPro;
     public float fadeDuration = 1.0f;
     public float displayDuration = 1.0f;
 
     private void Awake()
     {
+
+        screenOverlay = GameObject.Find("DeathPanel").GetComponent<CanvasGroup>();
         GameObject textObject = GameObject.Find("MainQuestText");
-        textMeshPro = textObject.GetComponent<TMPro.TMP_Text>();
-    
-        GameObject panel = GameObject.Find("Panel");
+        textMeshPro = textObject.GetComponent<TMP_Text>();
+
+        GameObject panel = GameObject.Find("DeathPanel");
         screenOverlay = panel.GetComponent<CanvasGroup>();
 
 
         Color color = textMeshPro.color;
         color.a = 0;
         textMeshPro.color = color;
-    } 
+    }
 
     public void InitializeQuestStep(string questId)
     {

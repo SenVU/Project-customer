@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122e37faa4173cd47ba5f5f47d6ea79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
   wanderSpeed: 2.8
   maxWanderDistance: 7
   wanderResetTargetDistance: 0.5

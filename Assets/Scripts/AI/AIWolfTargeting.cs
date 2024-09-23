@@ -131,7 +131,7 @@ public class AIWolfTargeting : AITargeter
                 if ((transform.position - attackTarget.transform.position).magnitude <= attackDistance)
                 {
                     lastAttackTime = 0;
-                    attackTarget.GetComponent<HealthManager>().Damage(attackDamage);
+                    attackTarget.GetComponent<HealthManager>().Damage(attackDamage, HealthManager.DamageSource.Wolf);
                 }
             }
             else lastAttackTime += Time.deltaTime;

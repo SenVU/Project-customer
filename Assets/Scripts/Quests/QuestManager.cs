@@ -12,7 +12,7 @@ public class QuestManager : MonoBehaviour
     private bool loadSideQuest = false;
     private QuestState currentQuestState;
     [SerializeField] private SideQuestManager sideQuestManager;
-    [SerializeField] private TMPro.TMP_Text questText;
+    private TMP_Text questText;
 
     private void OnDisable()
     {
@@ -23,6 +23,7 @@ public class QuestManager : MonoBehaviour
 
     private void Awake()
     {
+        questText=GameObject.Find("QuestText").GetComponent<TMP_Text>();
         GameEventsManager.instance.questEvents.onStartQuest += StartQuest;
         GameEventsManager.instance.questEvents.onProgressQuest += ProgressQuest;
         GameEventsManager.instance.questEvents.onFinishQuest += FinishQuest;
