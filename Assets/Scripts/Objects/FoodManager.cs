@@ -2,24 +2,25 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(DeathManager))]
+[RequireComponent(typeof(HealthManager))]
 public class FoodManager : MonoBehaviour
 {
     [Header("Configuration")]
     [SerializeField] private int startingFood = 5;
     [SerializeField] private float foodLossInterval = 30f;
+    [SerializeField] private float hungerDamage = 1f;
 
     public int currentFood { get; private set; }
     private TMP_Text myFood;
 
     private Coroutine foodLossCoroutine;
 
-    private DeathManager deathManager;
+    private HealthManager healthManager;
 
     private void Awake()
     {
         myFood = GameObject.Find("FoodUI").GetComponent<TMP_Text>();
-        deathManager = GetComponent<DeathManager>();
+        healthManager = GetComponent<HealthManager>();
         currentFood = startingFood;
         UpdateFoodUI();
     }
@@ -56,8 +57,6 @@ public class FoodManager : MonoBehaviour
         currentFood += food;
         GameEventsManager.instance.foodEvents.FoodChange(currentFood);
         UpdateFoodUI();
-
-        deathManager.StopDeathCountdown();
     }
 
     private void FoodLoosed(int food)
@@ -65,11 +64,6 @@ public class FoodManager : MonoBehaviour
         currentFood -= food;
         GameEventsManager.instance.foodEvents.FoodChange(currentFood);
         UpdateFoodUI();
-
-        if (currentFood <= 0)
-        {
-            deathManager.StartDeathCountdown(DeathManager.DeathReason.Starvation);
-        }
     }
 
     private IEnumerator FoodLossRoutine()
@@ -81,6 +75,10 @@ public class FoodManager : MonoBehaviour
             if (currentFood > 0)
             {
                 FoodLoosed(1);
+            }
+            else
+            {
+                healthManager.Damage(hungerDamage, HealthManager.DamageSource.Hunger);
             }
         }
     }

@@ -16,7 +16,9 @@ public class DeathManager : MonoBehaviour
 
     public enum DeathReason
     {
+        Unknown,
         Starvation,
+        WolfAttack
     }
 
     private void Awake()

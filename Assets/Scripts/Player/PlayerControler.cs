@@ -4,12 +4,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerControler : MonoBehaviour
 {
+    private Vector3 FPPCamLocalPos;
     private Rigidbody rigidBody;
     private Collider playerCollider;
     [Header("Objects")]
-    Transform FPPCamTF;
-    [SerializeField] private GameObject FPPCam;
-    [SerializeField] private GameObject TPPCam;
+    //Transform FPPCamTF;
+    [SerializeField] private GameObject cam;
 
     [Header("Controll Forces")]
     [SerializeField] private float moveSpeed;
@@ -27,23 +27,48 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode camSwitchKey = KeyCode.Tab;
 
+    [SerializeField] private float swimControlFactor = 5f;
+    [SerializeField] private float swimHeight = -.5f;
+
     private float playerYawRotation = 0;
     private float camPitchRotation = 0;
+
+
+    [Header("Camera")]
+    
+    private bool TPP;
+    private Transform camTransform;
+
+    [SerializeField] private float TPPDistanceAway = 4f;
+    [SerializeField] private float TPPDistanceUp = 1.8f;
+
+    private Vector3 velocityCanSmooth = Vector3.zero;
+    [SerializeField] private float TPPCanSmoothDampTime = .15f;
+
+    private Vector3 TPPLookDir;
+    private Vector3 TPPTargetPos;
+
+    bool camSwiched = false;
+
 
     /// <summary>
     /// setup at player spawn
     /// </summary>
     void Start()
     {
+
         rigidBody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<Collider>();
         Debug.Assert(playerCollider != null, "Players Collider not found");
-        Debug.Assert(FPPCam != null, "PlayerControler does not have a Camera attached");
-        FPPCamTF =  FPPCam.GetComponent<Transform>();
-        Debug.Assert(TPPCam != null, "PlayerControler does not have a third person Camera attached");
+        Debug.Assert(cam != null, "PlayerControler does not have a Camera attached");
         Application.targetFrameRate = 60;
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false; 
+        Cursor.visible = false;
+
+        camTransform = cam.transform;
+
+
+        FPPCamLocalPos = camTransform.localPosition;
     }
 
     /// <summary>
@@ -57,11 +82,14 @@ public class PlayerControler : MonoBehaviour
         float AD = Input.GetAxisRaw("Horizontal");
 
         RotatePlayer(mouseX);
-        RotateCamera(mouseY);
+        if (TPP) TPPCamUpdate();
+        else FPPCamUpdate(mouseY);
 
         MovePlayer(WS, AD);
         CheckForJump();
         CheckForCamSwitch();
+
+        FloatInWater();
     }
 
 
@@ -69,18 +97,20 @@ public class PlayerControler : MonoBehaviour
     /// camera rotation control
     /// </summary>
     /// <param name="mouseY">mouse Y axis</param>
-    private void RotateCamera(float mouseY)
+    private void FPPCamUpdate(float mouseY)
     {
+        camTransform.localPosition = FPPCamLocalPos;
         // checks if the FP camera is active
-        if (FPPCam.activeSelf)
+        if (cam.activeSelf)
         {
             camPitchRotation -= mouseY * camRotationSpeed;
             camPitchRotation = Mathf.Clamp(camPitchRotation, minCamRotation, maxCamRotation);
-        } else
+        }
+        else
         {
             camPitchRotation = 0;
         }
-        FPPCamTF.rotation = Quaternion.Euler(camPitchRotation, playerYawRotation, 0);
+        camTransform.rotation = Quaternion.Euler(camPitchRotation, playerYawRotation, 0);
     }
 
     /// <summary>
@@ -106,7 +136,8 @@ public class PlayerControler : MonoBehaviour
 
         // if the player is grounded use a velosity based movement else use force based
         if (IsGrounded()) rigidBody.velocity = moveVect;
-        else rigidBody.AddForce(moveVect*airControlFactor);
+        else if (IsSwimming()) rigidBody.AddForce(moveVect * swimControlFactor);
+        else rigidBody.AddForce(moveVect * airControlFactor);
     }
 
     /// <summary>
@@ -114,7 +145,7 @@ public class PlayerControler : MonoBehaviour
     /// </summary>
     private void CheckForJump()
     {
-        if (Input.GetKey(jumpKey) && IsGrounded())
+        if (Input.GetKey(jumpKey) && (IsGrounded() || IsSwimming()))
         {
             Vector3 jump = rigidBody.velocity;
             jump.y = jumpForce;
@@ -127,11 +158,17 @@ public class PlayerControler : MonoBehaviour
     /// </summary>
     private void CheckForCamSwitch()
     {
-        if (Input.GetKeyDown(camSwitchKey))
+        if (Input.GetKeyUp(camSwitchKey))
         {
-            FPPCam.SetActive(!FPPCam.activeSelf);
-            TPPCam.SetActive(!FPPCam.activeSelf);
+            if (!camSwiched)
+            {
+                TPP = !TPP;
+                cam.GetComponent<Camera>().cullingMask = TPP ? LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Ignore FP Camera") : LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI");
+                camTransform.parent = TPP ? null : this.gameObject.transform;
+                camSwiched = true;
+            }
         }
+        else camSwiched = false;
     }
 
     /// <summary>
@@ -139,15 +176,70 @@ public class PlayerControler : MonoBehaviour
     /// </summary>
     public bool IsGrounded()
     {
-        Vector3 colliderBottom = new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y , playerCollider.bounds.center.z);
+        Vector3 colliderBottom = new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y, playerCollider.bounds.center.z);
         float sphereRadius = 1.01f;
         Vector3 checkSperePoint = colliderBottom + new Vector3(0, sphereRadius, 0);
         bool grounded = Physics.CheckSphere(checkSperePoint, sphereRadius);
         // old raycast based method
         //bool grounded = Physics.Linecast(playerCollider.bounds.center, colliderBottom);
 
-        Debug.DrawLine(checkSperePoint, checkSperePoint + Vector3.down*sphereRadius, grounded ? Color.red : Color.blue);
+
+
+        Debug.DrawLine(checkSperePoint, checkSperePoint + Vector3.down * sphereRadius, grounded ? Color.red : Color.blue);
 
         return grounded;
+    }
+
+    public bool IsSwimming()
+    {
+        return (transform.position.y <= swimHeight);
+    }
+
+    public void FloatInWater()
+    {
+        Vector3 pos = transform.position;
+        pos.y = Mathf.Max(transform.position.y, swimHeight);
+        transform.position = pos;
+        if (IsSwimming())
+            rigidBody.velocity = new Vector3(rigidBody.velocity.x, Mathf.Max(rigidBody.velocity.y, 0), rigidBody.velocity.z);
+    }
+
+    void TPPCamUpdate()
+    {
+        Vector3 characterOffset = transform.position + new Vector3(0, TPPDistanceUp, 0);
+
+        //lookDir = characterOffset - camTransform.position;
+        //lookDir.y = 0;
+        //lookDir.Normalize();
+
+        TPPLookDir = transform.forward;
+
+
+        Debug.DrawRay(camTransform.position, TPPLookDir, Color.green);
+
+        TPPTargetPos = characterOffset + transform.up * TPPDistanceUp - TPPLookDir * TPPDistanceAway;
+        Debug.DrawLine(transform.position, TPPTargetPos, Color.magenta);
+
+        CompensateForWalls(characterOffset, ref TPPTargetPos);
+        SmoothPosition(camTransform.position, TPPTargetPos);
+
+        camTransform.LookAt(characterOffset);
+    }
+
+    private void SmoothPosition(Vector3 fromPos, Vector3 toPos)
+    {
+        camTransform.position = Vector3.SmoothDamp(fromPos, toPos, ref velocityCanSmooth, TPPCanSmoothDampTime);
+    }
+
+    private void CompensateForWalls(Vector3 fromObject, ref Vector3 toTarget)
+    {
+        Debug.DrawLine(fromObject, toTarget, Color.cyan);
+
+        RaycastHit wallHit = new RaycastHit();
+        if (Physics.Linecast(fromObject, toTarget, out wallHit))
+        {
+            Debug.DrawRay(wallHit.point, Vector3.down, Color.red);
+            toTarget = new Vector3(wallHit.point.x, toTarget.y, wallHit.point.z);
+        }
     }
 }

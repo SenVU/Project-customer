@@ -27,9 +27,13 @@ public class HealthManager : MonoBehaviour
     public bool IsDead() { return health <= 0; }
     public void Damage(float damage, DamageSource source)
     {
-        health -= damage;
-        Debug.Log("Damage dealt (" + damage + ") health left (" + health + ") source ("+source+")");
-        if(IsDead()) OnDeath(source);
+        if (health > 0)
+        {
+            health -= damage;
+            Debug.Log("Damage dealt (" + damage + ") health left (" + health + ") source (" + source + ")");
+
+            if (IsDead()) OnDeath(source);
+        }
     }
     public void Heal(float heal) { health += heal; }
 
