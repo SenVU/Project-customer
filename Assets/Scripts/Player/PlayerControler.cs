@@ -35,8 +35,7 @@ public class PlayerControler : MonoBehaviour
 
 
     [Header("Camera")]
-    
-    private bool TPP;
+    private bool isTPP;
     private Transform camTransform;
 
     [SerializeField] private float TPPDistanceAway = 4f;
@@ -48,7 +47,7 @@ public class PlayerControler : MonoBehaviour
     private Vector3 TPPLookDir;
     private Vector3 TPPTargetPos;
 
-    bool camSwiched = false;
+    private bool camSwiched = false;
 
 
     /// <summary>
@@ -82,7 +81,7 @@ public class PlayerControler : MonoBehaviour
         float AD = Input.GetAxisRaw("Horizontal");
 
         RotatePlayer(mouseX);
-        if (TPP) TPPCamUpdate();
+        if (isTPP) TPPCamUpdate();
         else FPPCamUpdate(mouseY);
 
         MovePlayer(WS, AD);
@@ -94,7 +93,7 @@ public class PlayerControler : MonoBehaviour
 
 
     /// <summary>
-    /// camera rotation control
+    /// first person camera update tick
     /// </summary>
     /// <param name="mouseY">mouse Y axis</param>
     private void FPPCamUpdate(float mouseY)
@@ -162,9 +161,11 @@ public class PlayerControler : MonoBehaviour
         {
             if (!camSwiched)
             {
-                TPP = !TPP;
-                cam.GetComponent<Camera>().cullingMask = TPP ? LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Ignore FP Camera") : LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI");
-                camTransform.parent = TPP ? null : this.gameObject.transform;
+                isTPP = !isTPP;
+                cam.GetComponent<Camera>().cullingMask = isTPP ?
+                    LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Ignore FP Camera") : 
+                    LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI");
+                camTransform.parent = isTPP ? null : this.gameObject.transform;   
                 camSwiched = true;
             }
         }
@@ -180,6 +181,7 @@ public class PlayerControler : MonoBehaviour
         float sphereRadius = 1.01f;
         Vector3 checkSperePoint = colliderBottom + new Vector3(0, sphereRadius, 0);
         bool grounded = Physics.CheckSphere(checkSperePoint, sphereRadius);
+        
         // old raycast based method
         //bool grounded = Physics.Linecast(playerCollider.bounds.center, colliderBottom);
 
@@ -204,6 +206,10 @@ public class PlayerControler : MonoBehaviour
             rigidBody.velocity = new Vector3(rigidBody.velocity.x, Mathf.Max(rigidBody.velocity.y, 0), rigidBody.velocity.z);
     }
 
+
+    /// <summary>
+    /// third person camera update tick
+    /// </summary>
     void TPPCamUpdate()
     {
         Vector3 characterOffset = transform.position + new Vector3(0, TPPDistanceUp, 0);
@@ -220,18 +226,24 @@ public class PlayerControler : MonoBehaviour
         TPPTargetPos = characterOffset + transform.up * TPPDistanceUp - TPPLookDir * TPPDistanceAway;
         Debug.DrawLine(transform.position, TPPTargetPos, Color.magenta);
 
-        CompensateForWalls(characterOffset, ref TPPTargetPos);
-        SmoothPosition(camTransform.position, TPPTargetPos);
+        TPPCompensateForWalls(characterOffset, ref TPPTargetPos);
+        TPPSmoothPosition(camTransform.position, TPPTargetPos);
 
         camTransform.LookAt(characterOffset);
     }
 
-    private void SmoothPosition(Vector3 fromPos, Vector3 toPos)
+    /// <summary>
+    /// dampens the movemantof the third person cam
+    /// </summary>
+    private void TPPSmoothPosition(Vector3 fromPos, Vector3 toPos)
     {
         camTransform.position = Vector3.SmoothDamp(fromPos, toPos, ref velocityCanSmooth, TPPCanSmoothDampTime);
     }
 
-    private void CompensateForWalls(Vector3 fromObject, ref Vector3 toTarget)
+    /// <summary>
+    /// makes sure the third person can does not clip into walls
+    /// </summary>
+    private void TPPCompensateForWalls(Vector3 fromObject, ref Vector3 toTarget)
     {
         Debug.DrawLine(fromObject, toTarget, Color.cyan);
 

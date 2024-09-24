@@ -6,7 +6,7 @@ using TMPro;
 
 public class QuestManager : MonoBehaviour
 {
-    private Dictionary<string, Quest> questMap;
+    private Dictionary<string, Quest> questMap = new Dictionary<string, Quest>();
     private Quest currentQuest;
     private int questIndex = 0;
     private bool loadSideQuest = false;
@@ -94,9 +94,7 @@ public class QuestManager : MonoBehaviour
         {
             sideQuestManager.LoadAllSideQuests();
             loadSideQuest = true;
-        }
-        
-        
+        }   
     }
     
     private void ChangeQuestState(string id, QuestState state)

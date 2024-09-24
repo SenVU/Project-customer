@@ -8,29 +8,34 @@ public class BackToYourDen : QuestStep
     public GameObject pointToJoin;
     private GameObject player;
     private TMPro.TMP_Text questText;
+    private TipsMessage tipsScript;
 
     public float tolerance = 5.0f;
-    public float xPos;
-    public float yPos;
-    public float zPos;
-
     // Start is called before the first frame update
     void Start()
     {
         GameObject textObject = GameObject.Find("QuestAdvancement");
         questText = textObject.GetComponent<TMPro.TMP_Text>();
 
+        GameObject tipsObject = GameObject.Find("TipsManager");
+        tipsScript = tipsObject.GetComponent<TipsMessage>();
+
         player = GameObject.Find("Player");
         pointToJoin = GameObject.Find("Old_tent_0002");
+
+        if (tipsScript != null)
+        {
+            tipsScript.SetTipsMessage("You can press \"x\" to display the map waypoint");
+        }
         UpdateTextUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        xPos = player.transform.position.x;
-        yPos = player.transform.position.y;
-        zPos = player.transform.position.z;
+        float xPos = player.transform.position.x;
+        float yPos = player.transform.position.y;
+        float zPos = player.transform.position.z;
 
         bool isXInRange = xPos >= pointToJoin.transform.position.x - tolerance && xPos <= pointToJoin.transform.position.x + tolerance;
         bool isYInRange = yPos >= pointToJoin.transform.position.y - tolerance && yPos <= pointToJoin.transform.position.y + tolerance;

@@ -14,16 +14,14 @@ public abstract class QuestStep : MonoBehaviour
     public float fadeDuration = 1.0f;
     public float displayDuration = 1.0f;
 
-    private void Awake()
+    private void Start()
     {
-
         screenOverlay = GameObject.Find("DeathPanel").GetComponent<CanvasGroup>();
         GameObject textObject = GameObject.Find("MainQuestText");
         textMeshPro = textObject.GetComponent<TMP_Text>();
 
         GameObject panel = GameObject.Find("DeathPanel");
         screenOverlay = panel.GetComponent<CanvasGroup>();
-
 
         Color color = textMeshPro.color;
         color.a = 0;
