@@ -90,11 +90,12 @@ public class QuestManager : MonoBehaviour
         }
 
         ChangeQuestState(quest.info.id, QuestState.FINISHED);
-        if (loadSideQuest == false)
-        {
-            sideQuestManager.LoadAllSideQuests();
-            loadSideQuest = true;
-        }   
+        // Load all side quest when the first main quest is finish, not sure for this
+        // if (loadSideQuest == false)
+        // {
+        //     sideQuestManager.LoadAllSideQuests();
+        //     loadSideQuest = true;
+        // }
     }
     
     private void ChangeQuestState(string id, QuestState state)

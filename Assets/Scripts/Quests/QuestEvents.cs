@@ -40,8 +40,8 @@ public class QuestEvents
 
 //////////////////// Side Quest ////////////////////
 
-    public event Action<string> onStartSideQuest;
-    public void StartSideQuest(string id)
+    public event Action<SideQuestSO> onStartSideQuest;
+    public void StartSideQuest(SideQuestSO id)
     {
         if (onStartSideQuest != null)
         {

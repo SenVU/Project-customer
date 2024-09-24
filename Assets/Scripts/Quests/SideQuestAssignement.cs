@@ -13,6 +13,7 @@ public class SideQuestAssignement : MonoBehaviour
     [SerializeField] private bool finishPoint = true;
 
     private bool playerIsNear = false;
+    private bool isQuestAssign = false;
     private string questId;
     private QuestState currentQuestState;
 
@@ -41,8 +42,9 @@ public class SideQuestAssignement : MonoBehaviour
 
     void OnTriggerEnter(Collider otherCollider)
     {
-        if (otherCollider.CompareTag("Player"))
+        if (otherCollider.CompareTag("Player") && !isQuestAssign)
         {
+            isQuestAssign = true;
             Debug.Log("ENTER");
             playerIsNear = true;
             sideQuestManager.AddSideQuest(questInfoForPoint);

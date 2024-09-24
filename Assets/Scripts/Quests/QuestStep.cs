@@ -57,12 +57,6 @@ public abstract class QuestStep : MonoBehaviour
         GameEventsManager.instance.questEvents.ProgressQuest(questId);
     }
 
-    protected void VerificationSideQuestStep()
-    {
-        GameEventsManager.instance.questEvents.ProgressSideQuest(sideQuestId);
-    }
-
-
     protected void FinishQuestStep()
     {
         if (!isFinished)

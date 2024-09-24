@@ -9,8 +9,18 @@ public class SideQuestManager : MonoBehaviour
     private Dictionary<string, SideQuest> sideQuestMap = new Dictionary<string, SideQuest>();
     private SideQuest currentSideQuest;
 
-    private void Start()
+    private void OnDisable()
     {
+        GameEventsManager.instance.questEvents.onStartSideQuest -= AddSideQuest;
+        GameEventsManager.instance.questEvents.onProgressSideQuest -= ProgressQuest;
+        GameEventsManager.instance.questEvents.onFinishSideQuest -= CompleteSideQuest;
+    }
+
+    private void Awake()
+    {
+        GameEventsManager.instance.questEvents.onStartSideQuest += AddSideQuest;
+        GameEventsManager.instance.questEvents.onProgressSideQuest += ProgressQuest;
+        GameEventsManager.instance.questEvents.onFinishSideQuest += CompleteSideQuest;
     }
 
     public void LoadAllSideQuests()
@@ -40,6 +50,7 @@ public class SideQuestManager : MonoBehaviour
         {
             SideQuest newQuest = new SideQuest(questInfo);
             sideQuestMap.Add(questInfo.id, newQuest);
+            newQuest.InstantiateCurrentSideQuestStep(this.transform);
         }
         else
         {
@@ -52,24 +63,21 @@ public class SideQuestManager : MonoBehaviour
         return new List<SideQuest>(sideQuestMap.Values);
     }
 
-    public void CompleteSideQuest(SideQuest quest)
+    public void CompleteSideQuest(string id)
     {
-        if (quest.state == QuestState.FINISHED)
+        SideQuest quest = GetSideQuestById(id);
+
+        if (sideQuestMap.ContainsKey(quest.info.id))
         {
-            if (sideQuestMap.ContainsKey(quest.info.id))
-            {
-                sideQuestMap.Remove(quest.info.id);
-                Debug.Log($"Side quest {quest.info.id} completed and removed from active quests.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Cannot complete side quest that isn't finished.");
+            sideQuestMap.Remove(quest.info.id);
+            Debug.Log($"Side quest {quest.info.id} completed and removed from active quests.");
         }
     }
 
-    public void ProgressQuest(SideQuest quest)
+    public void ProgressQuest(string id)
     {
+        SideQuest quest = GetSideQuestById(id);
+
         if (quest.CurrentStepExists())
         {
             quest.MoveToNextStep();

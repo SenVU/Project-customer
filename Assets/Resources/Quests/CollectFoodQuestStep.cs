@@ -20,7 +20,7 @@ public class CollectFoodQuestStep : QuestStep
 
         if (tipsScript != null)
         {
-            tipsScript.SetTipsMessage("You can press \"e\" to eat some things on the floor like food");
+            tipsScript.SetTipsMessage("You can press \"e\" to eat some things you found on the floor");
         }
 
         // move to the first side quest the player get
