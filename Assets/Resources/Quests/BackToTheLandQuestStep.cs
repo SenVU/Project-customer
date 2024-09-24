@@ -9,7 +9,7 @@ public class BackToTheLandQuestStep : QuestStep
     private TipsMessage tipsScript;
     private TMPro.TMP_Text questText;
 
-    public float tolerance = 2.0f;
+    public float tolerance = 50.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class BackToTheLandQuestStep : QuestStep
         tipsScript = GameObject.Find("TipsManager").GetComponent<TipsMessage>();
 
         player = GameObject.Find("Player");
-        pointToJoin = GameObject.Find("Cylinder");
+        pointToJoin = GameObject.Find("Land");
 
         if (tipsScript != null)
         {
@@ -33,14 +33,12 @@ public class BackToTheLandQuestStep : QuestStep
     void Update()
     {
         float xPos = player.transform.position.x;
-        float yPos = player.transform.position.y;
         float zPos = player.transform.position.z;
 
         bool isXInRange = xPos >= pointToJoin.transform.position.x - tolerance && xPos <= pointToJoin.transform.position.x + tolerance;
-        bool isYInRange = yPos >= pointToJoin.transform.position.y - tolerance && yPos <= pointToJoin.transform.position.y + tolerance;
         bool isZInRange = zPos >= pointToJoin.transform.position.z - tolerance && zPos <= pointToJoin.transform.position.z + tolerance;
 
-        if (isXInRange && isYInRange && isZInRange)
+        if (isXInRange && isZInRange)
         {
             FinishQuestStep();
         }

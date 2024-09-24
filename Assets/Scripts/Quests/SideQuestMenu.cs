@@ -45,7 +45,7 @@ public class SideQuestMenu : MonoBehaviour
 
         foreach (var quest in activeSideQuests)
         {
-            sb.AppendLine($"<b>{quest.info.displayName}</b> - {quest.state}");
+            sb.AppendLine($"<b>{quest.info.displayName}</b>:");
             sb.AppendLine($"{quest.info.Description}\n");
         }
 
