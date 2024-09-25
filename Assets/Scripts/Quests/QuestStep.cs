@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public abstract class QuestStep : MonoBehaviour
 {
@@ -10,6 +13,7 @@ public abstract class QuestStep : MonoBehaviour
     private string sideQuestId;
 
     private CanvasGroup screenOverlay;
+    private GameObject endScreen;
     private TMP_Text textMeshPro;
     public float fadeDuration = 1.0f;
     public float displayDuration = 1.0f;
@@ -19,6 +23,9 @@ public abstract class QuestStep : MonoBehaviour
         screenOverlay = GameObject.Find("DeathPanel").GetComponent<CanvasGroup>();
         GameObject textObject = GameObject.Find("MainQuestText");
         textMeshPro = textObject.GetComponent<TMP_Text>();
+
+        endScreen = GameObject.Find("EndScreen");
+        endScreen.gameObject.SetActive(false);
 
         GameObject panel = GameObject.Find("DeathPanel");
         screenOverlay = panel.GetComponent<CanvasGroup>();
@@ -31,6 +38,8 @@ public abstract class QuestStep : MonoBehaviour
     public void InitializeQuestStep(string questId)
     {
         this.questId = questId;
+        endScreen = GameObject.Find("EndScreen");
+        endScreen.gameObject.SetActive(false);
 
         if (textMeshPro == null)
         {
@@ -83,7 +92,8 @@ public abstract class QuestStep : MonoBehaviour
         {
             gameIsFinished = true;
 
-            StartCoroutine(FinishGameWithFade());
+            endScreen.gameObject.SetActive(true);
+            // StartCoroutine(FinishGameWithFade());
         }
     }
 
@@ -125,9 +135,11 @@ public abstract class QuestStep : MonoBehaviour
     {
         if (screenOverlay != null)
         {
-            yield return ScreenFade.Fade(screenOverlay, 2f, 1f, 0f); 
+            yield return ScreenFade.Fade(screenOverlay, 2f, 0f, 1f); 
         }
-
+    
+        endScreen.gameObject.SetActive(true);
         Destroy(this.gameObject);
+        
     }
 }

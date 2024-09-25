@@ -11,7 +11,7 @@ public class Food : MonoBehaviour
 
     void Start()
     {
-        interactionUI = GameObject.Find("FoodUI");
+        interactionUI = GameObject.Find("FoodText");
         if (interactionUI != null)
         {
             interactionUI.SetActive(false);

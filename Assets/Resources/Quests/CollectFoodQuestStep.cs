@@ -6,7 +6,7 @@ using TMPro;
 public class CollectFoodQuestStep : QuestStep
 {
     private int foodsCollected = 0;
-    private int foodsToComplete = 8;
+    private int foodsToComplete = 4;
     private TMPro.TMP_Text questText;
     private TipsMessage tipsScript;
 
@@ -20,14 +20,8 @@ public class CollectFoodQuestStep : QuestStep
 
         if (tipsScript != null)
         {
-            tipsScript.SetTipsMessage("You can press \"e\" to eat some things you found on the floor");
+            tipsScript.SetTipsMessage("You can press \"e\" to eat seal or anything else");
         }
-
-        // move to the first side quest the player get
-        // if (tipsScript != null)
-        // {
-        //     tipsScript.SetTipsMessage("You can press \"r\" to see all the side quest you can do");
-        // }
 
         GameEventsManager.instance.miscEvents.onFoodColleted += FoodCollected;
         UpdateTextUI();
@@ -55,7 +49,7 @@ public class CollectFoodQuestStep : QuestStep
     {
         if (questText != null)
         {
-            questText.text = "Find food to eat! In order to fill your hunger you must find " + foodsCollected + "/" + foodsToComplete + "pieces of food, be quick and mindful!";
+            questText.text = "Find food to eat! Seal are really good! In order to fill your hunger you must find at least " + foodsCollected + "/" + foodsToComplete + " pieces of food, be quick and mindful!";
         }
     }
 }
