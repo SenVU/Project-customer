@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1746707625131734553}
   - component: {fileID: 7126610049320625123}
   m_Layer: 0
-  m_Name: TestPlayerFollowAI
+  m_Name: Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

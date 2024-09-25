@@ -4,11 +4,13 @@ public class Food : MonoBehaviour
 {
     private bool isPlayerInRange = false;
     public string interactionKey = "e";
-    public GameObject interactionUI;
+    private GameObject interactionUI;
     [SerializeField] private int foodGained = 1;
+    [SerializeField] private float damage = 0;
 
     void Start()
     {
+        interactionUI = GameObject.Find("FoodUI");
         if (interactionUI != null)
         {
             interactionUI.SetActive(false);
@@ -56,6 +58,9 @@ public class Food : MonoBehaviour
         }
         GameEventsManager.instance.foodEvents.FoodGained(foodGained);
         GameEventsManager.instance.miscEvents.FoodCollected();
+        GameObject player = GameObject.Find("Player");
+        if (damage>0) player.GetComponent<HealthManager>().Damage(damage, HealthManager.DamageSource.AteGarbage);
+        player.GetComponent<PlayerControler>().StartEatAnimation();
         Destroy(gameObject);
     }
 }

@@ -9,10 +9,10 @@ public class QuestManager : MonoBehaviour
     private Dictionary<string, Quest> questMap = new Dictionary<string, Quest>();
     private Quest currentQuest;
     private int questIndex = 0;
-    private bool loadSideQuest = false;
     private QuestState currentQuestState;
     [SerializeField] private SideQuestManager sideQuestManager;
     private TMP_Text questText;
+    [SerializeField] private TipsMessage tipsScript;
 
     private void OnDisable()
     {
@@ -36,6 +36,11 @@ public class QuestManager : MonoBehaviour
         foreach (Quest quest in questMap.Values)
         {
             GameEventsManager.instance.questEvents.QuestStateChange(quest);
+        }
+
+        if (tipsScript != null)
+        {
+            tipsScript.SetTipsMessage("You can press \"f\" to see the control panel");
         }
     }
 

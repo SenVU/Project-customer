@@ -47,7 +47,7 @@ public class RescueTheCub : QuestStep
     {
         if (questText != null)
         {
-            questText.text = "Your baby polar bear is far in a ice plate and he can't swim. Save him !";
+            questText.text = "Your cub is stuck on a drifting piece of sea ice and it can't swim! Rescue it quickly!";
         }
     }
 }

@@ -10,7 +10,8 @@ public class HealthManager : MonoBehaviour
     {
         Unknown,
         Wolf,
-        Hunger
+        Hunger,
+        AteGarbage
     }
 
     // Update is called once per frame

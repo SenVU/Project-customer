@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d5d6334ce4ea614898470efeaffebad, type: 3}
-  m_Name: FindFoodSideQuest
+  m_Name: FindTwoCup
   m_EditorClassIdentifier: 
-  <id>k__BackingField: FindFoodSideQuest
-  displayName: Find Foods
-  Description: 'You need food to still alive so ... take some food c:'
+  <id>k__BackingField: FindTwoCup
+  displayName: Find the two lost bear cubs
+  Description: A mother polar bear lost her two cubs. Help her find them
   questStepPrefabs:
-  - {fileID: 3047735924823072943, guid: a926a26fdfc9b0e478560350194ea674, type: 3}
+  - {fileID: 3358581837729994535, guid: 164e661ab7fecbd4cbcf73d5d6098063, type: 3}

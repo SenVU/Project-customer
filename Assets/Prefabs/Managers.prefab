@@ -149,7 +149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1180154069899076649}
-  - component: {fileID: 3930382092437323521}
+  - component: {fileID: 6176735739193220255}
   m_Layer: 0
   m_Name: TipsManager
   m_TagString: Untagged
@@ -172,7 +172,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8753293086796153404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3930382092437323521
+--- !u!114 &6176735739193220255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

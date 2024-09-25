@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TakeTheCubQuestStep : QuestStep
 {
-    public string interactionKey = "g";
-
     private GameObject player;
     private GameObject cub;
 
@@ -22,7 +20,7 @@ public class TakeTheCubQuestStep : QuestStep
 
         if (tipsScript != null)
         {
-            tipsScript.SetTipsMessage("You can press \"g\" to pick up yours cub");
+            tipsScript.SetTipsMessage("You can press \"e\" to pick up yours cub");
         }
 
         UpdateTextUI();
@@ -30,16 +28,7 @@ public class TakeTheCubQuestStep : QuestStep
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Test");
-        float xPos = player.transform.position.x;
-        float yPos = player.transform.position.y;
-        float zPos = player.transform.position.z;
-
-        bool isXInRange = xPos >= cub.transform.position.x - 5.0f && xPos <= cub.transform.position.x + 5.0f;
-        bool isYInRange = yPos >= cub.transform.position.y - 5.0f && yPos <= cub.transform.position.y + 5.0f;
-        bool isZInRange = zPos >= cub.transform.position.z - 5.0f && zPos <= cub.transform.position.z + 5.0f;
-
-        if (isXInRange && isYInRange && isZInRange && Input.GetKeyDown(interactionKey))
+        if (player.GetComponent<CubPickup>().IsOnBack())
         {
             FinishQuestStep();
         }
