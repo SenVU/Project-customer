@@ -158,6 +158,7 @@ public class AIWolfTargeting : AITargeter
         bool toReturn = true;
         toReturn = toReturn && obj!=gameObject;
         toReturn = toReturn && (obj.GetComponent<HealthManager>() != null);
+        toReturn = toReturn && (obj.CompareTag("Player") || obj.CompareTag("PlayerCub"));
         return toReturn;
     }
 

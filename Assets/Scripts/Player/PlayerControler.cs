@@ -91,7 +91,7 @@ public class PlayerControler : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
         float WS = Input.GetAxisRaw("Vertical");
-        float AD = Input.GetAxisRaw("Horizontal");
+        float AD=0;// = Input.GetAxisRaw("Horizontal");
         bool running = Input.GetKey(runKey);
 
         if (isTPP) TPPCamUpdate();
@@ -197,8 +197,8 @@ public class PlayerControler : MonoBehaviour
     /// </summary>
     public bool IsGrounded()
     {
-        Vector3 colliderBottom = new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y, playerCollider.bounds.center.z);
-        float sphereRadius = 1.01f;
+        Vector3 colliderBottom = new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y-.5f, playerCollider.bounds.center.z);
+        float sphereRadius = 1f;
         Vector3 checkSperePoint = colliderBottom + new Vector3(0, sphereRadius, 0);
         bool grounded = Physics.CheckSphere(checkSperePoint, sphereRadius);
         

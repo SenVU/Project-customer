@@ -19,7 +19,8 @@ public class DeathManager : MonoBehaviour
         Unknown,
         Starvation,
         WolfAttack,
-        AteGarbage
+        AteGarbage,
+        CubDeath
     }
 
     private void Awake()

@@ -30,12 +30,12 @@ public class Boss : MonoBehaviour
     {
         if (isPlayerInRange && Input.GetMouseButtonDown(0))
         {
-            KillMob();
+            HurtWolf();
         }
     }
 
-    void KillMob()
+    void HurtWolf()
     {
-        Destroy(gameObject);
+        GetComponent<HealthManager>().Damage(1, HealthManager.DamageSource.Unknown);
     }
 }

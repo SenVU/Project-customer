@@ -50,6 +50,9 @@ public class FoodManager : MonoBehaviour
     private void Start()
     {
         GameEventsManager.instance.foodEvents.FoodChange(currentFood);
+        // myFood = GameObject.Find("FoodUI").GetComponent<TMPro.TMP_Text>();
+        // healthManager = GetComponent<HealthManager>();
+        // currentFood = startingFood;
         UpdateFoodUI();
     }
 

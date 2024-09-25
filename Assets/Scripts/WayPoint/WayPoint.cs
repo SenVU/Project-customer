@@ -3,12 +3,8 @@ using UnityEngine;
 public class WayPoint : MonoBehaviour
 {
     [SerializeField] GameObject markerPrefab;
-
-
-    void Update()
-    {
-        
-    }
+    [SerializeField] float maxDisplayDistance;
 
     public GameObject getPrefab() { return markerPrefab; }
+    public float getMaxDisplayDistance() { return maxDisplayDistance;}
 }
