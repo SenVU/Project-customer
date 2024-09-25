@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -80,6 +81,11 @@ public class WayPointCamera : MonoBehaviour
         {
             onScreenMarker.SetActive(true);
             GameObject wayPointObj = wayPointMarkers.GetValueOrDefault(onScreenMarker).gameObject;
+            float dist = (wayPointObj.transform.position - transform.position).magnitude;
+
+            TextMeshProUGUI distanceText = onScreenMarker.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            distanceText.text = ((int)dist) + " M";
+
             if (wayPointObj == null || !wayPointObj.activeSelf || wayPointObj.GetComponent<WayPoint>() == null)
             {
                 Destroy(onScreenMarker);

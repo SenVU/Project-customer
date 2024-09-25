@@ -7,6 +7,7 @@ public class Food : MonoBehaviour
     private GameObject interactionUI;
     [SerializeField] private int foodGained = 1;
     [SerializeField] private float damage = 0;
+    [SerializeField] private float healthGained = 1;
 
     void Start()
     {
@@ -59,6 +60,7 @@ public class Food : MonoBehaviour
         GameEventsManager.instance.foodEvents.FoodGained(foodGained);
         GameEventsManager.instance.miscEvents.FoodCollected();
         GameObject player = GameObject.Find("Player");
+        if (healthGained>0) player.GetComponent<HealthManager>().Heal(healthGained);
         if (damage>0) player.GetComponent<HealthManager>().Damage(damage, HealthManager.DamageSource.AteGarbage);
         player.GetComponent<PlayerControler>().StartEatAnimation();
         Destroy(gameObject);
