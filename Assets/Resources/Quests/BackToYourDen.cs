@@ -43,7 +43,6 @@ public class BackToYourDen : QuestStep
 
         if (isXInRange && isZInRange)
         {
-            Debug.Log("Yay");
             FinishGame();
         }
         UpdateTextUI();

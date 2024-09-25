@@ -125,7 +125,7 @@ public abstract class QuestStep : MonoBehaviour
     {
         if (screenOverlay != null)
         {
-            yield return ScreenFade.Fade(screenOverlay, 2f, 0f, 1f); 
+            yield return ScreenFade.Fade(screenOverlay, 2f, 1f, 0f); 
         }
 
         Destroy(this.gameObject);

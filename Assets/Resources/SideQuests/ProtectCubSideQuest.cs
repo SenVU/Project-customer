@@ -46,7 +46,6 @@ public class ProtectCubSideQuest : QuestStep
         spawnedWolves.Add(wolf2);
 
         wolvesSpawned = true;
-        Debug.Log("Wolves spawned in random positions!");
     }
 
     private Vector3 GetRandomPositionAroundTriggerZone()
@@ -75,7 +74,6 @@ public class ProtectCubSideQuest : QuestStep
 
         if (spawnedWolves.Count == 0)
         {
-            Debug.Log("All wolves are dead!");
             wolvesSpawned = false;
             FinishSideQuestStep();
         }
