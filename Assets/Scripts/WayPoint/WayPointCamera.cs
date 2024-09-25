@@ -80,8 +80,15 @@ public class WayPointCamera : MonoBehaviour
         foreach (GameObject onScreenMarker in wayPointMarkers.Keys)
         {
             onScreenMarker.SetActive(true);
-            GameObject wayPointObj = wayPointMarkers.GetValueOrDefault(onScreenMarker).gameObject;
+            WayPoint wayPoint = wayPointMarkers.GetValueOrDefault(onScreenMarker);
+            GameObject wayPointObj = wayPoint.gameObject;
             float dist = (wayPointObj.transform.position - transform.position).magnitude;
+
+            if (wayPoint.getMaxDisplayDistance()>0 && dist > wayPoint.getMaxDisplayDistance())
+            {
+                onScreenMarker.SetActive(false);
+                continue;
+            }
 
             TextMeshProUGUI distanceText = onScreenMarker.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             distanceText.text = ((int)dist) + " M";
@@ -90,9 +97,8 @@ public class WayPointCamera : MonoBehaviour
             {
                 Destroy(onScreenMarker);
                 wayPointMarkers.Remove(onScreenMarker);
-                break;
+                continue;
             }
-            WayPoint wayPoint = wayPointObj.GetComponent<WayPoint>();
 
             float minX = -onScreenMarker.GetComponent<Image>().GetPixelAdjustedRect().width / 8;
             float maxX = Screen.width - minX;
