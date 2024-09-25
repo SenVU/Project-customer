@@ -55,7 +55,7 @@ public class CollectFoodQuestStep : QuestStep
     {
         if (questText != null)
         {
-            questText.text = "Food needed: " + foodsCollected + "/" + foodsToComplete;
+            questText.text = "Find food to eat! In order to fill your hunger you must find " + foodsCollected + "/" + foodsToComplete + "pieces of food, be quick and mindful!";
         }
     }
 }

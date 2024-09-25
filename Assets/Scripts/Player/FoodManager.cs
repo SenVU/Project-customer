@@ -11,6 +11,7 @@ public class FoodManager : MonoBehaviour
     [SerializeField] private float hungerDamage = 1f;
 
     public int currentFood { get; private set; }
+    public int maxFood = 20;
     private TMP_Text myFood;
 
     private Coroutine foodLossCoroutine;
@@ -87,14 +88,7 @@ public class FoodManager : MonoBehaviour
     {
         if (myFood != null)
         {
-            string meatEmoji = "|";
-            string foodDisplay = "Food : ";
-
-            for (int i = 0; i < currentFood; i++)
-            {
-                foodDisplay += meatEmoji;
-            }
-            myFood.text = foodDisplay;
+            myFood.text = currentFood + "/" + maxFood;
         }
     }
 }
