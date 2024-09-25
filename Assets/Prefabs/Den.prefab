@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3039622607525976554}
+  - component: {fileID: 5301086193780225189}
   m_Layer: 0
   m_Name: Den
-  m_TagString: Untagged
+  m_TagString: wayPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +50,19 @@ Transform:
   - {fileID: 5398263492492434679}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5301086193780225189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4506481954954415242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bb23c2afa2acf45a08b78f0c8e4b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  markerPrefab: {fileID: 4221252926974151474, guid: 0402df0e6eb766b4397d4ddf9a6c2932, type: 3}
 --- !u!1001 &1218772409398973618
 PrefabInstance:
   m_ObjectHideFlags: 0

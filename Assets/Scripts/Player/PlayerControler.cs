@@ -13,6 +13,7 @@ public class PlayerControler : MonoBehaviour
 
     [Header("Controll Forces")]
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float runSpeed;
     [SerializeField] private float strafeSpeed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float jumpForce;
@@ -26,6 +27,7 @@ public class PlayerControler : MonoBehaviour
     [Header("Keybinds")]
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode camSwitchKey = KeyCode.Tab;
+    [SerializeField] private KeyCode runKey = KeyCode.LeftShift;
 
     [SerializeField] private float swimControlFactor = 5f;
     [SerializeField] private float swimHeight = -.5f;
@@ -49,13 +51,17 @@ public class PlayerControler : MonoBehaviour
 
     private bool camSwiched = false;
 
+    [Header("Animation")]
+
+    [SerializeField] private Animator animator;
+    private bool eating;
+
 
     /// <summary>
     /// setup at player spawn
     /// </summary>
     void Start()
     {
-
         rigidBody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<Collider>();
         Debug.Assert(playerCollider != null, "Players Collider not found");
@@ -66,7 +72,6 @@ public class PlayerControler : MonoBehaviour
 
         camTransform = cam.transform;
 
-
         FPPCamLocalPos = camTransform.localPosition;
     }
 
@@ -76,7 +81,6 @@ public class PlayerControler : MonoBehaviour
     private void Update()
     {
         CheckForCamSwitch();
-        if (isTPP) TPPCamUpdate();
     }
 
     /// <summary>
@@ -87,16 +91,20 @@ public class PlayerControler : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
         float WS = Input.GetAxisRaw("Vertical");
-        float AD = Input.GetAxisRaw("Horizontal"); 
+        float AD = Input.GetAxisRaw("Horizontal");
+        bool running = Input.GetKey(runKey);
 
-        if (!isTPP) FPPCamUpdate(mouseY);
+        if (isTPP) TPPCamUpdate();
+        else FPPCamUpdate(mouseY);
 
         RotatePlayer(mouseX);
 
-        MovePlayer(WS, AD);
+        MovePlayer(WS, AD, running);
         CheckForJump();
-
+            
         FloatInWater();
+
+        HandleAnimation(WS, running);
     }
 
 
@@ -126,6 +134,7 @@ public class PlayerControler : MonoBehaviour
     /// <param name="mouseX">mouse X axis</param>
     private void RotatePlayer(float mouseX)
     {
+        if (eating) { return; }
         playerYawRotation = transform.rotation.eulerAngles.y;
         playerYawRotation += mouseX * rotationSpeed;
         transform.rotation = Quaternion.Euler(0, playerYawRotation, 0);
@@ -136,9 +145,11 @@ public class PlayerControler : MonoBehaviour
     /// </summary>
     /// <param name="Forward">the forward input</param>
     /// <param name="Strafe">the sideways input</param>
-    private void MovePlayer(float Forward, float Strafe)
+    private void MovePlayer(float Forward, float Strafe, bool run)
     {
-        Vector3 moveVect = new Vector3(Strafe * strafeSpeed, rigidBody.velocity.y, Forward * moveSpeed);
+        if (eating) { return; }
+        float speed = run ? runSpeed : moveSpeed;
+        Vector3 moveVect = new Vector3(Strafe * strafeSpeed, rigidBody.velocity.y, Forward * speed);
         moveVect = Quaternion.Euler(0, playerYawRotation, 0) * moveVect;
 
         // if the player is grounded use a velosity based movement else use force based
@@ -152,6 +163,7 @@ public class PlayerControler : MonoBehaviour
     /// </summary>
     private void CheckForJump()
     {
+        if (eating) { return; }
         if (Input.GetKey(jumpKey) && (IsGrounded() || IsSwimming()))
         {
             Vector3 jump = rigidBody.velocity;
@@ -262,4 +274,17 @@ public class PlayerControler : MonoBehaviour
             toTarget = new Vector3(wallHit.point.x, toTarget.y, wallHit.point.z);
         }
     }
+    private void HandleAnimation(float WS, bool run)
+    {
+        animator.SetBool("isWalking", WS != 0);
+        animator.SetBool("isRunning", run);
+        eating = animator.GetCurrentAnimatorStateInfo(0).IsName("eat");
+        animator.SetBool("isSwimming", IsSwimming());
+    }
+
+    public void StartEatAnimation()
+    {
+        animator.SetTrigger("eat");
+    }
+
 }

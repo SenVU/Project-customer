@@ -34,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4336559499905252608, guid: 2f4f5d7c243412e46a3c471e7db65b96, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 407
       objectReference: {fileID: 0}
     - target: {fileID: 4336559499905252608, guid: 2f4f5d7c243412e46a3c471e7db65b96, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 241
       objectReference: {fileID: 0}
     - target: {fileID: 4336559499905252608, guid: 2f4f5d7c243412e46a3c471e7db65b96, type: 3}
       propertyPath: m_LocalPosition.x
@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4577688036594666810, guid: 2f4f5d7c243412e46a3c471e7db65b96, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f48d8124ace44943b0b64e890cd31da, type: 3}
     - target: {fileID: 7902137456757418325, guid: 2f4f5d7c243412e46a3c471e7db65b96, type: 3}
       propertyPath: m_Name
       value: CubMarker
