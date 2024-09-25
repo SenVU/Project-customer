@@ -3,15 +3,13 @@ using UnityEngine;
 public class AIPlayerCubTargeting : AITargeter
 {
     System.Random random = new System.Random();
-    State currentState = State.Wander;
+    [SerializeField] State currentState = State.Idle;
     Vector2? wanderTarget;
 
     float idleTime;
     float chosenIdleTime;
 
     GameObject player;
-
-    [SerializeField] bool active;
 
     [SerializeField] float wanderSpeed = 2;
     [SerializeField] int maxWanderDistance = 10;
@@ -28,11 +26,12 @@ public class AIPlayerCubTargeting : AITargeter
 
     [SerializeField] string playerObjectName = "Player";
 
-    enum State
+    protected enum State
     {
         Wander,
         Follow,
-        Idle
+        Idle,
+        Disabled
     }
 
     protected override void Start()
@@ -44,7 +43,7 @@ public class AIPlayerCubTargeting : AITargeter
 
     protected override void Update()
     {
-        if (!active) return;
+        if (currentState == State.Disabled) return;
 
         if (Vec3ToVec2(transform.position - player.transform.position).magnitude > maxDistanceFromPlayer)
             currentState = State.Follow;
@@ -59,24 +58,24 @@ public class AIPlayerCubTargeting : AITargeter
         if (maxDistanceFromPlayer > 0) Debug.DrawLine(transform.position, player.transform.position, Color.cyan);
     }
 
-    public void startIdle()
+    protected void startIdle()
     {
         idleTime = 0;
-        chosenIdleTime = minIdleTime + (maxIdleTime-minIdleTime)*((float)random.NextDouble());
+        chosenIdleTime = minIdleTime + (maxIdleTime - minIdleTime) * ((float)random.NextDouble());
         currentState = State.Idle;
     }
 
-    public void Idle()
+    protected void Idle()
     {
         walker.SetTarget(null);
         wanderTarget = null;
         idleTime += Time.deltaTime;
-        
-        if (idleTime > maxIdleTime) 
+
+        if (idleTime > maxIdleTime)
             currentState = State.Wander;
     }
 
-    public void Follow() 
+    protected void Follow()
     {
         Vector2 playerPos = Vec3ToVec2(player.transform.position);
         Vector2 selfPos = GetVec2Pos();
@@ -88,12 +87,12 @@ public class AIPlayerCubTargeting : AITargeter
         if (Vec3ToVec2(transform.position - player.transform.position).magnitude < followDistance) currentState = State.Idle;
     }
 
-    public void Wander()
+    protected void Wander()
     {
         if (wanderTarget.HasValue)
         {
             // sets a new target, if the walker deems it unreachable the target is unset
-            if (!walker.SetTargetVec2(wanderTarget.Value, wanderSpeed)) 
+            if (!walker.SetTargetVec2(wanderTarget.Value, wanderSpeed))
                 wanderTarget = null;
 
             // unset the target if it has been reached
@@ -104,13 +103,13 @@ public class AIPlayerCubTargeting : AITargeter
                 if (random.NextDouble() < wanderToIdleChanse) { startIdle(); }
             }
         }
-        else 
+        else
         {
             int itterations = 0;
-            while (!wanderTarget.HasValue && itterations<11)
+            while (!wanderTarget.HasValue && itterations < 11)
             {
                 // if this loop has been called 10 times it is deemed a failure and it will target the starting point
-                if (itterations > 10) wanderTarget = Vec3ToVec2(player.transform.position)+new Vector2(minDistanceFromPlayer, 0);
+                if (itterations > 10) wanderTarget = Vec3ToVec2(player.transform.position) + new Vector2(minDistanceFromPlayer, 0);
                 else wanderTarget = GetVec2Pos() + RandomPosOffset();
 
                 // check if the target is too far from the staring point and if so reset it
@@ -123,29 +122,23 @@ public class AIPlayerCubTargeting : AITargeter
         }
     }
 
-
-    bool isAttackable(GameObject obj)
-    {
-        bool toReturn = true;
-        toReturn = toReturn && obj!=gameObject;
-        toReturn = toReturn && (obj.GetComponent<HealthManager>() != null);
-        return toReturn;
-    }
+    public void DeactivateAI() { if (currentState != State.Disabled) currentState = State.Disabled; }
+    public void ActivateAI() { if (currentState == State.Disabled) startIdle(); }
 
     /// <summary>
     /// returns the Vec3 version of the target
     /// </summary>
-    Vector3 Vec2ToVec3(Vector2 target) { return new Vector3(target.x, transform.position.y, target.y); }
+    protected Vector3 Vec2ToVec3(Vector2 target) { return new Vector3(target.x, transform.position.y, target.y); }
     /// <summary>
     /// returns the Vec2 version of the target
     /// </summary>
-    Vector2 Vec3ToVec2(Vector3 target) { return new Vector2(target.x, target.z); }
+    protected Vector2 Vec3ToVec2(Vector3 target) { return new Vector2(target.x, target.z); }
     /// <summary>
     /// gets the current position in the Vec2 format
     /// </summary>
-    Vector2 GetVec2Pos() { return Vec3ToVec2(transform.position); }
+    protected Vector2 GetVec2Pos() { return Vec3ToVec2(transform.position); }
     /// <summary>
     /// A Random Offset for finding a new target
     /// </summary>
-    Vector2 RandomPosOffset() { return new Vector2(random.Next(-maxWanderDistance, maxWanderDistance), random.Next(-maxWanderDistance, maxWanderDistance)); }
+    protected Vector2 RandomPosOffset() { return new Vector2(random.Next(-maxWanderDistance, maxWanderDistance), random.Next(-maxWanderDistance, maxWanderDistance)); }
 }
