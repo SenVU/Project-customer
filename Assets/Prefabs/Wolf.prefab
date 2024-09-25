@@ -179,6 +179,9 @@ GameObject:
   - component: {fileID: 7295313396399196296}
   - component: {fileID: 1746707625131734553}
   - component: {fileID: 7126610049320625123}
+  - component: {fileID: 3344742675726344077}
+  - component: {fileID: 1667301138835659149}
+  - component: {fileID: 1813156357621286523}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
@@ -290,3 +293,51 @@ MonoBehaviour:
   attackDistance: 1.5
   attackDamage: 1
   attackInterval: 1
+--- !u!135 &3344742675726344077
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237931810966955209}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1667301138835659149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237931810966955209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edfa9540ee0f9c4458e77785688b3d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1813156357621286523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237931810966955209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f3408a113687e47bada7ab56939513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  despawnOnDeath: 1
+  runOnDeathFunction: 

@@ -11,7 +11,10 @@ public class AIPlayerCubTargeting : AITargeter
 
     GameObject player;
 
+    [SerializeField] Animator animator;
+
     [SerializeField] float wanderSpeed = 2;
+    [SerializeField] float followSpeed = 10;
     [SerializeField] int maxWanderDistance = 10;
     [SerializeField] float wanderResetTargetDistance = .5f;
     [SerializeField] float maxDistanceFromPlayer = 20;
@@ -43,6 +46,7 @@ public class AIPlayerCubTargeting : AITargeter
 
     protected override void Update()
     {
+        HandleAnimation();
         if (currentState == State.Disabled) return;
 
         if (Vec3ToVec2(transform.position - player.transform.position).magnitude > maxDistanceFromPlayer)
@@ -82,7 +86,7 @@ public class AIPlayerCubTargeting : AITargeter
 
         Vector2 direction = (selfPos - playerPos).normalized;
 
-        walker.SetTargetVec2(playerPos + (direction * followDistance));
+        walker.SetTargetVec2(playerPos + (direction * followDistance), followSpeed);
 
         if (Vec3ToVec2(transform.position - player.transform.position).magnitude < followDistance) currentState = State.Idle;
     }
@@ -141,4 +145,11 @@ public class AIPlayerCubTargeting : AITargeter
     /// A Random Offset for finding a new target
     /// </summary>
     protected Vector2 RandomPosOffset() { return new Vector2(random.Next(-maxWanderDistance, maxWanderDistance), random.Next(-maxWanderDistance, maxWanderDistance)); }
+
+    private void HandleAnimation() {
+        animator.SetBool("isWalking", currentState==State.Wander||currentState==State.Follow);
+        animator.SetBool("isRunning", currentState==State.Follow);
+        //eating = animator.GetCurrentAnimatorStateInfo(0).IsName("eat");
+        animator.SetBool("isSwimming", false);
+    }
 }
