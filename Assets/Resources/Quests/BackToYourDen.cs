@@ -10,7 +10,7 @@ public class BackToYourDen : QuestStep
     private TMPro.TMP_Text questText;
     private TipsMessage tipsScript;
 
-    public float tolerance = 5.0f;
+    public float tolerance = 20.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class BackToYourDen : QuestStep
         tipsScript = tipsObject.GetComponent<TipsMessage>();
 
         player = GameObject.Find("Player");
-        pointToJoin = GameObject.Find("Old_tent_0002");
+        pointToJoin = GameObject.Find("Den");
 
         if (tipsScript != null)
         {
@@ -41,8 +41,9 @@ public class BackToYourDen : QuestStep
         bool isYInRange = yPos >= pointToJoin.transform.position.y - tolerance && yPos <= pointToJoin.transform.position.y + tolerance;
         bool isZInRange = zPos >= pointToJoin.transform.position.z - tolerance && zPos <= pointToJoin.transform.position.z + tolerance;
 
-        if (isXInRange && isYInRange && isZInRange)
+        if (isXInRange && isZInRange)
         {
+            Debug.Log("Yay");
             FinishGame();
         }
         UpdateTextUI();

@@ -9,7 +9,6 @@ public class QuestManager : MonoBehaviour
     private Dictionary<string, Quest> questMap = new Dictionary<string, Quest>();
     private Quest currentQuest;
     private int questIndex = 0;
-    private bool loadSideQuest = false;
     private QuestState currentQuestState;
     [SerializeField] private SideQuestManager sideQuestManager;
     private TMP_Text questText;

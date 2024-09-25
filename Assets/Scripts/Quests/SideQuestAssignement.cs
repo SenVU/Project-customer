@@ -8,10 +8,6 @@ public class SideQuestAssignement : MonoBehaviour
     [SerializeField] private SideQuestManager sideQuestManager;
     [SerializeField] private SideQuestSO questInfoForPoint;
 
-    [Header("Config")]
-    [SerializeField] private bool startPoint = true;
-    [SerializeField] private bool finishPoint = true;
-
     private bool playerIsNear = false;
     private bool isQuestAssign = false;
     private string questId;
@@ -45,7 +41,6 @@ public class SideQuestAssignement : MonoBehaviour
         if (otherCollider.CompareTag("Player") && !isQuestAssign)
         {
             isQuestAssign = true;
-            Debug.Log("ENTER");
             playerIsNear = true;
             sideQuestManager.AddSideQuest(questInfoForPoint);
         }

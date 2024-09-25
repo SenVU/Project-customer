@@ -15,7 +15,7 @@ public class TipsMessage : MonoBehaviour
         tipsText = tipsObject.GetComponent<TMPro.TMP_Text>();
 
         originalPosition = tipsObject.transform.position;
-        targetPosition = originalPosition + new Vector3(850, 0, 0);
+        targetPosition = originalPosition + new Vector3(350, 0, 0);
     }
 
     public void SetTipsMessage(string tips)

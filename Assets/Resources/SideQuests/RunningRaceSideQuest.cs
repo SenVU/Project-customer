@@ -11,7 +11,7 @@ public class RunningRaceSideQuest : QuestStep
     private CourseAI courseAi;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         opponent = GameObject.Find("Running Race");
 
