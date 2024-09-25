@@ -1112,6 +1112,8 @@ MonoBehaviour:
       value: Starvation Text got lost :(
     - key: 1
       value: You got killed by wolf
+    - key: 3
+      value: You ate garbage and died
   deathCountdownDuration: 10
 --- !u!114 &4426155937254774511
 MonoBehaviour:
@@ -1151,6 +1153,8 @@ MonoBehaviour:
       value: 1
     - key: 2
       value: 0
+    - key: 3
+      value: 3
 --- !u!114 &8263099061378590361
 MonoBehaviour:
   m_ObjectHideFlags: 0

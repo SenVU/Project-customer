@@ -11,8 +11,6 @@ public class CubPickup : MonoBehaviour
     [SerializeField] float maxPickupDistance;
     [SerializeField] Vector3 cubPositionOffset;
 
-    private bool resqued;
-
     bool onBack;
     bool wasOnBack;
     void Start()
@@ -61,12 +59,12 @@ public class CubPickup : MonoBehaviour
                 cub.transform.SetParent(transform);
                 cubCollider.enabled = false;
                 cubAI.DeactivateAI();
-                resqued = true;
                 wasOnBack = true;
             }
 
             cub.transform.localPosition = cubPositionOffset;
             cub.transform.localRotation = Quaternion.Euler(Vector3.zero);
+            cub.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
         if (!onBack && wasOnBack)
         {

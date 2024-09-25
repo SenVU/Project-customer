@@ -71,6 +71,15 @@ public class PlayerControler : MonoBehaviour
     }
 
     /// <summary>
+    /// update loop
+    /// </summary>
+    private void Update()
+    {
+        CheckForCamSwitch();
+        if (isTPP) TPPCamUpdate();
+    }
+
+    /// <summary>
     /// fixed update loop
     /// </summary>
     void FixedUpdate()
@@ -78,15 +87,14 @@ public class PlayerControler : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
         float WS = Input.GetAxisRaw("Vertical");
-        float AD = Input.GetAxisRaw("Horizontal");
+        float AD = Input.GetAxisRaw("Horizontal"); 
+
+        if (!isTPP) FPPCamUpdate(mouseY);
 
         RotatePlayer(mouseX);
-        if (isTPP) TPPCamUpdate();
-        else FPPCamUpdate(mouseY);
 
         MovePlayer(WS, AD);
         CheckForJump();
-        CheckForCamSwitch();
 
         FloatInWater();
     }
