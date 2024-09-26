@@ -56,6 +56,12 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private Animator animator;
     private bool eating;
 
+    [Header("Sound")]
+    [SerializeField] private AudioClip walkSound;
+    [SerializeField] private AudioClip runSound;
+    [SerializeField] private AudioClip iceSound;
+    [SerializeField] private AudioSource audioSource;
+
 
     /// <summary>
     /// setup at player spawn
@@ -103,8 +109,10 @@ public class PlayerControler : MonoBehaviour
         CheckForJump();
             
         FloatInWater();
-
+        
+        bool onIce = IsOnIce();
         HandleAnimation(WS, running);
+        HandleMovementSounds(running, onIce);
     }
 
 
@@ -126,6 +134,21 @@ public class PlayerControler : MonoBehaviour
             camPitchRotation = 0;
         }
         camTransform.rotation = Quaternion.Euler(camPitchRotation, playerYawRotation, 0);
+    }
+
+    /// <summary>
+    /// Check if on ice
+    /// </summary>
+    /// <returns></returns>
+    private bool IsOnIce()
+    {
+        // Utiliser un raycast pour vérifier le tag
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
+        {
+            return hit.collider.CompareTag("IceShelve");
+        }
+        return false;
     }
 
     /// <summary>
@@ -287,4 +310,31 @@ public class PlayerControler : MonoBehaviour
         animator.SetTrigger("eat");
     }
 
+    private void HandleMovementSounds(bool isRunning, bool onIce)
+    {
+        bool isWalking = Input.GetAxisRaw("Vertical") != 0;
+
+        if (onIce && isWalking && !IsSwimming())
+        {
+            if (!audioSource.isPlaying || audioSource.clip != iceSound)
+            {
+                audioSource.clip = iceSound;
+                audioSource.Play();
+            }
+        }
+        else if (isWalking && isRunning && !audioSource.isPlaying && !IsSwimming())
+        {
+            audioSource.clip = runSound;
+            audioSource.Play();
+        }
+        else if (isWalking && !isRunning && !audioSource.isPlaying && !IsSwimming())
+        {
+            audioSource.clip = walkSound;
+            audioSource.Play();
+        }
+        else if (!isWalking && !isRunning && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
 }

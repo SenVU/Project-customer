@@ -24,7 +24,7 @@ public abstract class QuestStep : MonoBehaviour
         GameObject textObject = GameObject.Find("MainQuestText");
         textMeshPro = textObject.GetComponent<TMP_Text>();
 
-        endScreen = GameObject.Find("EndScreen");
+        endScreen = GameObject.Find("Finish");
         endScreen.gameObject.SetActive(false);
 
         GameObject panel = GameObject.Find("DeathPanel");
@@ -38,8 +38,11 @@ public abstract class QuestStep : MonoBehaviour
     public void InitializeQuestStep(string questId)
     {
         this.questId = questId;
-        endScreen = GameObject.Find("EndScreen");
-        endScreen.gameObject.SetActive(false);
+        endScreen = GameObject.Find("Finish");
+        if (endScreen != null)
+        {
+            endScreen.gameObject.SetActive(false);
+        }
 
         if (textMeshPro == null)
         {
@@ -92,10 +95,13 @@ public abstract class QuestStep : MonoBehaviour
         {
             gameIsFinished = true;
 
-            endScreen.gameObject.SetActive(true);
-            // StartCoroutine(FinishGameWithFade());
+            if (endScreen != null)
+            {
+                endScreen.SetActive(true);
+            }
         }
     }
+
 
     private void QuestStartUI()
     {

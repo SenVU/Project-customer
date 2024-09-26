@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerCub
   - wayPoint
+  - WaterZone
+  - IceShelve
   layers:
   - Default
   - TransparentFX

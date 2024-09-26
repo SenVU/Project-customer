@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Food : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Food : MonoBehaviour
     [SerializeField] private int foodGained = 1;
     [SerializeField] private float damage = 0;
     [SerializeField] private float healthGained = 1;
+    private bool isEating;
 
     void Start()
     {
@@ -44,25 +46,34 @@ public class Food : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerInRange && Input.GetKeyDown(interactionKey))
+        if (isPlayerInRange && Input.GetKeyDown(interactionKey) && !isEating)
         {
-            CollectItem();
+            isEating = true;
+            StartCoroutine(CollectItem());
         }
     }
 
-    void CollectItem()
+    private IEnumerator CollectItem()
     {
         Debug.Log("Object collected ! Food +" + foodGained);
+        
         if (interactionUI != null)
         {
             interactionUI.SetActive(false);
         }
+        
         GameEventsManager.instance.foodEvents.FoodGained(foodGained);
         GameEventsManager.instance.miscEvents.FoodCollected();
+        
         GameObject player = GameObject.Find("Player");
-        if (healthGained>0) player.GetComponent<HealthManager>().Heal(healthGained);
-        if (damage>0) player.GetComponent<HealthManager>().Damage(damage, HealthManager.DamageSource.AteGarbage);
+        if (healthGained > 0) 
+            player.GetComponent<HealthManager>().Heal(healthGained);
+        
+        if (damage > 0) 
+            player.GetComponent<HealthManager>().Damage(damage, HealthManager.DamageSource.AteGarbage);
+        
         player.GetComponent<PlayerControler>().StartEatAnimation();
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 }
