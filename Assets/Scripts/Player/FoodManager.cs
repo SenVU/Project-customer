@@ -10,6 +10,7 @@ public class FoodManager : MonoBehaviour
     [SerializeField] private float foodLossInterval = 30f;
     [SerializeField] private float hungerDamage = 1f;
 
+    [SerializeField] private AudioSource audioSource;
     public int currentFood { get; private set; }
     public int maxFood = 20;
     private TMP_Text myFood;
@@ -50,9 +51,6 @@ public class FoodManager : MonoBehaviour
     private void Start()
     {
         GameEventsManager.instance.foodEvents.FoodChange(currentFood);
-        // myFood = GameObject.Find("FoodUI").GetComponent<TMPro.TMP_Text>();
-        // healthManager = GetComponent<HealthManager>();
-        // currentFood = startingFood;
         UpdateFoodUI();
     }
 
@@ -60,6 +58,8 @@ public class FoodManager : MonoBehaviour
     {
         currentFood += food;
         GameEventsManager.instance.foodEvents.FoodChange(currentFood);
+
+        PlayEatSound();
         UpdateFoodUI();
     }
 
@@ -85,6 +85,11 @@ public class FoodManager : MonoBehaviour
                 healthManager.Damage(hungerDamage, HealthManager.DamageSource.Hunger);
             }
         }
+    }
+    
+    private void PlayEatSound()
+    {
+        audioSource.Play();
     }
 
     private void UpdateFoodUI()
