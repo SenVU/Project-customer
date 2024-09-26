@@ -45,24 +45,25 @@ Material:
   - TransparentDepthPostpass
   - TransparentBackface
   - RayTracingPrepass
+  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: d03c980f8a7f7aa4186b01382b958165, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5f42b3978f7d39e419fde25883d4d181, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ExtraTex:
-        m_Texture: {fileID: 2800000, guid: aa5383bee4115ca41bff80dfed71c254, type: 3}
+        m_Texture: {fileID: 2800000, guid: b22692804ad8f1646a7c07803088873e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 83b9944ec85b9494895ee18e522ad210, type: 3}
+        m_Texture: {fileID: 2800000, guid: 95e9848a4f652f0419939a38e0f4a35d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SubsurfaceTex:
-        m_Texture: {fileID: 2800000, guid: 043f324541b4a1047b612ecb6be02c99, type: 3}
+        m_Texture: {fileID: 2800000, guid: 30c2e6151f40a894fa838bdbc6029416, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -133,7 +134,7 @@ Material:
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
     - _WINDQUALITY: 4
-    - _WindQuality: 1
+    - _WindQuality: 0
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 3
     - _ZTestTransparent: 4

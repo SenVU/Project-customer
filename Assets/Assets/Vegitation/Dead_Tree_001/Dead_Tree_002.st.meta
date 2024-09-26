@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: 7d8d6e2a164a32d459d841539f6e3e75
 SpeedTreeImporter:
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bark
+    second: {fileID: 2100000, guid: 0959904c7d0a5d3428ab83abfb78b7d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dead_Tree_002
+    second: {fileID: 2100000, guid: 8f905b9f7efc33242ae72c831fb51a7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dead_Tree_002_Billboard
+    second: {fileID: 2100000, guid: b31d309d1955f364291f0ec311a14e93, type: 2}
   serializedVersion: 7
   mainColor: {r: 1, g: 1, b: 1, a: 1}
   hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
